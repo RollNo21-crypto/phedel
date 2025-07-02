@@ -29,6 +29,15 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://phedel.pages.dev">
     
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
     <!-- Structured Data for Local Business -->
     <script type="application/ld+json">
     {
@@ -646,7 +655,8 @@
             <div class="w-40 h-40 mx-auto mt-5 mb-5 rounded-full overflow-hidden shadow-lg border-4 border-blue-300">
                 <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" 
                      alt="Founder" 
-                     class="w-full h-full object-cover">
+                     class="w-full h-full object-cover"
+                     loading="lazy">
             </div>
             <div class="text-white">
                 <h3 class="text-lg font-bold mb-1">M Shivaraj Mattigatti</h3>

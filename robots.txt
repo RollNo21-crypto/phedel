@@ -1,0 +1,21 @@
+# Robots.txt for PHEDEL Modular Systems
+# https://phedel.pages.dev
+
+User-agent: *
+Allow: /
+
+# Disallow crawling of any admin or private directories (if they exist)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Allow crawling of CSS and JS files for better rendering
+Allow: /*.css$
+Allow: /*.js$
+
+# Sitemap location
+Sitemap: https://phedel.pages.dev/sitemap.xml
+
+# Crawl-delay (optional - helps prevent server overload)
+Crawl-delay: 1
