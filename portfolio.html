@@ -37,19 +37,88 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                Our <span class="text-blue-600">Portfolio</span>
+    <section class="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+        <div class="absolute top-0 left-0 w-full h-full">
+            <div class="absolute top-20 left-10 w-32 h-32 bg-blue-500 bg-opacity-20 rounded-full blur-xl"></div>
+            <div class="absolute bottom-20 right-10 w-48 h-48 bg-indigo-500 bg-opacity-20 rounded-full blur-xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center space-x-2 bg-white bg-opacity-10 backdrop-blur-sm rounded-full px-6 py-3 mb-8">
+                <i class="fas fa-award text-yellow-400"></i>
+                <span class="text-white font-medium">Award-Winning Industrial Solutions</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-8">
+                Our <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Portfolio</span>
             </h1>
-            <p class="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
-                Showcasing our expertise through successful industrial projects and innovative solutions
+            <p class="text-xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+                Discover how we've transformed industrial operations across India with cutting-edge solutions, delivering measurable results for over 200+ clients
             </p>
+            
+            <!-- Stats Row -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-white mb-2">200+</div>
+                    <div class="text-blue-200 text-sm">Projects Completed</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-white mb-2">15+</div>
+                    <div class="text-blue-200 text-sm">Industries Served</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-white mb-2">99.8%</div>
+                    <div class="text-blue-200 text-sm">Client Satisfaction</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-white mb-2">₹500Cr+</div>
+                    <div class="text-blue-200 text-sm">Project Value</div>
+                </div>
+            </div>
+            
             <div class="flex flex-wrap justify-center gap-4">
-                <button class="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-all">All Projects</button>
-                <button class="bg-white text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-all">Data Centers</button>
-                <button class="bg-white text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-all">Manufacturing</button>
-                <button class="bg-white text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-all">Logistics</button>
+                <button class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-blue-800 transition-all transform hover:-translate-y-1 shadow-lg">All Projects</button>
+                <button class="bg-white bg-opacity-10 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-semibold hover:bg-opacity-20 transition-all border border-white border-opacity-20">Data Centers</button>
+                <button class="bg-white bg-opacity-10 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-semibold hover:bg-opacity-20 transition-all border border-white border-opacity-20">Manufacturing</button>
+                <button class="bg-white bg-opacity-10 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-semibold hover:bg-opacity-20 transition-all border border-white border-opacity-20">Logistics</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Expertise -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Industry Expertise</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Specialized solutions across diverse industrial sectors</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all group">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-server text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Data Centers</h3>
+                    <p class="text-gray-600 mb-4">Hyperscale facilities, edge computing, and cloud infrastructure</p>
+                    <div class="text-sm text-blue-600 font-medium">50+ Projects • 500MW+ Capacity</div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all group">
+                    <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-industry text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Manufacturing</h3>
+                    <p class="text-gray-600 mb-4">Smart factories, automation, and process optimization</p>
+                    <div class="text-sm text-green-600 font-medium">80+ Projects • 40% Efficiency Gain</div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all group">
+                    <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-truck text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Logistics</h3>
+                    <p class="text-gray-600 mb-4">Cold chain, warehousing, and distribution networks</p>
+                    <div class="text-sm text-purple-600 font-medium">60+ Projects • 25 Cities</div>
+                </div>
             </div>
         </div>
     </section>
@@ -58,206 +127,319 @@
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Featured Projects</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Discover how we've helped leading companies transform their industrial operations</p>
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Featured Case Studies</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Deep dive into our most impactful projects and the results we delivered</p>
             </div>
 
             <!-- Project Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+            <div class="space-y-16">
                 
                 <!-- Project 1 - Large Featured -->
-                <div class="lg:col-span-2 bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-8 text-white relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-white bg-opacity-10 rounded-full -translate-y-32 translate-x-32"></div>
+                <div class="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 rounded-3xl p-12 text-white relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-96 h-96 bg-white bg-opacity-5 rounded-full -translate-y-48 translate-x-48"></div>
+                    <div class="absolute bottom-0 left-0 w-64 h-64 bg-white bg-opacity-5 rounded-full translate-y-32 -translate-x-32"></div>
                     <div class="relative z-10">
-                        <div class="flex items-start justify-between mb-6">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                             <div>
-                                <div class="inline-flex items-center space-x-2 bg-white bg-opacity-20 rounded-full px-4 py-2 mb-4">
-                                    <i class="fas fa-server text-sm"></i>
-                                    <span class="text-sm font-medium">Data Center</span>
+                                <div class="inline-flex items-center space-x-2 bg-white bg-opacity-20 backdrop-blur-sm rounded-full px-6 py-3 mb-6">
+                                    <i class="fas fa-server"></i>
+                                    <span class="font-medium">Data Center Excellence</span>
                                 </div>
-                                <h3 class="text-3xl font-bold mb-2">Hyperscale Data Center Infrastructure</h3>
-                                <p class="text-blue-100 mb-6">Complete power and cooling solution for a 50MW hyperscale data center facility in Bengaluru</p>
+                                <h3 class="text-4xl font-bold mb-6">Hyperscale Data Center Infrastructure</h3>
+                                <p class="text-blue-100 mb-8 text-lg leading-relaxed">Complete end-to-end power and cooling solution for a 50MW hyperscale data center facility in Bengaluru, featuring redundant power systems, advanced cooling technology, and 24/7 monitoring capabilities.</p>
+                                
+                                <div class="space-y-4 mb-8">
+                                    <div class="flex items-center space-x-3">
+                                        <i class="fas fa-check-circle text-green-400"></i>
+                                        <span>Tier III+ certified infrastructure</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <i class="fas fa-check-circle text-green-400"></i>
+                                        <span>N+1 redundancy across all systems</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <i class="fas fa-check-circle text-green-400"></i>
+                                        <span>Advanced fire suppression system</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center space-x-6">
+                                    <button class="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all transform hover:-translate-y-1 shadow-lg">
+                                        View Full Case Study
+                                    </button>
+                                    <div class="flex items-center space-x-2 text-blue-200">
+                                        <i class="fas fa-calendar"></i>
+                                        <span>Completed Q2 2024</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                            <div class="bg-white bg-opacity-10 rounded-xl p-4">
-                                <div class="text-2xl font-bold">50MW</div>
-                                <div class="text-blue-100 text-sm">Power Capacity</div>
-                            </div>
-                            <div class="bg-white bg-opacity-10 rounded-xl p-4">
-                                <div class="text-2xl font-bold">99.99%</div>
-                                <div class="text-blue-100 text-sm">Uptime SLA</div>
-                            </div>
-                            <div class="bg-white bg-opacity-10 rounded-xl p-4">
-                                <div class="text-2xl font-bold">6 Months</div>
-                                <div class="text-blue-100 text-sm">Delivery Time</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-4">
-                            <button class="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-all">
-                                View Case Study
-                            </button>
-                            <div class="flex items-center space-x-2 text-blue-100">
-                                <i class="fas fa-calendar text-sm"></i>
-                                <span class="text-sm">Completed 2024</span>
+                            
+                            <div class="grid grid-cols-2 gap-6">
+                                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 text-center">
+                                    <div class="text-3xl font-bold mb-2">50MW</div>
+                                    <div class="text-blue-200">Power Capacity</div>
+                                </div>
+                                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 text-center">
+                                    <div class="text-3xl font-bold mb-2">99.99%</div>
+                                    <div class="text-blue-200">Uptime SLA</div>
+                                </div>
+                                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 text-center">
+                                    <div class="text-3xl font-bold mb-2">6 Months</div>
+                                    <div class="text-blue-200">Delivery Time</div>
+                                </div>
+                                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 text-center">
+                                    <div class="text-3xl font-bold mb-2">₹200Cr</div>
+                                    <div class="text-blue-200">Project Value</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-industry text-green-600 text-xl"></i>
+                <!-- Project 2 & 3 Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Project 2 -->
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-10 border border-green-100 hover:shadow-xl transition-all group">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i class="fas fa-industry text-green-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-green-600 font-semibold uppercase tracking-wide">Manufacturing Excellence</div>
+                                <div class="text-2xl font-bold text-gray-900">Smart Factory Automation</div>
+                            </div>
                         </div>
-                        <div>
-                            <div class="text-sm text-green-600 font-medium">Manufacturing</div>
-                            <div class="text-lg font-bold text-gray-900">Smart Factory Automation</div>
+                        <p class="text-gray-700 mb-8 text-lg leading-relaxed">Comprehensive IoT-enabled power management and automation system for Tata Motors' automotive manufacturing plant in Chennai, resulting in significant operational improvements.</p>
+                        
+                        <div class="grid grid-cols-2 gap-6 mb-8">
+                            <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+                                <div class="text-2xl font-bold text-green-600 mb-1">35%</div>
+                                <div class="text-gray-600 text-sm">Energy Savings</div>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+                                <div class="text-2xl font-bold text-green-600 mb-1">24/7</div>
+                                <div class="text-gray-600 text-sm">AI Monitoring</div>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+                                <div class="text-2xl font-bold text-green-600 mb-1">40%</div>
+                                <div class="text-gray-600 text-sm">Efficiency Gain</div>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+                                <div class="text-2xl font-bold text-green-600 mb-1">₹50Cr</div>
+                                <div class="text-gray-600 text-sm">Annual Savings</div>
+                            </div>
                         </div>
+                        
+                        <button class="w-full bg-green-600 text-white py-4 rounded-xl font-semibold hover:bg-green-700 transition-all transform hover:-translate-y-1 shadow-lg">
+                            View Case Study
+                        </button>
                     </div>
-                    <p class="text-gray-600 mb-6">Implemented IoT-enabled power management system for automotive manufacturing plant</p>
-                    <div class="grid grid-cols-2 gap-4 mb-6">
-                        <div class="text-center">
-                            <div class="text-xl font-bold text-gray-900">30%</div>
-                            <div class="text-gray-500 text-sm">Energy Savings</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-xl font-bold text-gray-900">24/7</div>
-                            <div class="text-gray-500 text-sm">Monitoring</div>
-                        </div>
-                    </div>
-                    <button class="w-full bg-gray-100 text-gray-700 py-3 rounded-lg font-medium hover:bg-gray-200 transition-all">
-                        Learn More
-                    </button>
-                </div>
 
-                <!-- Project 3 -->
-                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-truck text-purple-600 text-xl"></i>
+                    <!-- Project 3 -->
+                    <div class="bg-gradient-to-br from-purple-50 to-violet-50 rounded-3xl p-10 border border-purple-100 hover:shadow-xl transition-all group">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i class="fas fa-truck text-purple-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-purple-600 font-semibold uppercase tracking-wide">Logistics Innovation</div>
+                                <div class="text-2xl font-bold text-gray-900">Cold Chain Distribution</div>
+                            </div>
                         </div>
-                        <div>
-                            <div class="text-sm text-purple-600 font-medium">Logistics</div>
-                            <div class="text-lg font-bold text-gray-900">Cold Chain Distribution</div>
+                        <p class="text-gray-700 mb-8 text-lg leading-relaxed">Advanced temperature-controlled storage and distribution network for Cipla's pharmaceutical products across 15 major cities, ensuring product integrity and compliance.</p>
+                        
+                        <div class="grid grid-cols-2 gap-6 mb-8">
+                            <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+                                <div class="text-2xl font-bold text-purple-600 mb-1">±0.2°C</div>
+                                <div class="text-gray-600 text-sm">Temperature Precision</div>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+                                <div class="text-2xl font-bold text-purple-600 mb-1">15</div>
+                                <div class="text-gray-600 text-sm">Cities Covered</div>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+                                <div class="text-2xl font-bold text-purple-600 mb-1">99.9%</div>
+                                <div class="text-gray-600 text-sm">Compliance Rate</div>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+                                <div class="text-2xl font-bold text-purple-600 mb-1">₹75Cr</div>
+                                <div class="text-gray-600 text-sm">Project Value</div>
+                            </div>
                         </div>
+                        
+                        <button class="w-full bg-purple-600 text-white py-4 rounded-xl font-semibold hover:bg-purple-700 transition-all transform hover:-translate-y-1 shadow-lg">
+                            View Case Study
+                        </button>
                     </div>
-                    <p class="text-gray-600 mb-6">Temperature-controlled storage and distribution network for pharmaceutical products</p>
-                    <div class="grid grid-cols-2 gap-4 mb-6">
-                        <div class="text-center">
-                            <div class="text-xl font-bold text-gray-900">±0.5°C</div>
-                            <div class="text-gray-500 text-sm">Precision</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-xl font-bold text-gray-900">15</div>
-                            <div class="text-gray-500 text-sm">Locations</div>
-                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements & Certifications -->
+    <section class="py-20 bg-gradient-to-br from-gray-900 to-slate-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Achievements & Recognition</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Industry recognition and certifications that validate our commitment to excellence</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-yellow-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-trophy text-white text-2xl"></i>
                     </div>
-                    <button class="w-full bg-gray-100 text-gray-700 py-3 rounded-lg font-medium hover:bg-gray-200 transition-all">
-                        Learn More
-                    </button>
+                    <h3 class="text-xl font-bold mb-2">Best Industrial Solution</h3>
+                    <p class="text-gray-400">CII Award 2024</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-green-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-certificate text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">ISO 9001:2015</h3>
+                    <p class="text-gray-400">Quality Management</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">ISO 27001:2013</h3>
+                    <p class="text-gray-400">Information Security</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-star text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">5-Star Rating</h3>
+                    <p class="text-gray-400">Client Satisfaction</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Project Gallery -->
-    <section class="py-20 bg-gray-100">
+    <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Project Gallery</h2>
-                <p class="text-gray-600">A visual showcase of our industrial solutions in action</p>
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Project Showcase</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Visual highlights from our most innovative industrial solutions across different sectors</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Gallery Item 1 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all group">
-                    <div class="bg-gradient-to-br from-blue-500 to-blue-700 h-48 flex items-center justify-center">
-                        <i class="fas fa-database text-white text-4xl group-hover:scale-110 transition-transform"></i>
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group">
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-700 h-64 flex flex-col items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <i class="fas fa-database text-white text-5xl group-hover:scale-110 transition-transform relative z-10"></i>
+                        <div class="absolute bottom-4 left-4 right-4 text-white z-10">
+                            <div class="text-sm font-medium opacity-90">Mumbai • 2024</div>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-gray-900 mb-2">Modular Data Center</h3>
-                        <p class="text-gray-600 text-sm mb-4">Prefabricated data center modules with integrated cooling</p>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Modular Data Center</h3>
+                        <p class="text-gray-600 mb-6">Prefabricated data center modules with integrated cooling and power management for rapid deployment</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-blue-600 text-sm font-medium">Enterprise Client</span>
-                            <i class="fas fa-arrow-right text-gray-400"></i>
+                            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">Enterprise</span>
+                            <button class="text-blue-600 hover:text-blue-700 font-medium">View Details →</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Gallery Item 2 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all group">
-                    <div class="bg-gradient-to-br from-green-500 to-green-700 h-48 flex items-center justify-center">
-                        <i class="fas fa-solar-panel text-white text-4xl group-hover:scale-110 transition-transform"></i>
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group">
+                    <div class="bg-gradient-to-br from-green-500 to-green-700 h-64 flex flex-col items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <i class="fas fa-solar-panel text-white text-5xl group-hover:scale-110 transition-transform relative z-10"></i>
+                        <div class="absolute bottom-4 left-4 right-4 text-white z-10">
+                            <div class="text-sm font-medium opacity-90">Pune • 2024</div>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-gray-900 mb-2">Solar Power Integration</h3>
-                        <p class="text-gray-600 text-sm mb-4">Renewable energy solutions for industrial facilities</p>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Solar Power Integration</h3>
+                        <p class="text-gray-600 mb-6">Renewable energy solutions with smart grid integration for sustainable industrial operations</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-green-600 text-sm font-medium">Manufacturing</span>
-                            <i class="fas fa-arrow-right text-gray-400"></i>
+                            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium">Manufacturing</span>
+                            <button class="text-green-600 hover:text-green-700 font-medium">View Details →</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Gallery Item 3 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all group">
-                    <div class="bg-gradient-to-br from-purple-500 to-purple-700 h-48 flex items-center justify-center">
-                        <i class="fas fa-warehouse text-white text-4xl group-hover:scale-110 transition-transform"></i>
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group">
+                    <div class="bg-gradient-to-br from-purple-500 to-purple-700 h-64 flex flex-col items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <i class="fas fa-warehouse text-white text-5xl group-hover:scale-110 transition-transform relative z-10"></i>
+                        <div class="absolute bottom-4 left-4 right-4 text-white z-10">
+                            <div class="text-sm font-medium opacity-90">Gurgaon • 2023</div>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-gray-900 mb-2">Automated Warehouse</h3>
-                        <p class="text-gray-600 text-sm mb-4">Smart storage solutions with robotic systems</p>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Automated Warehouse</h3>
+                        <p class="text-gray-600 mb-6">AI-powered storage solutions with robotic systems and predictive analytics</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-purple-600 text-sm font-medium">E-commerce</span>
-                            <i class="fas fa-arrow-right text-gray-400"></i>
+                            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-medium">E-commerce</span>
+                            <button class="text-purple-600 hover:text-purple-700 font-medium">View Details →</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Gallery Item 4 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all group">
-                    <div class="bg-gradient-to-br from-orange-500 to-orange-700 h-48 flex items-center justify-center">
-                        <i class="fas fa-fire text-white text-4xl group-hover:scale-110 transition-transform"></i>
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group">
+                    <div class="bg-gradient-to-br from-orange-500 to-orange-700 h-64 flex flex-col items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <i class="fas fa-fire text-white text-5xl group-hover:scale-110 transition-transform relative z-10"></i>
+                        <div class="absolute bottom-4 left-4 right-4 text-white z-10">
+                            <div class="text-sm font-medium opacity-90">Hyderabad • 2024</div>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-gray-900 mb-2">Fire Suppression System</h3>
-                        <p class="text-gray-600 text-sm mb-4">Advanced fire protection for critical infrastructure</p>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Fire Suppression System</h3>
+                        <p class="text-gray-600 mb-6">Advanced fire protection with early detection and automated response systems</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-orange-600 text-sm font-medium">Data Center</span>
-                            <i class="fas fa-arrow-right text-gray-400"></i>
+                            <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm font-medium">Data Center</span>
+                            <button class="text-orange-600 hover:text-orange-700 font-medium">View Details →</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Gallery Item 5 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all group">
-                    <div class="bg-gradient-to-br from-teal-500 to-teal-700 h-48 flex items-center justify-center">
-                        <i class="fas fa-wind text-white text-4xl group-hover:scale-110 transition-transform"></i>
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group">
+                    <div class="bg-gradient-to-br from-teal-500 to-teal-700 h-64 flex flex-col items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <i class="fas fa-wind text-white text-5xl group-hover:scale-110 transition-transform relative z-10"></i>
+                        <div class="absolute bottom-4 left-4 right-4 text-white z-10">
+                            <div class="text-sm font-medium opacity-90">Chennai • 2023</div>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-gray-900 mb-2">HVAC Optimization</h3>
-                        <p class="text-gray-600 text-sm mb-4">Energy-efficient climate control systems</p>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">HVAC Optimization</h3>
+                        <p class="text-gray-600 mb-6">Energy-efficient climate control with IoT monitoring and predictive maintenance</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-teal-600 text-sm font-medium">Healthcare</span>
-                            <i class="fas fa-arrow-right text-gray-400"></i>
+                            <span class="bg-teal-100 text-teal-600 px-3 py-1 rounded-full text-sm font-medium">Healthcare</span>
+                            <button class="text-teal-600 hover:text-teal-700 font-medium">View Details →</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Gallery Item 6 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all group">
-                    <div class="bg-gradient-to-br from-red-500 to-red-700 h-48 flex items-center justify-center">
-                        <i class="fas fa-shield-alt text-white text-4xl group-hover:scale-110 transition-transform"></i>
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group">
+                    <div class="bg-gradient-to-br from-red-500 to-red-700 h-64 flex flex-col items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <i class="fas fa-shield-alt text-white text-5xl group-hover:scale-110 transition-transform relative z-10"></i>
+                        <div class="absolute bottom-4 left-4 right-4 text-white z-10">
+                            <div class="text-sm font-medium opacity-90">Delhi • 2024</div>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-gray-900 mb-2">Security Infrastructure</h3>
-                        <p class="text-gray-600 text-sm mb-4">Comprehensive security and monitoring solutions</p>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Security Infrastructure</h3>
+                        <p class="text-gray-600 mb-6">Comprehensive security with biometric access, surveillance, and threat detection</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-red-600 text-sm font-medium">Government</span>
-                            <i class="fas fa-arrow-right text-gray-400"></i>
+                            <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-medium">Government</span>
+                            <button class="text-red-600 hover:text-red-700 font-medium">View Details →</button>
                         </div>
                     </div>
                 </div>
@@ -269,8 +451,8 @@
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Client Success Stories</h2>
-                <p class="text-gray-600">What our clients say about working with us</p>
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Client Success Stories</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Trusted by industry leaders across India for delivering exceptional results and long-term partnerships</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
