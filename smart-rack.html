@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Rack Series - PHEDEL Modular Systems</title>
+    <meta name="description" content="Explore PHEDEL's Smart Rack Series - Intelligent data center racks with monitoring, temperature sensors, and power management features.">
+    <meta name="keywords" content="smart rack, data center rack, intelligent monitoring, server rack, PHEDEL">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold text-blue-600">PHEDEL</h1>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">About</a>
+                    <a href="services.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Services</a>
+                    <a href="portfolio.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Portfolio</a>
+                    <a href="products.html" class="text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Products</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Home</a>
+                <a href="about.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition duration-300">About</a>
+                <a href="services.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Services</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Portfolio</a>
+                <a href="products.html" class="text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Products</a>
+                <a href="contact.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="pt-20 pb-4 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li class="inline-flex items-center">
+                        <a href="index.html" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600">
+                            <i class="fas fa-home mr-2"></i>Home
+                        </a>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <i class="fas fa-chevron-right text-gray-400 mx-2"></i>
+                            <a href="products.html" class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2">Products</a>
+                        </div>
+                    </li>
+                    <li aria-current="page">
+                        <div class="flex items-center">
+                            <i class="fas fa-chevron-right text-gray-400 mx-2"></i>
+                            <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">Smart Rack Series</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Smart Rack Series</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Intelligent data center racks with advanced monitoring, temperature control, and power management capabilities</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold">SR Series</span>
+                    <span class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold">Intelligent Monitoring</span>
+                    <span class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold">Power Management</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Variants Section -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Smart Rack Variants</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Choose from our range of intelligent rack solutions designed for modern data centers</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- SR-42U Smart Rack -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="SR-42U Smart Rack" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">SR-42U Smart Rack</h3>
+                        <p class="text-gray-600 mb-4">42U height intelligent rack with comprehensive monitoring system</p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-700 mb-2">Key Features:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• 42U Height (2000mm)</li>
+                                <li>• 600mm/800mm Depth Options</li>
+                                <li>• Intelligent Temperature Monitoring</li>
+                                <li>• Power Consumption Tracking</li>
+                                <li>• Remote Access & Control</li>
+                                <li>• LED Status Indicators</li>
+                            </ul>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-700 mb-2">Specifications:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Load Capacity: 1500kg</li>
+                                <li>• Material: Cold Rolled Steel</li>
+                                <li>• IP Rating: IP20</li>
+                                <li>• Operating Temp: 0°C to 40°C</li>
+                            </ul>
+                        </div>
+                        <button onclick="downloadSpec('sr-42u')" class="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300">
+                            <i class="fas fa-download mr-2"></i>Download Specification
+                        </button>
+                    </div>
+                </div>
+
+                <!-- SR-47U Smart Rack -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="SR-47U Smart Rack" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">SR-47U Smart Rack</h3>
+                        <p class="text-gray-600 mb-4">47U height intelligent rack with advanced environmental controls</p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-700 mb-2">Key Features:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• 47U Height (2200mm)</li>
+                                <li>• 800mm/1000mm Depth Options</li>
+                                <li>• Advanced Temperature Sensors</li>
+                                <li>• Humidity Monitoring</li>
+                                <li>• Smart Power Distribution</li>
+                                <li>• Mobile App Integration</li>
+                            </ul>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-700 mb-2">Specifications:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Load Capacity: 1800kg</li>
+                                <li>• Material: Cold Rolled Steel</li>
+                                <li>• IP Rating: IP20</li>
+                                <li>• Operating Temp: 0°C to 40°C</li>
+                            </ul>
+                        </div>
+                        <button onclick="downloadSpec('sr-47u')" class="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300">
+                            <i class="fas fa-download mr-2"></i>Download Specification
+                        </button>
+                    </div>
+                </div>
+
+                <!-- SR-42U-Pro Smart Rack -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="SR-42U-Pro Smart Rack" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">SR-42U-Pro Smart Rack</h3>
+                        <p class="text-gray-600 mb-4">Professional grade 42U rack with enterprise-level monitoring</p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-700 mb-2">Key Features:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• 42U Height (2000mm)</li>
+                                <li>• 1000mm/1200mm Depth Options</li>
+                                <li>• AI-Powered Analytics</li>
+                                <li>• Predictive Maintenance</li>
+                                <li>• SNMP Integration</li>
+                                <li>• Enterprise Security Features</li>
+                            </ul>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-700 mb-2">Specifications:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Load Capacity: 2000kg</li>
+                                <li>• Material: High-Grade Steel</li>
+                                <li>• IP Rating: IP20</li>
+                                <li>• Operating Temp: -5°C to 45°C</li>
+                            </ul>
+                        </div>
+                        <button onclick="downloadSpec('sr-42u-pro')" class="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300">
+                            <i class="fas fa-download mr-2"></i>Download Specification
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="bg-gray-100 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Smart Features</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Advanced capabilities that set our Smart Rack Series apart</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-thermometer-half text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Temperature Monitoring</h3>
+                    <p class="text-gray-600">Real-time temperature tracking with alerts and automated responses</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bolt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Power Management</h3>
+                    <p class="text-gray-600">Intelligent power distribution and consumption monitoring</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-purple-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-mobile-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Remote Access</h3>
+                    <p class="text-gray-600">Monitor and control your racks from anywhere with mobile app</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-orange-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Security Features</h3>
+                    <p class="text-gray-600">Advanced access control and security monitoring systems</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-blue-600 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Upgrade Your Data Center?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Contact our experts to discuss your Smart Rack requirements and get a customized solution</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="contact.html" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+                    <i class="fas fa-phone mr-2"></i>Contact Us
+                </a>
+                <button onclick="downloadCatalog()" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition duration-300">
+                    <i class="fas fa-download mr-2"></i>Download Catalog
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">PHEDEL</h3>
+                    <p class="text-gray-300 mb-4">Leading provider of modular electrical systems and smart infrastructure solutions.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition duration-300">About</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="products.html" class="text-gray-300 hover:text-white transition duration-300">Products</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="smart-rack.html" class="text-gray-300 hover:text-white transition duration-300">Smart Racks</a></li>
+                        <li><a href="server-rack.html" class="text-gray-300 hover:text-white transition duration-300">Server Racks</a></li>
+                        <li><a href="data-centre-rack.html" class="text-gray-300 hover:text-white transition duration-300">Data Centre Racks</a></li>
+                        <li><a href="cctv-racks.html" class="text-gray-300 hover:text-white transition duration-300">CCTV Racks</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Bengaluru, India</p>
+                        <p><i class="fas fa-phone mr-2"></i>+91 XXX XXX XXXX</p>
+                        <p><i class="fas fa-envelope mr-2"></i>info@phedel.pages.dev</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">&copy; 2024 PHEDEL Modular Systems. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Download specification function
+        function downloadSpec(productType) {
+            const specifications = {
+                'sr-42u': {
+                    title: 'Smart Rack SR-42U - Technical Specification',
+                    content: `PHEDEL MODULAR SYSTEMS\n\nSMART RACK SR-42U\nTechnical Specification Sheet\n\n1. GENERAL SPECIFICATIONS\n   - Height: 42U (2000mm)\n   - Width: 19\" Standard (600mm)\n   - Depth: 600mm / 800mm Options\n   - Load Capacity: 1500kg\n   - Material: Cold Rolled Steel\n   - Finish: Powder Coated RAL 7035\n\n2. SMART FEATURES\n   - Intelligent Temperature Monitoring\n   - Power Consumption Tracking\n   - Remote Access & Control\n   - LED Status Indicators\n   - Mobile App Integration\n   - SNMP Support\n\n3. ENVIRONMENTAL\n   - Operating Temperature: 0°C to 40°C\n   - Humidity: 20% to 80% RH\n   - IP Rating: IP20\n   - Ventilation: Front to Rear Airflow\n\n4. POWER & CONNECTIVITY\n   - Power Input: 230V AC / 16A\n   - Monitoring Sensors: 4x Temperature, 2x Humidity\n   - Communication: Ethernet, Wi-Fi, 4G Optional\n   - Power Outlets: 8x IEC C13, 4x IEC C19\n\n5. COMPLIANCE\n   - IEC 60297 (19\" Rack Standard)\n   - EIA-310-D\n   - RoHS Compliant\n   - CE Certified\n\n6. APPLICATIONS\n   - Data Centers\n   - Server Rooms\n   - Network Operations Centers\n   - Cloud Infrastructure\n\nFor more information, contact: info@phedel.pages.dev`
+                },
+                'sr-47u': {
+                    title: 'Smart Rack SR-47U - Technical Specification',
+                    content: `PHEDEL MODULAR SYSTEMS\n\nSMART RACK SR-47U\nTechnical Specification Sheet\n\n1. GENERAL SPECIFICATIONS\n   - Height: 47U (2200mm)\n   - Width: 19\" Standard (600mm)\n   - Depth: 800mm / 1000mm Options\n   - Load Capacity: 1800kg\n   - Material: Cold Rolled Steel\n   - Finish: Powder Coated RAL 7035\n\n2. ADVANCED SMART FEATURES\n   - Advanced Temperature Sensors (6x)\n   - Humidity Monitoring (4x)\n   - Smart Power Distribution\n   - Mobile App Integration\n   - Predictive Analytics\n   - Cloud Connectivity\n\n3. ENVIRONMENTAL\n   - Operating Temperature: 0°C to 40°C\n   - Humidity: 15% to 85% RH\n   - IP Rating: IP20\n   - Airflow Management: Optimized\n\n4. POWER & CONNECTIVITY\n   - Power Input: 230V AC / 32A\n   - Monitoring Points: 10x Sensors\n   - Communication: Ethernet, Wi-Fi, 4G\n   - Power Outlets: 12x IEC C13, 6x IEC C19\n\n5. COMPLIANCE\n   - IEC 60297, EIA-310-D\n   - ASHRAE Guidelines\n   - RoHS & CE Certified\n\n6. APPLICATIONS\n   - Enterprise Data Centers\n   - Colocation Facilities\n   - High-Density Computing\n   - Mission-Critical Applications\n\nFor more information, contact: info@phedel.pages.dev`
+                },
+                'sr-42u-pro': {
+                    title: 'Smart Rack SR-42U-Pro - Technical Specification',
+                    content: `PHEDEL MODULAR SYSTEMS\n\nSMART RACK SR-42U-PRO\nTechnical Specification Sheet\n\n1. GENERAL SPECIFICATIONS\n   - Height: 42U (2000mm)\n   - Width: 19\" Standard (600mm)\n   - Depth: 1000mm / 1200mm Options\n   - Load Capacity: 2000kg\n   - Material: High-Grade Steel\n   - Finish: Premium Powder Coating\n\n2. ENTERPRISE SMART FEATURES\n   - AI-Powered Analytics\n   - Predictive Maintenance\n   - SNMP v3 Integration\n   - Enterprise Security Features\n   - Advanced Alerting System\n   - Integration APIs\n\n3. ENVIRONMENTAL\n   - Operating Temperature: -5°C to 45°C\n   - Humidity: 10% to 90% RH\n   - IP Rating: IP20\n   - Thermal Management: Advanced\n\n4. POWER & CONNECTIVITY\n   - Power Input: 230V AC / 63A\n   - Monitoring Points: 16x Sensors\n   - Communication: Redundant Ethernet\n   - Power Outlets: 16x IEC C13, 8x IEC C19\n\n5. SECURITY\n   - Biometric Access Control\n   - RFID Card Reader\n   - Security Cameras Integration\n   - Tamper Detection\n\n6. COMPLIANCE\n   - IEC 60297, EIA-310-D\n   - TIA-942 Standard\n   - ISO 27001 Compatible\n   - NEBS Level 3\n\n7. APPLICATIONS\n   - Hyperscale Data Centers\n   - Financial Services\n   - Government Facilities\n   - Critical Infrastructure\n\nFor more information, contact: info@phedel.pages.dev`
+                }
+            };
+
+            const spec = specifications[productType];
+            if (spec) {
+                // Create and download the specification file
+                const blob = new Blob([spec.content], { type: 'text/plain' });
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `${spec.title.replace(/[^a-zA-Z0-9]/g, '_')}_Specification.txt`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
+                
+                // Show success message
+                showNotification(`${spec.title} downloaded successfully!`);
+            }
+        }
+
+        // Download catalog function
+        function downloadCatalog() {
+            const catalogContent = `PHEDEL MODULAR SYSTEMS\nSMART RACK SERIES CATALOG\n\n=== SMART RACK SERIES ===\n\n1. SR-42U Smart Rack\n   - 42U Height (2000mm)\n   - Intelligent Monitoring\n   - Load Capacity: 1500kg\n   - Price: Contact for Quote\n\n2. SR-47U Smart Rack\n   - 47U Height (2200mm)\n   - Advanced Environmental Controls\n   - Load Capacity: 1800kg\n   - Price: Contact for Quote\n\n3. SR-42U-Pro Smart Rack\n   - 42U Height (2000mm)\n   - Enterprise-Grade Features\n   - Load Capacity: 2000kg\n   - Price: Contact for Quote\n\n=== SMART FEATURES ===\n\n- Temperature Monitoring\n- Power Management\n- Remote Access\n- Mobile App Integration\n- Predictive Analytics\n- Security Features\n\n=== COMPANY INFORMATION ===\n\nPHEDEL Modular Systems\nBengaluru, India\nEmail: info@phedel.pages.dev\nWebsite: https://phedel.pages.dev\n\nFor detailed specifications and quotations, please contact our technical team.`;
+            
+            const blob = new Blob([catalogContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'PHEDEL_Smart_Rack_Series_Catalog.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+            
+            showNotification('Smart Rack Series catalog downloaded successfully!');
+        }
+
+        // Show notification function
+        function showNotification(message) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300';
+            notification.innerHTML = `
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+            }, 100);
+            
+            // Animate out and remove
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
