@@ -10,13 +10,23 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://phedel.pages.dev/404.html">
     
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE" />
+    
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+      
+      // Track 404 errors
+      gtag('event', 'page_view', {
+        page_title: '404 Error',
+        page_location: window.location.href,
+        custom_parameter: '404_error'
+      });
     </script>
     
     <script src="https://cdn.tailwindcss.com"></script>
