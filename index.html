@@ -104,19 +104,37 @@
                         <span class="text-xl font-bold text-gray-900">PHEDEL</span>
                     </div>
                 </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="index.html" class="text-blue-600 px-3 py-2 text-sm font-medium">Home</a>
-                        <a href="services.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Services</a>
-                        <a href="products.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Products</a>
-                        <a href="portfolio.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Portfolio</a>
-                        <a href="about.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">About</a>
-                        <a href="contact.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
+                <div class="hidden md:flex lg:flex">
+                    <div class="ml-10 flex items-baseline space-x-4 lg:space-x-8">
+                        <a href="index.html" class="text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="services.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Services</a>
+                        <a href="products.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Products</a>
+                        <a href="portfolio.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Portfolio</a>
+                        <a href="about.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">About</a>
+                        <a href="contact.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Contact</a>
                     </div>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <a href="contact.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700">Get Quote</a>
+                <div class="flex items-center space-x-2 lg:space-x-4">
+                    <a href="contact.html" class="bg-blue-600 text-white px-3 lg:px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700">Get Quote</a>
+                    <div class="md:hidden lg:hidden">
+                        <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600">
+                            <i class="fas fa-bars text-xl"></i>
+                        </button>
+                    </div>
                 </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden lg:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-blue-600">Home</a>
+                <a href="services.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Services</a>
+                <a href="products.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Products</a>
+                <a href="portfolio.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Portfolio</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">About</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
+                <a href="contact.html" class="block px-3 py-2 bg-blue-600 text-white rounded-lg mx-3 mt-2">Get Quote</a>
             </div>
         </div>
     </nav>
@@ -1088,5 +1106,18 @@
             </div>
         </div>
     </footer>
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
