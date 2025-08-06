@@ -127,27 +127,36 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+    <section class="bg-gradient-to-br from-blue-50 to-indigo-100 relative overflow-hidden py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                Our <span class="text-blue-600">Products</span>
+            <div class="inline-flex items-center space-x-2 bg-blue-100 rounded-full px-4 py-2 mb-6">
+                <i class="fas fa-cogs text-blue-600"></i>
+                <span class="text-blue-600 font-medium text-sm">Professional Services</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Our <span class="text-blue-600">Services</span>
             </h1>
-            <p class="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
-                Comprehensive computer racks, server racks, and modular systems designed to meet your IT infrastructure needs
+            <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Complete IT infrastructure services from consultation to maintenance, ensuring optimal performance and reliability
             </p>
+            <!-- <div class="flex flex-wrap justify-center gap-4">
+                <a href="#consultation" class="bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-all hover:shadow-xl transform hover:-translate-y-1">Consultation</a>
+                <a href="#installation" class="border border-blue-600 text-blue-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-600 hover:text-white transition-all">Installation</a>
+                <a href="#maintenance" class="border border-blue-600 text-blue-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-600 hover:text-white transition-all">Maintenance</a>
+            </div> -->
         </div>
     </section>
 
-    <!-- Services Infographic Section -->
+    <!-- Services Section -->
     <section class="py-20 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <!-- Service 1: Consultation Services -->
-            <div class="mb-24 bg-white rounded-3xl shadow-xl overflow-hidden">
+            <div class="group mb-24 bg-gradient-to-br from-teal-50 to-teal-100 rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
                     <div class="p-12 lg:p-16 bg-gradient-to-br from-green-600 to-green-800 text-white flex flex-col justify-center">
-                        <div class="w-20 h-20 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-8">
-                            <i class="fas fa-tools text-3xl"></i>
+                        <div class="w-20 h-20 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-users text-3xl"></i>
                         </div>
                         <h3 class="text-4xl font-bold mb-6">CONSULTATION SERVICES</h3>
                         <p class="text-green-100 mb-8 text-lg">Expert guidance for customized industrial setups and optimized infrastructure solutions</p>
@@ -170,64 +179,64 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-8 lg:p-12 bg-gray-50 flex items-center justify-center">
-                        <svg width="300" height="250" viewBox="0 0 300 250" class="w-full h-auto max-w-sm">
-                            <!-- Consultation Infographic -->
-                            <rect x="50" y="50" width="200" height="150" rx="15" fill="#10b981" opacity="0.1"/>
-                            <circle cx="100" cy="100" r="25" fill="#10b981"/>
-                            <circle cx="200" cy="100" r="25" fill="#059669"/>
-                            <circle cx="150" cy="150" r="25" fill="#047857"/>
-                            <path d="M100 100 L200 100 M150 100 L150 150" stroke="#10b981" stroke-width="3"/>
-                            <text x="100" y="105" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Plan</text>
-                            <text x="200" y="105" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Design</text>
-                            <text x="150" y="155" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Execute</text>
-                            <text x="150" y="30" text-anchor="middle" fill="#047857" font-size="16" font-weight="bold">Consultation Process</text>
-                        </svg>
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                             alt="Professional IT Consultation and Strategy Meeting" 
+                             class="w-full h-full object-cover min-h-[400px] lg:min-h-[500px]">
+                        <div class="absolute inset-0 bg-gradient-to-r from-teal-900/80 via-teal-800/60 to-transparent"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white px-8">
+                                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <i class="fas fa-users text-2xl"></i>
+                                </div>
+                                <h4 class="text-3xl font-bold mb-4">Expert Consultation</h4>
+                                <p class="text-lg opacity-90 max-w-md mx-auto">Professional IT Infrastructure Planning & Strategic Advisory</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Service 2: Product Development -->
-            <div class="mb-24 bg-white rounded-3xl shadow-xl overflow-hidden">
+            <div class="group mb-24 bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                    <div class="p-8 lg:p-12 bg-gray-50 flex items-center justify-center order-2 lg:order-1">
-                        <svg width="300" height="250" viewBox="0 0 300 250" class="w-full h-auto max-w-sm">
-                            <!-- Product Development Infographic -->
-                            <rect x="30" y="60" width="240" height="130" rx="15" fill="#3b82f6" opacity="0.1"/>
-                            <rect x="60" y="90" width="50" height="70" rx="8" fill="#3b82f6"/>
-                            <rect x="125" y="90" width="50" height="70" rx="8" fill="#2563eb"/>
-                            <rect x="190" y="90" width="50" height="70" rx="8" fill="#1d4ed8"/>
-                            <circle cx="85" cy="80" r="8" fill="#60a5fa"/>
-                            <circle cx="150" cy="80" r="8" fill="#60a5fa"/>
-                            <circle cx="215" cy="80" r="8" fill="#60a5fa"/>
-                            <text x="85" y="130" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Design</text>
-                            <text x="150" y="130" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Build</text>
-                            <text x="215" y="130" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Test</text>
-                            <text x="150" y="40" text-anchor="middle" fill="#1d4ed8" font-size="16" font-weight="bold">Development Pipeline</text>
-                        </svg>
+                    <div class="relative overflow-hidden order-2 lg:order-1">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                             alt="Professional Server Installation and Data Center Setup" 
+                             class="w-full h-full object-cover min-h-[400px] lg:min-h-[500px]">
+                        <div class="absolute inset-0 bg-gradient-to-l from-blue-900/80 via-blue-800/60 to-transparent"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white px-8">
+                                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <i class="fas fa-tools text-2xl"></i>
+                                </div>
+                                <h4 class="text-3xl font-bold mb-4">Professional Installation</h4>
+                                <p class="text-lg opacity-90 max-w-md mx-auto">Complete Infrastructure Setup & Technical Implementation</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="p-12 lg:p-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white flex flex-col justify-center order-1 lg:order-2">
-                        <div class="w-20 h-20 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-8">
-                            <i class="fas fa-hammer text-3xl"></i>
+                        <div class="w-20 h-20 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-tools  text-3xl"></i>
                         </div>
-                        <h3 class="text-4xl font-bold mb-6">PRODUCT DEVELOPMENT</h3>
-                        <p class="text-blue-100 mb-8 text-lg">Innovative solutions tailored to meet your specific industrial requirements and market demands</p>
+                        <h3 class="text-4xl font-bold mb-6">INSTALLATION SERVICES</h3>
+                        <p class="text-blue-100 mb-8 text-lg">Professional installation and setup of complete infrastructure systems</p>
                         <div class="space-y-4">
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-check-circle text-blue-300 mt-1 text-lg"></i>
-                                <span class="text-base">Electrical, Mechanical & Electronic Product Design</span>
+                                <span class="text-base">Complete rack assembly and configuration</span>
                             </div>
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-check-circle text-blue-300 mt-1 text-lg"></i>
-                                <span class="text-base">Value Engineering & Performance Enhancement</span>
+                                <span class="text-base">Cable management and organization systems</span>
                             </div>
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-check-circle text-blue-300 mt-1 text-lg"></i>
-                                <span class="text-base">Rapid Prototyping & Testing Solutions</span>
+                                <span class="text-base">Power distribution and cooling setup</span>
                             </div>
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-check-circle text-blue-300 mt-1 text-lg"></i>
-                                <span class="text-base">Custom Manufacturing & Quality Assurance</span>
+                                <span class="text-base">Quality testing and performance validation</span>
                             </div>
                         </div>
                     </div>
@@ -235,80 +244,75 @@
             </div>
 
             <!-- Service 3: Door Delivery & Logistics -->
-            <div class="mb-24 bg-white rounded-3xl shadow-xl overflow-hidden">
+            <div class="group mb-24 bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                    <div class="p-12 lg:p-16 bg-gradient-to-br from-orange-500 to-orange-700 text-white flex flex-col justify-center">
-                        <div class="w-20 h-20 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-8">
-                            <i class="fas fa-truck text-3xl"></i>
+                    <div class="p-12 lg:p-16 bg-gradient-to-br from-purple-600 to-purple-800 text-white flex flex-col justify-center">
+                        <div class="w-20 h-20 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-wrench text-3xl"></i>
                         </div>
-                        <h3 class="text-4xl font-bold mb-6">DOOR DELIVERY & LOGISTICS</h3>
-                        <p class="text-orange-100 mb-8 text-lg">Comprehensive logistics solutions ensuring timely and secure delivery of your industrial equipment</p>
+                        <h3 class="text-4xl font-bold mb-6">MAINTENANCE SERVICES</h3>
+                        <p class="text-purple-100 mb-8 text-lg">Comprehensive maintenance programs to ensure optimal performance and longevity</p>
                         <div class="space-y-4">
                             <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-orange-300 mt-1 text-lg"></i>
-                                <span class="text-base">Real-time tracking & delivery notifications</span>
+                                <i class="fas fa-check-circle text-purple-300 mt-1 text-lg"></i>
+                                <span class="text-base">Preventive maintenance scheduling</span>
                             </div>
                             <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-orange-300 mt-1 text-lg"></i>
-                                <span class="text-base">Specialized handling for sensitive equipment</span>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-orange-300 mt-1 text-lg"></i>
-                                <span class="text-base">Flexible scheduling & route optimization</span>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-orange-300 mt-1 text-lg"></i>
-                                <span class="text-base">Insurance coverage & damage protection</span>
-                            </div>
+                                 <i class="fas fa-check-circle text-purple-300 mt-1 text-lg"></i>
+                                 <span class="text-base">Emergency repair and support services</span>
+                             </div>
+                             <div class="flex items-start space-x-3">
+                                 <i class="fas fa-check-circle text-purple-300 mt-1 text-lg"></i>
+                                 <span class="text-base">Performance monitoring and optimization</span>
+                             </div>
+                             <div class="flex items-start space-x-3">
+                                 <i class="fas fa-check-circle text-purple-300 mt-1 text-lg"></i>
+                                 <span class="text-base">Equipment lifecycle management</span>
+                             </div>
                         </div>
                     </div>
-                    <div class="p-8 lg:p-12 bg-gray-50 flex items-center justify-center">
-                        <svg width="300" height="250" viewBox="0 0 300 250" class="w-full h-auto max-w-sm">
-                            <!-- Logistics Infographic -->
-                            <path d="M50 150 Q150 100 250 150" stroke="#f97316" stroke-width="4" fill="none" stroke-dasharray="10,5"/>
-                            <rect x="40" y="140" width="30" height="20" rx="5" fill="#ea580c"/>
-                            <rect x="135" y="90" width="30" height="20" rx="5" fill="#dc2626"/>
-                            <rect x="240" y="140" width="30" height="20" rx="5" fill="#16a34a"/>
-                            <circle cx="55" cy="170" r="5" fill="#374151"/>
-                            <circle cx="65" cy="170" r="5" fill="#374151"/>
-                            <circle cx="150" cy="120" r="5" fill="#374151"/>
-                            <circle cx="160" cy="120" r="5" fill="#374151"/>
-                            <circle cx="255" cy="170" r="5" fill="#374151"/>
-                            <circle cx="265" cy="170" r="5" fill="#374151"/>
-                            <text x="55" y="190" text-anchor="middle" fill="#ea580c" font-size="12" font-weight="bold">Origin</text>
-                            <text x="150" y="140" text-anchor="middle" fill="#dc2626" font-size="12" font-weight="bold">Transit</text>
-                            <text x="255" y="190" text-anchor="middle" fill="#16a34a" font-size="12" font-weight="bold">Delivery</text>
-                            <text x="150" y="40" text-anchor="middle" fill="#ea580c" font-size="16" font-weight="bold">Logistics Network</text>
-                        </svg>
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                             alt="Technical Maintenance and Support Services" 
+                             class="w-full h-full object-cover min-h-[400px] lg:min-h-[500px]">
+                        <div class="absolute inset-0 bg-gradient-to-r from-purple-900/80 via-purple-800/60 to-transparent"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white px-8">
+                                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <i class="fas fa-wrench text-2xl"></i>
+                                </div>
+                                <h4 class="text-3xl font-bold mb-4">Expert Maintenance</h4>
+                                <p class="text-lg opacity-90 max-w-md mx-auto">24/7 Support & Monitoring Services</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Service 4: Product Sourcing -->
-            <div class="mb-24 bg-white rounded-3xl shadow-xl overflow-hidden">
+            <div class="group mb-24 bg-gradient-to-br from-teal-50 to-teal-100 rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                    <div class="p-8 lg:p-12 bg-gray-50 flex items-center justify-center order-2 lg:order-1">
-                        <svg width="300" height="250" viewBox="0 0 300 250" class="w-full h-auto max-w-sm">
-                            <!-- Global Sourcing Infographic -->
-                            <circle cx="150" cy="125" r="80" fill="#10b981" opacity="0.1"/>
-                            <circle cx="150" cy="125" r="60" fill="#059669" opacity="0.2"/>
-                            <circle cx="150" cy="125" r="40" fill="#047857" opacity="0.3"/>
-                            <circle cx="150" cy="125" r="20" fill="#065f46"/>
-                            <circle cx="100" cy="80" r="8" fill="#10b981"/>
-                            <circle cx="200" cy="80" r="8" fill="#10b981"/>
-                            <circle cx="80" cy="170" r="8" fill="#10b981"/>
-                            <circle cx="220" cy="170" r="8" fill="#10b981"/>
-                            <path d="M100 80 L150 125 M200 80 L150 125 M80 170 L150 125 M220 170 L150 125" stroke="#10b981" stroke-width="2"/>
-                            <text x="150" y="130" text-anchor="middle" fill="white" font-size="12" font-weight="bold">HUB</text>
-                            <text x="150" y="40" text-anchor="middle" fill="#047857" font-size="16" font-weight="bold">Global Network</text>
-                        </svg>
+                    <div class="relative overflow-hidden order-2 lg:order-1">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                             alt="Global Supply Chain and Product Sourcing" 
+                             class="w-full h-full object-cover min-h-[400px] lg:min-h-[500px]">
+                        <div class="absolute inset-0 bg-gradient-to-l from-teal-900/60 via-teal-800/40 to-transparent"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white px-8">
+                                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <i class="fas fa-globe text-2xl"></i>
+                                </div>
+                                <h4 class="text-3xl font-bold mb-4">Global Sourcing</h4>
+                                <p class="text-lg opacity-90 max-w-md mx-auto">Worldwide Supply Chain & Procurement Solutions</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="p-12 lg:p-16 bg-gradient-to-br from-green-600 to-green-800 text-white flex flex-col justify-center order-1 lg:order-2">
-                        <div class="w-20 h-20 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-8">
+                    <div class="p-12 lg:p-16 bg-gradient-to-br from-teal-600 to-teal-800 text-white flex flex-col justify-center order-1 lg:order-2">
+                        <div class="w-20 h-20 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                             <i class="fas fa-globe text-3xl"></i>
                         </div>
                         <h3 class="text-4xl font-bold mb-6">PRODUCT SOURCING</h3>
-                        <p class="text-green-100 mb-8 text-lg">Strategic procurement solutions connecting you with reliable global suppliers and quality products</p>
+                        <p class="text-teal-100 mb-8 text-lg">Strategic procurement solutions connecting you with reliable global suppliers and quality products</p>
                         <div class="space-y-4">
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-check-circle text-green-300 mt-1 text-lg"></i>
@@ -332,10 +336,10 @@
             </div>
 
             <!-- Service 5: Datacenter Solutions -->
-            <div class="mb-24 bg-white rounded-3xl shadow-xl overflow-hidden">
+            <div class="group mb-24 bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
                     <div class="p-12 lg:p-16 bg-gradient-to-br from-purple-600 to-purple-800 text-white flex flex-col justify-center">
-                        <div class="w-20 h-20 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-8">
+                        <div class="w-20 h-20 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                             <i class="fas fa-server text-3xl"></i>
                         </div>
                         <h3 class="text-4xl font-bold mb-6">DATACENTER SOLUTIONS</h3>
@@ -359,46 +363,44 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-8 lg:p-12 bg-gray-50 flex items-center justify-center">
-                        <svg width="300" height="250" viewBox="0 0 300 250" class="w-full h-auto max-w-sm">
-                            <!-- Datacenter Infographic -->
-                            <rect x="80" y="60" width="140" height="130" rx="10" fill="#7c3aed" opacity="0.1"/>
-                            <rect x="100" y="80" width="20" height="90" rx="3" fill="#7c3aed"/>
-                            <rect x="130" y="80" width="20" height="90" rx="3" fill="#6d28d9"/>
-                            <rect x="160" y="80" width="20" height="90" rx="3" fill="#5b21b6"/>
-                            <rect x="190" y="80" width="20" height="90" rx="3" fill="#4c1d95"/>
-                            <circle cx="110" cy="90" r="3" fill="#a855f7"/>
-                            <circle cx="140" cy="90" r="3" fill="#a855f7"/>
-                            <circle cx="170" cy="90" r="3" fill="#a855f7"/>
-                            <circle cx="200" cy="90" r="3" fill="#a855f7"/>
-                            <path d="M90 200 L210 200" stroke="#7c3aed" stroke-width="3"/>
-                            <text x="150" y="40" text-anchor="middle" fill="#5b21b6" font-size="16" font-weight="bold">Server Infrastructure</text>
-                            <text x="150" y="220" text-anchor="middle" fill="#7c3aed" font-size="12" font-weight="bold">Power & Cooling</text>
-                        </svg>
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                             alt="Modern Data Center with Advanced Server Infrastructure" 
+                             class="w-full h-full object-cover min-h-[400px] lg:min-h-[500px]">
+                        <div class="absolute inset-0 bg-gradient-to-r from-purple-900/40 via-purple-800/20 to-transparent"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white px-8">
+                                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <i class="fas fa-server text-2xl"></i>
+                                </div>
+                                <h4 class="text-3xl font-bold mb-4">Enterprise Infrastructure</h4>
+                                <p class="text-lg opacity-90 max-w-md mx-auto">Scalable & Secure Datacenter Solutions</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Service 6: Certification Services -->
-            <div class="mb-12 bg-white rounded-3xl shadow-xl overflow-hidden">
+            <div class="group mb-24 bg-gradient-to-br from-red-50 to-red-100 rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                    <div class="p-8 lg:p-12 bg-gray-50 flex items-center justify-center order-2 lg:order-1">
-                        <svg width="300" height="250" viewBox="0 0 300 250" class="w-full h-auto max-w-sm">
-                            <!-- Certification Infographic -->
-                            <rect x="100" y="60" width="100" height="130" rx="15" fill="#dc2626" opacity="0.1"/>
-                            <circle cx="150" cy="100" r="30" fill="#dc2626" opacity="0.2"/>
-                            <path d="M135 100 L145 110 L165 90" stroke="#dc2626" stroke-width="4" fill="none"/>
-                            <rect x="120" y="140" width="60" height="30" rx="5" fill="#dc2626"/>
-                            <text x="150" y="158" text-anchor="middle" fill="white" font-size="12" font-weight="bold">CERTIFIED</text>
-                            <circle cx="80" cy="80" r="8" fill="#fbbf24"/>
-                            <circle cx="220" cy="80" r="8" fill="#fbbf24"/>
-                            <circle cx="80" cy="170" r="8" fill="#fbbf24"/>
-                            <circle cx="220" cy="170" r="8" fill="#fbbf24"/>
-                            <text x="150" y="40" text-anchor="middle" fill="#dc2626" font-size="16" font-weight="bold">Quality Assurance</text>
-                        </svg>
+                    <div class="relative overflow-hidden order-2 lg:order-1">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                             alt="Quality Certification and Testing Laboratory" 
+                             class="w-full h-full object-cover min-h-[400px] lg:min-h-[500px]">
+                        <div class="absolute inset-0 bg-gradient-to-l from-red-900/80 via-red-800/60 to-transparent"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white px-8">
+                                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <i class="fas fa-certificate text-2xl"></i>
+                                </div>
+                                <h4 class="text-3xl font-bold mb-4">Quality Assurance</h4>
+                                <p class="text-lg opacity-90 max-w-md mx-auto">Certified Excellence & Compliance</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="p-12 lg:p-16 bg-gradient-to-br from-red-600 to-red-800 text-white flex flex-col justify-center order-1 lg:order-2">
-                        <div class="w-20 h-20 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-8">
+                        <div class="w-20 h-20 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                             <i class="fas fa-certificate text-3xl"></i>
                         </div>
                         <h3 class="text-4xl font-bold mb-6">CERTIFICATION SERVICES</h3>
@@ -447,128 +449,128 @@
         </div>
     </section>
 
-    <!-- Services Cards Section -->
-    <section class="py-20 bg-white">
+    <!-- Our Development Process Section -->
+    <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="text-blue-600 font-medium text-sm uppercase tracking-wide">Quick Overview</span>
+                <span class="text-blue-600 font-medium text-sm uppercase tracking-wide">Our Process</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
-                    Our Service Portfolio
+                    Development Process
                 </h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">
-                    Comprehensive solutions designed to meet your industrial and infrastructure needs
+                    From concept to delivery, our comprehensive development process ensures quality and innovation at every step
                 </p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Consultation Services -->
-                <div class="group bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-comments text-white text-2xl"></i>
+                <!-- Conceptual Design & Innovative Solution -->
+                <div class="group bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-lightbulb text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Consultation Services</h3>
-                    <p class="text-gray-600 mb-4">Expert guidance for optimizing your industrial operations and energy efficiency</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Conceptual Design & Solution</h3>
+                    <p class="text-gray-600 mb-4">Creative ideation and innovative design solutions tailored to your needs</p>
                     <ul class="text-sm text-gray-600 space-y-1 mb-6">
-                        <li>• Energy audits and assessments</li>
-                        <li>• System optimization strategies</li>
-                        <li>• Compliance consulting</li>
+                        <li>• Requirement analysis</li>
+                        <li>• Creative brainstorming</li>
+                        <li>• Technical feasibility study</li>
+                        <li>• Design optimization</li>
                     </ul>
-                    <a href="#consultation" class="text-green-600 font-medium hover:text-green-700 transition-colors">
-                        Learn More →
-                    </a>
+                    <div class="text-indigo-600 font-medium">
+                        Step 1 →
+                    </div>
                 </div>
                 
-                <!-- Product Development -->
-                <div class="group bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-cogs text-white text-2xl"></i>
+                <!-- Development of Prototype -->
+                <div class="group bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-cube text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Product Development</h3>
-                    <p class="text-gray-600 mb-4">Custom solutions designed and manufactured to meet your specific requirements</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Development of Prototype</h3>
+                    <p class="text-gray-600 mb-4">Rapid prototyping and iterative development to validate design concepts</p>
                     <ul class="text-sm text-gray-600 space-y-1 mb-6">
-                        <li>• Custom rack solutions</li>
-                        <li>• Power distribution units</li>
-                        <li>• Modular systems</li>
+                        <li>• 3D modeling and simulation</li>
+                        <li>• Rapid prototyping</li>
+                        <li>• Performance testing</li>
+                        <li>• Design refinement</li>
                     </ul>
-                    <a href="#development" class="text-blue-600 font-medium hover:text-blue-700 transition-colors">
-                        Learn More →
-                    </a>
+                    <div class="text-emerald-600 font-medium">
+                        Step 2 →
+                    </div>
                 </div>
                 
-                <!-- Logistics & Delivery -->
-                <div class="group bg-gradient-to-br from-orange-50 to-orange-100 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-truck text-white text-2xl"></i>
+                <!-- Quality Management -->
+                <div class="group bg-gradient-to-br from-amber-50 to-amber-100 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Door Delivery & Logistics</h3>
-                    <p class="text-gray-600 mb-4">Reliable delivery and installation services across India and globally</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Quality Management</h3>
+                    <p class="text-gray-600 mb-4">Rigorous quality control and assurance throughout the development lifecycle</p>
                     <ul class="text-sm text-gray-600 space-y-1 mb-6">
-                        <li>• Nationwide delivery network</li>
-                        <li>• Professional installation</li>
-                        <li>• Supply chain management</li>
+                        <li>• Quality standards compliance</li>
+                        <li>• Testing protocols</li>
+                        <li>• Performance validation</li>
+                        <li>• Continuous improvement</li>
                     </ul>
-                    <a href="#logistics" class="text-orange-600 font-medium hover:text-orange-700 transition-colors">
-                        Learn More →
-                    </a>
+                    <div class="text-amber-600 font-medium">
+                        Step 3 →
+                    </div>
                 </div>
                 
-                <!-- Product Sourcing -->
-                <div class="group bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-search text-white text-2xl"></i>
+                <!-- Setting up a Line -->
+                <div class="group bg-gradient-to-br from-rose-50 to-rose-100 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-rose-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-industry text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Product Sourcing</h3>
-                    <p class="text-gray-600 mb-4">Global procurement of quality industrial components and materials</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Setting up Production Line</h3>
+                    <p class="text-gray-600 mb-4">Establishing efficient production lines for scalable manufacturing</p>
                     <ul class="text-sm text-gray-600 space-y-1 mb-6">
-                        <li>• Quality supplier network</li>
-                        <li>• Cost-effective sourcing</li>
-                        <li>• Vendor management</li>
+                        <li>• Production planning</li>
+                        <li>• Equipment setup</li>
+                        <li>• Process optimization</li>
+                        <li>• Capacity scaling</li>
                     </ul>
-                    <a href="#sourcing" class="text-purple-600 font-medium hover:text-purple-700 transition-colors">
-                        Learn More →
-                    </a>
+                    <div class="text-rose-600 font-medium">
+                        Step 4 →
+                    </div>
                 </div>
                 
-                <!-- Datacenter Solutions -->
-                <div class="group bg-gradient-to-br from-teal-50 to-teal-100 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-teal-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-server text-white text-2xl"></i>
+                <!-- Packaging & Dispatch -->
+                <div class="group bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-cyan-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-box text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Datacenter Solutions</h3>
-                    <p class="text-gray-600 mb-4">Dedicated infrastructure solutions for mission-critical data center operations</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Packaging & Dispatch</h3>
+                    <p class="text-gray-600 mb-4">Professional packaging and efficient dispatch for safe product delivery</p>
                     <ul class="text-sm text-gray-600 space-y-1 mb-6">
-                        <li>• High-speed connectivity</li>
-                        <li>• Redundant power systems</li>
-                        <li>• Scalable infrastructure</li>
+                        <li>• Protective packaging design</li>
+                        <li>• Logistics coordination</li>
+                        <li>• Tracking systems</li>
+                        <li>• Delivery confirmation</li>
                     </ul>
-                    <a href="#datacenter" class="text-teal-600 font-medium hover:text-teal-700 transition-colors">
-                        Learn More →
-                    </a>
+                    <div class="text-cyan-600 font-medium">
+                        Final Step ✓
+                    </div>
                 </div>
                 
-                <!-- Certification Services -->
-                <div class="group bg-gradient-to-br from-red-50 to-red-100 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-red-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-certificate text-white text-2xl"></i>
+                <!-- Process Summary -->
+                <div class="group bg-gradient-to-br from-violet-50 to-violet-100 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-violet-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-rocket text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Certification Services</h3>
-                    <p class="text-gray-600 mb-4">Comprehensive certification and compliance support for global standards</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">End-to-End Excellence</h3>
+                    <p class="text-gray-600 mb-4">Complete project lifecycle management from concept to customer delivery</p>
                     <ul class="text-sm text-gray-600 space-y-1 mb-6">
-                        <li>• ISO compliance support</li>
-                        <li>• Quality assurance testing</li>
-                        <li>• Documentation assistance</li>
+                        <li>• Project management</li>
+                        <li>• Timeline adherence</li>
+                        <li>• Customer communication</li>
+                        <li>• Post-delivery support</li>
                     </ul>
-                    <a href="#certification" class="text-red-600 font-medium hover:text-red-700 transition-colors">
-                        Learn More →
-                    </a>
+                    <div class="text-violet-600 font-medium">
+                        Complete Solution
+                    </div>
                 </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="contact.html" class="bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-all hover:shadow-xl transform hover:-translate-y-1">
-                    Get Started Today
-                </a>
-            </div>
+            </div>  
         </div>
     </section>
 
