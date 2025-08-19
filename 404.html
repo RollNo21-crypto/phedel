@@ -31,6 +31,7 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="js/search.js" defer></script>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
@@ -54,9 +55,35 @@
                         <a href="contact.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
                     </div>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <a href="contact.html" class="hidden md:inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700">Get Quote</a>
-                    <!-- Mobile menu button -->
+                <div class="flex items-center space-x-2 lg:space-x-4">
+                    <button id="search-button" class="text-gray-700 hover:text-blue-600 p-2 rounded-lg hover:bg-gray-100 transition-colors" title="Search Products (Ctrl+K)">
+                        <i class="fas fa-search text-lg"></i>
+                    </button>
+                    <a href="contact.html" class="bg-blue-600 text-white px-3 lg:px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700">Get Quote</a>
+                    <div class="md:hidden lg:hidden">
+                        <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600">
+                            <i class="fas fa-bars text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden lg:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <button id="mobile-search-button" class="block w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600">
+                    <i class="fas fa-search mr-2"></i>Search Products
+                </button>
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Home</a>
+                <a href="services.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Services</a>
+                <a href="products.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Products</a>
+                <a href="portfolio.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Portfolio</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">About</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
+                <a href="contact.html" class="block px-3 py-2 bg-blue-600 text-white rounded-lg mx-3 mt-2">Get Quote</a>
+            </div>
+        </div><!-- Mobile menu button -->
                     <button id="mobile-menu-button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
                         <span class="sr-only">Open main menu</span>
                         <svg id="hamburger-icon" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -37,6 +37,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="js/search.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Mobile products menu toggle
+            const mobileProductsButton = document.getElementById('mobile-products-menu-button');
+            const mobileProductsMenu = document.getElementById('mobile-products-menu');
+            const mobileProductsIcon = mobileProductsButton.querySelector('i');
+            
+            mobileProductsButton.addEventListener('click', function() {
+                mobileProductsMenu.classList.toggle('hidden');
+                mobileProductsIcon.classList.toggle('rotate-180');
+            });
+        });
+    </script>
     
     <style>
         body {
@@ -87,13 +109,32 @@
                     <div class="ml-10 flex items-baseline space-x-4 lg:space-x-8">
                         <a href="index.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Home</a>
                         <a href="services.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Services</a>
-                        <a href="products.html" class="text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Products</a>
-                        <a href="portfolio.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Portfolio</a>
+                        <div class="relative group">
+                            <a href="products.html" class="text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium flex items-center">
+                                Products
+                                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </a>
+                            <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50">
+                                <div class="py-1" role="menu" aria-orientation="vertical">
+                                    <a href="data-centre-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Data Centre</a>
+                                    <a href="telecom-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Telecom</a>
+                                    <a href="power-it-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Power & IT</a>
+                                    <a href="industrial-rack-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Industrial Rack</a>
+                                    <a href="civil-work-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Civil Work</a>
+                                    <a href="laboratory-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Laboratory</a>
+                                    <a href="accessories-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Accessories</a>
+                                    <a href="products.html" class="block px-4 py-2 text-sm text-blue-600 bg-gray-100" role="menuitem">All Products</a>
+                                </div>
+                            </div>
+                        </div>
                         <a href="about.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">About</a>
                         <a href="contact.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Contact</a>
                     </div>
                 </div>
                 <div class="flex items-center space-x-2 lg:space-x-4">
+                    <button id="search-button" class="text-gray-700 hover:text-blue-600 p-2 rounded-lg hover:bg-gray-100 transition-colors" title="Search Products (Ctrl+K)">
+                        <i class="fas fa-search text-lg"></i>
+                    </button>
                     <a href="contact.html" class="bg-blue-600 text-white px-3 lg:px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700">Get Quote</a>
                     <div class="md:hidden lg:hidden">
                         <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600">
@@ -107,10 +148,30 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden lg:hidden bg-white border-t">
             <div class="px-2 pt-2 pb-3 space-y-1">
+                <button id="mobile-search-button" class="block w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600">
+                    <i class="fas fa-search mr-2"></i>Search Products
+                </button>
                 <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Home</a>
                 <a href="services.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Services</a>
-                <a href="products.html" class="block px-3 py-2 text-blue-600">Products</a>
-                <a href="portfolio.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Portfolio</a>
+                
+                <!-- Products dropdown for mobile -->
+                <div class="relative">
+                    <button id="mobile-products-menu-button" class="text-blue-600 flex justify-between w-full px-3 py-2 rounded-md text-base font-medium transition duration-300">
+                        Products
+                        <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-200"></i>
+                    </button>
+                    <div id="mobile-products-menu" class="hidden px-4 py-2 bg-gray-50">
+                        <a href="data-centre-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Data Centre</a>
+                        <a href="telecom-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Telecom</a>
+                        <a href="power-it-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Power & IT</a>
+                        <a href="industrial-rack-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Industrial Rack</a>
+                        <a href="civil-work-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Civil Work</a>
+                        <a href="laboratory-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Laboratory</a>
+                        <a href="accessories-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Accessories</a>
+                        <a href="products.html" class="block px-3 py-2 rounded-md text-sm text-blue-600">All Products</a>
+                    </div>
+                </div>
+                
                 <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">About</a>
                 <a href="contact.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
                 <a href="contact.html" class="bg-blue-600 text-white block px-3 py-2 text-base font-medium hover:bg-blue-700 rounded-lg mx-3 mt-4">Get Quote</a>
@@ -177,9 +238,114 @@
     <!-- Product Categories -->
     <section class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Server & Data Center Racks -->
-            <div id="racks" class="mb-20">
-                <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Server & Data Center Racks</h2>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Product Categories</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Browse our comprehensive range of products organized by category</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-16">
+                <!-- Data Centre Category -->
+                <a href="data-centre-category.html" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Data Centre" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/70 to-blue-700/70 group-hover:from-blue-600/70 group-hover:to-blue-800/70 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-server text-white text-4xl group-hover:scale-110 transition-transform duration-300"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Data Centre</h3>
+                        <p class="text-gray-600">Server racks, cabinets, and data center infrastructure solutions</p>
+                    </div>
+                </a>
+                
+                <!-- Telecom Category -->
+                <a href="telecom-category.html" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Telecom" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-green-500/70 to-green-700/70 group-hover:from-green-600/70 group-hover:to-green-800/70 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-broadcast-tower text-white text-4xl group-hover:scale-110 transition-transform duration-300"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Telecom</h3>
+                        <p class="text-gray-600">Telecommunications infrastructure and networking solutions</p>
+                    </div>
+                </a>
+                
+                <!-- Power & IT Category -->
+                <a href="power-it-category.html" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Power & IT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-red-500/70 to-red-700/70 group-hover:from-red-600/70 group-hover:to-red-800/70 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-bolt text-white text-4xl group-hover:scale-110 transition-transform duration-300"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Power & IT</h3>
+                        <p class="text-gray-600">Power management solutions and IT infrastructure</p>
+                    </div>
+                </a>
+                
+                <!-- Industrial Rack Category -->
+                <a href="industrial-rack-category.html" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581092921461-eab10380ed66?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Industrial Rack" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-yellow-500/70 to-yellow-700/70 group-hover:from-yellow-600/70 group-hover:to-yellow-800/70 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-industry text-white text-4xl group-hover:scale-110 transition-transform duration-300"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Industrial Rack</h3>
+                        <p class="text-gray-600">Heavy-duty industrial rack solutions for various environments</p>
+                    </div>
+                </a>
+                
+                <!-- Civil Work Category -->
+                <a href="civil-work-category.html" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Civil Work" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-gray-500/70 to-gray-700/70 group-hover:from-gray-600/70 group-hover:to-gray-800/70 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-hard-hat text-white text-4xl group-hover:scale-110 transition-transform duration-300"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Civil Work</h3>
+                        <p class="text-gray-600">Infrastructure components for construction and civil engineering</p>
+                    </div>
+                </a>
+                
+                <!-- Laboratory Category -->
+                <a href="laboratory-category.html" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Laboratory" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/70 to-blue-700/70 group-hover:from-blue-600/70 group-hover:to-blue-800/70 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-flask text-white text-4xl group-hover:scale-110 transition-transform duration-300"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Laboratory</h3>
+                        <p class="text-gray-600">Equipment and infrastructure for laboratory environments</p>
+                    </div>
+                </a>
+                
+                <!-- Accessories Category -->
+                <a href="accessories-category.html" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1588508065123-287b28e013da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Accessories" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500/70 to-purple-700/70 group-hover:from-purple-600/70 group-hover:to-purple-800/70 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-tools text-white text-4xl group-hover:scale-110 transition-transform duration-300"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Accessories</h3>
+                        <p class="text-gray-600">Essential components and accessories for IT infrastructure</p>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Featured Products Section -->
+            <div id="featured-products" class="mb-20">
+                <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Featured Products</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Smart Rack -->
                     <div class="group product-card bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">

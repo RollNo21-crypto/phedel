@@ -41,6 +41,7 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="js/search.js" defer></script>
     
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -90,13 +91,36 @@
                     <div class="ml-10 flex items-baseline space-x-4 lg:space-x-8">
                         <a href="index.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Home</a>
                         <a href="services.html" class="text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Services</a>
-                        <a href="products.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Products</a>
+                        
+                        <!-- Products dropdown -->
+                        <div class="relative group">
+                            <button class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium flex items-center">
+                                Products
+                                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </button>
+                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                                <div class="py-1">
+                                    <a href="data-centre-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Data Centre</a>
+                                    <a href="telecom-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Telecom</a>
+                                    <a href="power-it-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Power & IT</a>
+                                    <a href="industrial-rack-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Industrial Rack</a>
+                                    <a href="civil-work-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Civil Work</a>
+                                    <a href="laboratory-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Laboratory</a>
+                                    <a href="accessories-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Accessories</a>
+                                    <a href="products.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">All Products</a>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <a href="portfolio.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Portfolio</a>
                         <a href="about.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">About</a>
                         <a href="contact.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Contact</a>
                     </div>
                 </div>
                 <div class="flex items-center space-x-2 lg:space-x-4">
+                    <button id="search-button" class="text-gray-700 hover:text-blue-600 p-2 rounded-lg hover:bg-gray-100 transition-colors" title="Search Products (Ctrl+K)">
+                        <i class="fas fa-search text-lg"></i>
+                    </button>
                     <a href="contact.html" class="hidden md:inline-block bg-blue-600 text-white px-3 lg:px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700">Get Quote</a>
                     <!-- Mobile menu button -->
                     <button id="mobile-menu-button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
@@ -113,9 +137,30 @@
             <!-- Mobile menu -->
             <div id="mobile-menu" class="md:hidden hidden">
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+                    <button id="mobile-search-button" class="block w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600 text-base font-medium">
+                        <i class="fas fa-search mr-2"></i>Search Products
+                    </button>
                     <a href="index.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Home</a>
                     <a href="services.html" class="text-blue-600 block px-3 py-2 text-base font-medium">Services</a>
-                    <a href="products.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Products</a>
+                    
+                    <!-- Products dropdown for mobile -->
+                    <div class="relative">
+                        <button id="mobile-products-menu-button" class="text-gray-700 hover:text-blue-600 flex justify-between w-full px-3 py-2 rounded-md text-base font-medium transition duration-300">
+                            Products
+                            <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-200"></i>
+                        </button>
+                        <div id="mobile-products-menu" class="hidden px-4 py-2 bg-gray-50">
+                            <a href="data-centre-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Data Centre</a>
+                            <a href="telecom-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Telecom</a>
+                            <a href="power-it-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Power & IT</a>
+                            <a href="industrial-rack-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Industrial Rack</a>
+                            <a href="civil-work-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Civil Work</a>
+                            <a href="laboratory-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Laboratory</a>
+                            <a href="accessories-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Accessories</a>
+                            <a href="products.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">All Products</a>
+                        </div>
+                    </div>
+                    
                     <a href="portfolio.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Portfolio</a>
                     <a href="about.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">About</a>
                     <a href="contact.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Contact</a>
@@ -163,19 +208,15 @@
                         <div class="space-y-4">
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-check-circle text-green-300 mt-1 text-lg"></i>
-                                <span class="text-base">Optimized rack storage and level cabling systems</span>
+                                <span class="text-base">Optimized rack storage and level cabling</span>
                             </div>
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-check-circle text-green-300 mt-1 text-lg"></i>
-                                <span class="text-base">Advanced rack-level cooling for efficient performance</span>
+                                <span class="text-base">Rack-level cooling for efficient performance</span>
                             </div>
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-check-circle text-green-300 mt-1 text-lg"></i>
-                                <span class="text-base">Comprehensive site assessment and planning</span>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-green-300 mt-1 text-lg"></i>
-                                <span class="text-base">Energy efficiency optimization strategies</span>
+                                <span class="text-base">Expert guidance for customized setups</span>
                             </div>
                         </div>
                     </div>
@@ -197,46 +238,42 @@
                 </div>
             </div>
 
-            <!-- Service 2: Product Development -->
+            <!-- Service 2: Product Development Services -->
             <div class="group mb-24 bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
                     <div class="relative overflow-hidden order-2 lg:order-1">
                         <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                             alt="Professional Server Installation and Data Center Setup" 
+                             alt="Product Development and Custom Solutions" 
                              class="w-full h-full object-cover min-h-[400px] lg:min-h-[500px]">
                         <div class="absolute inset-0 bg-gradient-to-l from-blue-900/80 via-blue-800/60 to-transparent"></div>
                         <div class="absolute inset-0 flex items-center justify-center">
                             <div class="text-center text-white px-8">
                                 <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <i class="fas fa-tools text-2xl"></i>
+                                    <i class="fas fa-cogs text-2xl"></i>
                                 </div>
-                                <h4 class="text-3xl font-bold mb-4">Professional Installation</h4>
-                                <p class="text-lg opacity-90 max-w-md mx-auto">Complete Infrastructure Setup & Technical Implementation</p>
+                                <h4 class="text-3xl font-bold mb-4">Custom Solutions</h4>
+                                <p class="text-lg opacity-90 max-w-md mx-auto">Tailored Product Development & Value-Added Services</p>
                             </div>
                         </div>
                     </div>
                     <div class="p-12 lg:p-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white flex flex-col justify-center order-1 lg:order-2">
                         <div class="w-20 h-20 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-tools  text-3xl"></i>
+                            <i class="fas fa-cogs text-3xl"></i>
                         </div>
-                        <h3 class="text-4xl font-bold mb-6">INSTALLATION SERVICES</h3>
-                        <p class="text-blue-100 mb-8 text-lg">Professional installation and setup of complete infrastructure systems</p>
+                        <h3 class="text-4xl font-bold mb-6">PRODUCT DEVELOPMENT SERVICES</h3>
+                        <p class="text-blue-100 mb-8 text-lg">Custom solutions for electrical, mechanical and electronic products</p>
                         <div class="space-y-4">
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-check-circle text-blue-300 mt-1 text-lg"></i>
-                                <span class="text-base">Complete rack assembly and configuration</span>
+                                <span class="text-base">Electrical/Mechanical and Electronic Products</span>
                             </div>
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-check-circle text-blue-300 mt-1 text-lg"></i>
-                                <span class="text-base">Cable management and organization systems</span>
+                                <span class="text-base">Value Addition: Enhancing growth through value addition</span>
                             </div>
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-check-circle text-blue-300 mt-1 text-lg"></i>
-                                <span class="text-base">Power distribution and cooling setup</span>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-blue-300 mt-1 text-lg"></i>
-                                <span class="text-base">Quality testing and performance validation</span>
+                                <span class="text-base">Delivering tailored and customized solutions</span>
                             </div>
                         </div>
                     </div>
@@ -248,48 +285,44 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
                     <div class="p-12 lg:p-16 bg-gradient-to-br from-purple-600 to-purple-800 text-white flex flex-col justify-center">
                         <div class="w-20 h-20 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-wrench text-3xl"></i>
+                            <i class="fas fa-truck text-3xl"></i>
                         </div>
-                        <h3 class="text-4xl font-bold mb-6">MAINTENANCE SERVICES</h3>
-                        <p class="text-purple-100 mb-8 text-lg">Comprehensive maintenance programs to ensure optimal performance and longevity</p>
+                        <h3 class="text-4xl font-bold mb-6">DOOR DELIVERY AND LOGISTICS</h3>
+                        <p class="text-purple-100 mb-8 text-lg">Reliable shipping and delivery services for all your equipment needs</p>
                         <div class="space-y-4">
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-check-circle text-purple-300 mt-1 text-lg"></i>
-                                <span class="text-base">Preventive maintenance scheduling</span>
+                                <span class="text-base">Timely delivery with real-time tracking</span>
                             </div>
                             <div class="flex items-start space-x-3">
                                  <i class="fas fa-check-circle text-purple-300 mt-1 text-lg"></i>
-                                 <span class="text-base">Emergency repair and support services</span>
+                                 <span class="text-base">Secure handling for all shipment sizes</span>
                              </div>
                              <div class="flex items-start space-x-3">
                                  <i class="fas fa-check-circle text-purple-300 mt-1 text-lg"></i>
-                                 <span class="text-base">Performance monitoring and optimization</span>
-                             </div>
-                             <div class="flex items-start space-x-3">
-                                 <i class="fas fa-check-circle text-purple-300 mt-1 text-lg"></i>
-                                 <span class="text-base">Equipment lifecycle management</span>
+                                 <span class="text-base">Customized logistics to fit your needs</span>
                              </div>
                         </div>
                     </div>
                     <div class="relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                             alt="Technical Maintenance and Support Services" 
+                        <img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                             alt="Logistics and Delivery Services" 
                              class="w-full h-full object-cover min-h-[400px] lg:min-h-[500px]">
                         <div class="absolute inset-0 bg-gradient-to-r from-purple-900/80 via-purple-800/60 to-transparent"></div>
                         <div class="absolute inset-0 flex items-center justify-center">
                             <div class="text-center text-white px-8">
                                 <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <i class="fas fa-wrench text-2xl"></i>
+                                    <i class="fas fa-truck text-2xl"></i>
                                 </div>
-                                <h4 class="text-3xl font-bold mb-4">Expert Maintenance</h4>
-                                <p class="text-lg opacity-90 max-w-md mx-auto">24/7 Support & Monitoring Services</p>
+                                <h4 class="text-3xl font-bold mb-4">Reliable Delivery</h4>
+                                <p class="text-lg opacity-90 max-w-md mx-auto">Secure Shipping & Logistics Solutions</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Service 4: Product Sourcing -->
+            <!-- Service 4: Product Sourcing Services -->
             <div class="group mb-24 bg-gradient-to-br from-teal-50 to-teal-100 rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
                     <div class="relative overflow-hidden order-2 lg:order-1">
@@ -311,82 +344,74 @@
                         <div class="w-20 h-20 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                             <i class="fas fa-globe text-3xl"></i>
                         </div>
-                        <h3 class="text-4xl font-bold mb-6">PRODUCT SOURCING</h3>
+                        <h3 class="text-4xl font-bold mb-6">PRODUCT SOURCING SERVICES</h3>
                         <p class="text-teal-100 mb-8 text-lg">Strategic procurement solutions connecting you with reliable global suppliers and quality products</p>
                         <div class="space-y-4">
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-check-circle text-green-300 mt-1 text-lg"></i>
-                                <span class="text-base">Global supplier network & quality verification</span>
+                                <span class="text-base">Global sourcing for quality products</span>
                             </div>
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-check-circle text-green-300 mt-1 text-lg"></i>
-                                <span class="text-base">Cost optimization & competitive pricing</span>
+                                <span class="text-base">Reliable suppliers for diverse needs</span>
                             </div>
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-check-circle text-green-300 mt-1 text-lg"></i>
-                                <span class="text-base">Supply chain risk management</span>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-green-300 mt-1 text-lg"></i>
-                                <span class="text-base">Transparent procurement processes</span>
+                                <span class="text-base">Streamlined procurement with transparency</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Service 5: Datacenter Solutions -->
+            <!-- Service 5: Dedicated Line for Datacenter -->
             <div class="group mb-24 bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
                     <div class="p-12 lg:p-16 bg-gradient-to-br from-purple-600 to-purple-800 text-white flex flex-col justify-center">
                         <div class="w-20 h-20 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-server text-3xl"></i>
+                            <i class="fas fa-network-wired text-3xl"></i>
                         </div>
-                        <h3 class="text-4xl font-bold mb-6">DATACENTER SOLUTIONS</h3>
-                        <p class="text-purple-100 mb-8 text-lg">Advanced infrastructure solutions designed for high-performance data centers and enterprise environments</p>
+                        <h3 class="text-4xl font-bold mb-6">DEDICATED LINE FOR DATACENTER</h3>
+                        <p class="text-purple-100 mb-8 text-lg">High-performance connectivity solutions for mission-critical data center operations</p>
                         <div class="space-y-4">
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-check-circle text-purple-300 mt-1 text-lg"></i>
-                                <span class="text-base">High-speed connectivity & network infrastructure</span>
+                                <span class="text-base">High-speed connectivity for data centers</span>
                             </div>
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-check-circle text-purple-300 mt-1 text-lg"></i>
-                                <span class="text-base">Redundant power & cooling systems</span>
+                                <span class="text-base">Reliable infrastructure for seamless access</span>
                             </div>
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-check-circle text-purple-300 mt-1 text-lg"></i>
-                                <span class="text-base">Scalable rack & cabinet solutions</span>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-purple-300 mt-1 text-lg"></i>
-                                <span class="text-base">24/7 monitoring & maintenance support</span>
+                                <span class="text-base">Scalable solutions for growing demands</span>
                             </div>
                         </div>
                     </div>
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                             alt="Modern Data Center with Advanced Server Infrastructure" 
+                             alt="High-Speed Data Center Connectivity" 
                              class="w-full h-full object-cover min-h-[400px] lg:min-h-[500px]">
                         <div class="absolute inset-0 bg-gradient-to-r from-purple-900/40 via-purple-800/20 to-transparent"></div>
                         <div class="absolute inset-0 flex items-center justify-center">
                             <div class="text-center text-white px-8">
                                 <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <i class="fas fa-server text-2xl"></i>
+                                    <i class="fas fa-network-wired text-2xl"></i>
                                 </div>
-                                <h4 class="text-3xl font-bold mb-4">Enterprise Infrastructure</h4>
-                                <p class="text-lg opacity-90 max-w-md mx-auto">Scalable & Secure Datacenter Solutions</p>
+                                <h4 class="text-3xl font-bold mb-4">High-Performance Connectivity</h4>
+                                <p class="text-lg opacity-90 max-w-md mx-auto">Dedicated Lines for Mission-Critical Operations</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Service 6: Certification Services -->
+            <!-- Service 6: Product Certification Services -->
             <div class="group mb-24 bg-gradient-to-br from-red-50 to-red-100 rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
                     <div class="relative overflow-hidden order-2 lg:order-1">
                         <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                             alt="Quality Certification and Testing Laboratory" 
+                             alt="Product Certification and Compliance Services" 
                              class="w-full h-full object-cover min-h-[400px] lg:min-h-[500px]">
                         <div class="absolute inset-0 bg-gradient-to-l from-red-900/80 via-red-800/60 to-transparent"></div>
                         <div class="absolute inset-0 flex items-center justify-center">
@@ -394,8 +419,8 @@
                                 <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
                                     <i class="fas fa-certificate text-2xl"></i>
                                 </div>
-                                <h4 class="text-3xl font-bold mb-4">Quality Assurance</h4>
-                                <p class="text-lg opacity-90 max-w-md mx-auto">Certified Excellence & Compliance</p>
+                                <h4 class="text-3xl font-bold mb-4">Compliance Assurance</h4>
+                                <p class="text-lg opacity-90 max-w-md mx-auto">Global Standards & Certification Support</p>
                             </div>
                         </div>
                     </div>
@@ -403,24 +428,20 @@
                         <div class="w-20 h-20 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                             <i class="fas fa-certificate text-3xl"></i>
                         </div>
-                        <h3 class="text-4xl font-bold mb-6">CERTIFICATION SERVICES</h3>
+                        <h3 class="text-4xl font-bold mb-6">PRODUCT CERTIFICATION SERVICES</h3>
                         <p class="text-red-100 mb-8 text-lg">Comprehensive certification support ensuring compliance with international standards and market requirements</p>
                         <div class="space-y-4">
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-check-circle text-red-300 mt-1 text-lg"></i>
-                                <span class="text-base">ISO 9001:2015 & ISO 14001:2015 compliance</span>
+                                <span class="text-base">Compliance assurance for market entry</span>
                             </div>
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-check-circle text-red-300 mt-1 text-lg"></i>
-                                <span class="text-base">International market entry certification</span>
+                                <span class="text-base">Expert guidance through certification processes</span>
                             </div>
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-check-circle text-red-300 mt-1 text-lg"></i>
-                                <span class="text-base">Quality management system implementation</span>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-red-300 mt-1 text-lg"></i>
-                                <span class="text-base">Ongoing compliance monitoring & support</span>
+                                <span class="text-base">Tailored support for global standards</span>
                             </div>
                         </div>
                     </div>
@@ -636,6 +657,16 @@
                 hamburgerIcon.classList.add('hidden');
                 closeIcon.classList.remove('hidden');
             }
+        });
+
+        // Mobile products menu toggle
+        const mobileProductsButton = document.getElementById('mobile-products-menu-button');
+        const mobileProductsMenu = document.getElementById('mobile-products-menu');
+        const mobileProductsIcon = mobileProductsButton.querySelector('i');
+        
+        mobileProductsButton.addEventListener('click', function() {
+            mobileProductsMenu.classList.toggle('hidden');
+            mobileProductsIcon.classList.toggle('rotate-180');
         });
 
         // Close menu when clicking on a link

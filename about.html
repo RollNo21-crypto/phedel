@@ -41,6 +41,28 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="js/search.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Mobile products menu toggle
+            const mobileProductsButton = document.getElementById('mobile-products-menu-button');
+            const mobileProductsMenu = document.getElementById('mobile-products-menu');
+            const mobileProductsIcon = mobileProductsButton.querySelector('i');
+            
+            mobileProductsButton.addEventListener('click', function() {
+                mobileProductsMenu.classList.toggle('hidden');
+                mobileProductsIcon.classList.toggle('rotate-180');
+            });
+        });
+    </script>
     
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -125,13 +147,32 @@
                     <div class="ml-10 flex items-baseline space-x-4 lg:space-x-8">
                         <a href="index.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Home</a>
                         <a href="services.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Services</a>
-                        <a href="products.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Products</a>
-                        <a href="portfolio.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Portfolio</a>
+                        <div class="relative group">
+                            <a href="products.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium flex items-center">
+                                Products
+                                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </a>
+                            <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50">
+                                <div class="py-1" role="menu" aria-orientation="vertical">
+                                    <a href="data-centre-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Data Centre</a>
+                                    <a href="telecom-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Telecom</a>
+                                    <a href="power-it-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Power & IT</a>
+                                    <a href="industrial-rack-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Industrial Rack</a>
+                                    <a href="civil-work-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Civil Work</a>
+                                    <a href="laboratory-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Laboratory</a>
+                                    <a href="accessories-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Accessories</a>
+                                    <a href="products.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">All Products</a>
+                                </div>
+                            </div>
+                        </div>
                         <a href="about.html" class="text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">About</a>
                         <a href="contact.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Contact</a>
                     </div>
                 </div>
                 <div class="flex items-center space-x-4">
+                    <button id="search-button" class="text-gray-700 hover:text-blue-600 p-2 rounded-lg hover:bg-gray-100 transition-colors" title="Search Products (Ctrl+K)">
+                        <i class="fas fa-search text-lg"></i>
+                    </button>
                     <a href="contact.html" class="hidden sm:block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700">Get Quote</a>
                     <!-- Mobile menu button -->
                     <button id="mobile-menu-button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
@@ -145,11 +186,31 @@
             <!-- Mobile menu -->
             <div id="mobile-menu" class="md:hidden hidden">
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+                    <button id="mobile-search-button" class="block w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600 text-base font-medium">
+                        <i class="fas fa-search mr-2"></i>Search Products
+                    </button>
                     <a href="index.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Home</a>
                     <a href="services.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Services</a>
+                    
+                    <!-- Products dropdown for mobile -->
+                    <div class="relative">
+                        <button id="mobile-products-menu-button" class="text-gray-700 hover:text-blue-600 flex justify-between w-full px-3 py-2 rounded-md text-base font-medium transition duration-300">
+                            Products
+                            <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-200"></i>
+                        </button>
+                        <div id="mobile-products-menu" class="hidden px-4 py-2 bg-gray-50">
+                            <a href="data-centre-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Data Centre</a>
+                            <a href="telecom-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Telecom</a>
+                            <a href="power-it-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Power & IT</a>
+                            <a href="industrial-rack-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Industrial Rack</a>
+                            <a href="civil-work-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Civil Work</a>
+                            <a href="laboratory-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Laboratory</a>
+                            <a href="accessories-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Accessories</a>
+                            <a href="products.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">All Products</a>
+                        </div>
+                    </div>
+                    
                     <a href="about.html" class="text-blue-600 block px-3 py-2 text-base font-medium">About</a>
-                    <a href="portfolio.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Portfolio</a>
-                    <a href="products.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Products</a>
                     <a href="contact.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Contact</a>
                     <a href="contact.html" class="bg-blue-600 text-white block px-3 py-2 text-base font-medium rounded-lg mt-4 text-center hover:bg-blue-700">Get Quote</a>
                 </div>
