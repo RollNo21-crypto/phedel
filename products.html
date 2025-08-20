@@ -40,13 +40,29 @@
     <script src="js/search.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Wait for search system to be available
+            const initializeApp = () => {
+                if (window.searchSystem) {
+                    // Connect products data to search system
+                    window.searchSystem.setProductsData(products);
+                    
+                    // Initialize products display
+                    initializeProducts();
+                } else {
+                    // Retry if search system not ready
+                    setTimeout(initializeApp, 50);
+                }
+            };
+            
+            initializeApp();
+            
             // Mobile menu toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             
             mobileMenuButton.addEventListener('click', function() {
                 mobileMenu.classList.toggle('hidden');
-            });
+        });
             
             // Mobile products menu toggle
             const mobileProductsButton = document.getElementById('mobile-products-menu-button');
@@ -57,6 +73,337 @@
                 mobileProductsMenu.classList.toggle('hidden');
                 mobileProductsIcon.classList.toggle('rotate-180');
             });
+            
+            // Connect search buttons to search system
+            const searchButton = document.getElementById('search-button');
+            const mobileSearchButton = document.getElementById('mobile-search-button');
+            
+            if (searchButton) {
+                searchButton.addEventListener('click', function() {
+                    if (window.searchSystem) {
+                        window.searchSystem.openSearch();
+                    }
+                });
+            }
+            
+            if (mobileSearchButton) {
+                mobileSearchButton.addEventListener('click', function() {
+                    if (window.searchSystem) {
+                        window.searchSystem.openSearch();
+                    }
+                    // Close mobile menu
+                    mobileMenu.classList.add('hidden');
+                });
+            }
+            
+            // Function to filter products based on search results
+            window.filterProductsBySearch = function(query, searchResults) {
+                if (!query || !searchResults || searchResults.length === 0) {
+                    displayProducts(products);
+                    updateProductCount(products.length);
+                    // Restore original page title
+                    const pageTitle = document.querySelector('h1');
+                    if (pageTitle) {
+                        pageTitle.textContent = 'Our Products';
+                    }
+                    return;
+                }
+                
+                // Filter original products based on search results
+                const filteredProducts = products.filter(product => {
+                    return searchResults.some(result => {
+                        return result.name.toLowerCase().includes(product.name.toLowerCase()) ||
+                               product.name.toLowerCase().includes(result.name.toLowerCase()) ||
+                               result.category === product.category ||
+                               product.description.toLowerCase().includes(query.toLowerCase()) ||
+                               product.name.toLowerCase().includes(query.toLowerCase());
+                    });
+                });
+                
+                displayProducts(filteredProducts);
+                updateProductCount(filteredProducts.length);
+                
+                // Update page title to show search results
+                const pageTitle = document.querySelector('h1');
+                if (pageTitle) {
+                    pageTitle.textContent = `Search Results for "${query}" (${filteredProducts.length} found)`;
+                }
+            };
+            
+            // Function to clear search and show all products
+            window.clearSearchResults = function() {
+                displayProducts(products);
+                updateProductCount(products.length);
+                // Restore original page title
+                const pageTitle = document.querySelector('h1');
+                if (pageTitle) {
+                    pageTitle.textContent = 'Our Products';
+                }
+                // Clear URL search parameter
+                const url = new URL(window.location);
+                url.searchParams.delete('search');
+                window.history.replaceState({}, '', url);
+            };
+            
+            // Check for search parameter in URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchQuery = urlParams.get('search');
+            
+            if (searchQuery && window.searchSystem) {
+                // Perform search and filter products
+                setTimeout(() => {
+                    const results = window.searchSystem.performAdvancedSearch(searchQuery);
+                    window.filterProductsBySearch(searchQuery, results);
+                }, 100);
+            }
+            
+            // Add keyboard shortcut for search (Ctrl+K)
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.key === 'k') {
+                    e.preventDefault();
+                    if (window.searchSystem) {
+                        window.searchSystem.openSearch();
+                    }
+                }
+            });
+
+            // Product data
+            const products = [
+                // Data Centre Products
+                {
+                    name: "Server Rack 42U",
+                    category: "data-centre",
+                    series: "Server Series",
+                    description: "High-quality 42U server rack with excellent ventilation and cable management.",
+                    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    link: "data-centre-category.html"
+                },
+                {
+                    name: "Network Cabinet 27U",
+                    category: "data-centre",
+                    series: "Network Series",
+                    description: "Compact 27U network cabinet perfect for small to medium installations.",
+                    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    link: "data-centre-category.html"
+                },
+                {
+                    name: "Wall Mount Rack 12U",
+                    category: "data-centre",
+                    series: "Wall Mount Series",
+                    description: "Space-saving 12U wall mount rack for small office environments.",
+                    image: "https://images.unsplash.com/photo-1581092921461-eab10380ed66?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    link: "data-centre-category.html"
+                },
+                // Telecom Products
+                {
+                    name: "Outdoor Telecom Cabinet",
+                    category: "telecom",
+                    series: "Outdoor Series",
+                    description: "Weather-resistant outdoor telecom cabinet for harsh environments.",
+                    image: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    link: "telecom-category.html"
+                },
+                {
+                    name: "CCTV Pole Mount Enclosure",
+                    category: "telecom",
+                    series: "CCTV Series",
+                    description: "Secure pole mount enclosure for CCTV equipment protection.",
+                    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    link: "telecom-category.html"
+                },
+                {
+                    name: "Fiber Distribution Hub",
+                    category: "telecom",
+                    series: "Fiber Series",
+                    description: "Centralized fiber distribution hub for network infrastructure.",
+                    image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    link: "telecom-category.html"
+                },
+                // Power & IT Products
+                {
+                    name: "UPS Battery Cabinet",
+                    category: "power-it",
+                    series: "Power Series",
+                    description: "Dedicated UPS battery cabinet with ventilation and monitoring.",
+                    image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    link: "power-it-category.html"
+                },
+                {
+                    name: "Power Distribution Unit",
+                    category: "power-it",
+                    series: "PDU Series",
+                    description: "Intelligent power distribution unit with remote monitoring.",
+                    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    link: "power-it-category.html"
+                },
+                {
+                    name: "IT Equipment Rack",
+                    category: "power-it",
+                    series: "IT Series",
+                    description: "Specialized rack for IT equipment with integrated power management.",
+                    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    link: "power-it-category.html"
+                },
+                // Industrial Rack Products
+                {
+                    name: "Heavy Duty Industrial Rack",
+                    category: "industrial-rack",
+                    series: "Heavy Duty Series",
+                    description: "Robust industrial rack designed for harsh manufacturing environments.",
+                    image: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    link: "industrial-rack-category.html"
+                },
+                {
+                    name: "Modular Industrial Cabinet",
+                    category: "industrial-rack",
+                    series: "Modular Series",
+                    description: "Flexible modular cabinet system for industrial applications.",
+                    image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    link: "industrial-rack-category.html"
+                },
+                // Civil Work Products
+                {
+                    name: "HDPE PLB Duct Pipe 40mm",
+                    category: "civil-work",
+                    series: "HDPE Series",
+                    description: "High-density polyethylene duct pipe for underground cable installation.",
+                    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    link: "civil-work-category.html"
+                },
+                {
+                    name: "Cable Tray System",
+                    category: "civil-work",
+                    series: "Infrastructure Series",
+                    description: "Comprehensive cable tray system for organized cable management.",
+                    image: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    link: "civil-work-category.html"
+                },
+                // Laboratory Products
+                {
+                    name: "Laboratory Equipment Rack",
+                    category: "laboratory",
+                    series: "Lab Series",
+                    description: "Specialized rack for laboratory equipment with anti-static features.",
+                    image: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    link: "laboratory-category.html"
+                },
+                {
+                    name: "Clean Room Cabinet",
+                    category: "laboratory",
+                    series: "Clean Room Series",
+                    description: "Contamination-free cabinet designed for clean room environments.",
+                    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    link: "laboratory-category.html"
+                },
+                // Accessories Products
+                {
+                    name: "Optical Fiber Splice Closure",
+                    category: "accessories",
+                    series: "Fiber Accessories",
+                    description: "Weather-resistant splice closure for fiber optic connections.",
+                    image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    link: "accessories-category.html"
+                },
+                {
+                    name: "Cable Management Kit",
+                    category: "accessories",
+                    series: "Management Series",
+                    description: "Complete cable management solution with ties and organizers.",
+                    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    link: "accessories-category.html"
+                },
+                {
+                    name: "Rack Mounting Hardware",
+                    category: "accessories",
+                    series: "Hardware Series",
+                    description: "Essential mounting hardware for rack installation and setup.",
+                    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    link: "accessories-category.html"
+                }
+            ];
+
+            // Initialize products
+            function initializeProducts() {
+                displayProducts(products);
+                updateProductCount(products.length);
+                setupFilterButtons();
+            }
+
+            // Display products
+            function displayProducts(productsToShow) {
+                const grid = document.getElementById('products-grid');
+                grid.innerHTML = '';
+
+                productsToShow.forEach(product => {
+                    const productCard = createProductCard(product);
+                    grid.appendChild(productCard);
+                });
+            }
+
+            // Create product card
+            function createProductCard(product) {
+                const card = document.createElement('div');
+                card.className = 'product-item bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300';
+                card.setAttribute('data-category', product.category);
+
+                card.innerHTML = `
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-2 right-2">
+                            <span class="bg-white/90 text-gray-800 px-2 py-1 rounded-full text-xs font-medium">${product.series}</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">${product.name}</h3>
+                        <p class="text-gray-600 text-sm mb-3 line-clamp-2">${product.description}</p>
+                        <div class="flex justify-between items-center">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium capitalize">${product.category.replace('-', ' ')}</span>
+                            <a href="${product.link}" class="text-blue-600 hover:text-blue-800 font-medium text-sm">View Details →</a>
+                        </div>
+                    </div>
+                `;
+
+                return card;
+            }
+
+            // Setup filter buttons
+            function setupFilterButtons() {
+                const filterButtons = document.querySelectorAll('.filter-btn');
+                
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        // Remove active class from all buttons
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        // Add active class to clicked button
+                        this.classList.add('active');
+                        
+                        const category = this.getAttribute('data-category');
+                        filterProducts(category);
+                    });
+                });
+            }
+
+            // Filter products
+            function filterProducts(category) {
+                let filteredProducts;
+                
+                if (category === 'all') {
+                    filteredProducts = products;
+                } else {
+                    filteredProducts = products.filter(product => product.category === category);
+                }
+                
+                displayProducts(filteredProducts);
+                updateProductCount(filteredProducts.length);
+            }
+
+            // Update product count
+            function updateProductCount(count) {
+                const countElement = document.getElementById('product-count');
+                countElement.textContent = `${count} product${count !== 1 ? 's' : ''} found`;
+            }
+
+            // Products will be initialized after search system is ready
         });
     </script>
     
@@ -89,6 +436,32 @@
         }
         .download-btn:hover {
             transform: scale(1.05);
+        }
+        .filter-btn {
+            padding: 8px 16px;
+            border: 2px solid #e5e7eb;
+            background: white;
+            color: #6b7280;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .filter-btn:hover {
+            border-color: #3b82f6;
+            color: #3b82f6;
+        }
+        .filter-btn.active {
+            background: #3b82f6;
+            border-color: #3b82f6;
+            color: white;
+        }
+        .product-item {
+            transition: all 0.3s ease;
+        }
+        .product-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -195,45 +568,7 @@
         </div>
     </section>
 
-    <!-- Product Overview -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Product Overview</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">PHEDEL offers a comprehensive portfolio of IT infrastructure solutions designed for modern data centers, telecommunications, and enterprise environments.</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-server text-blue-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Server & Data Center Racks</h3>
-                    <p class="text-gray-600 text-sm">High-quality server racks and data center solutions</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-broadcast-tower text-green-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Telecom Products</h3>
-                    <p class="text-gray-600 text-sm">Outdoor telecom enclosures and CCTV solutions</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-network-wired text-purple-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Optical Fiber Accessories</h3>
-                    <p class="text-gray-600 text-sm">Complete range of fiber optic cable accessories</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-road text-orange-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Infrastructure</h3>
-                    <p class="text-gray-600 text-sm">HDPE PLB duct pipes and infrastructure solutions</p>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Product Categories -->
     <section class="py-20">
@@ -275,7 +610,7 @@
                 <!-- Power & IT Category -->
                 <a href="power-it-category.html" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                     <div class="h-48 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Power & IT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Power & IT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                         <div class="absolute inset-0 bg-gradient-to-br from-red-500/70 to-red-700/70 group-hover:from-red-600/70 group-hover:to-red-800/70 transition-all duration-300 flex items-center justify-center">
                             <i class="fas fa-bolt text-white text-4xl group-hover:scale-110 transition-transform duration-300"></i>
                         </div>
@@ -331,7 +666,7 @@
                 <!-- Accessories Category -->
                 <a href="accessories-category.html" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                     <div class="h-48 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1588508065123-287b28e013da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Accessories" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Accessories" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                         <div class="absolute inset-0 bg-gradient-to-br from-purple-500/70 to-purple-700/70 group-hover:from-purple-600/70 group-hover:to-purple-800/70 transition-all duration-300 flex items-center justify-center">
                             <i class="fas fa-tools text-white text-4xl group-hover:scale-110 transition-transform duration-300"></i>
                         </div>
@@ -343,416 +678,65 @@
                 </a>
             </div>
             
-            <!-- Featured Products Section -->
-            <div id="featured-products" class="mb-20">
-                <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Featured Products</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Smart Rack -->
-                    <div class="group product-card bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                        <div class="h-48 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Smart Rack with intelligent monitoring" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/80 to-blue-700/80 group-hover:from-blue-600/80 group-hover:to-blue-800/80 transition-all duration-300 flex items-center justify-center">
-                                <i class="fas fa-microchip text-white text-4xl group-hover:scale-110 transition-transform duration-300"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-3">Smart Rack</h3>
-                            <p class="text-gray-600 mb-4">A smart rack for data centers with intelligent monitoring and management capabilities.</p>
-                            <div class="mb-4">
-                                <h4 class="font-semibold text-gray-800 mb-2">Available Variations:</h4>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">42U</span>
-                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">47U</span>
-                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">600mm Deep</span>
-                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">800mm Deep</span>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <span class="text-blue-600 font-semibold bg-blue-50 px-3 py-1 rounded-full text-sm">SR Series</span>
-                            </div>
-                            <div class="flex gap-2">
-                                <button onclick="window.location.href='smart-rack.html'" class="download-btn flex-1 bg-green-600 text-white px-4 py-2 rounded-xl hover:bg-green-700 transition-all hover:shadow-lg transform hover:-translate-y-1">
-                                    <i class="fas fa-search mr-2"></i>Explore More
-                                </button>
-                                <button onclick="downloadSpec('smart-rack')" class="download-btn flex-1 bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition-all hover:shadow-lg transform hover:-translate-y-1">
-                                    <i class="fas fa-download mr-2"></i>Spec Sheet
-                                </button>
-                            </div>
-                        </div>
+            <!-- Search Results Section (Hidden by default) -->
+            <div id="search-results-section" class="hidden mb-20">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900">Search Results</h2>
+                    <div id="results-count" class="text-gray-600"></div>
+                </div>
+                
+                <!-- Loading indicator -->
+                <div id="loading" class="hidden text-center py-12">
+                    <div class="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-blue-500 bg-white transition ease-in-out duration-150">
+                        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Searching...
                     </div>
-
-                    <!-- Server Rack -->
-                    <div class="group product-card bg-gradient-to-br from-green-50 to-green-100 rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                        <div class="h-48 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Professional server rack installation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                            <div class="absolute inset-0 bg-gradient-to-br from-green-500/80 to-green-700/80 group-hover:from-green-600/80 group-hover:to-green-800/80 transition-all duration-300 flex items-center justify-center">
-                                <i class="fas fa-server text-white text-4xl group-hover:scale-110 transition-transform duration-300"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-3">Server Rack</h3>
-                            <p class="text-gray-600 mb-4">A server rack designed for optimal performance and efficient server management.</p>
-                            <div class="mb-4">
-                                <h4 class="font-semibold text-gray-800 mb-2">Available Variations:</h4>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium">19\" Standard</span>
-                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium">42U Height</span>
-                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium">Perforated Door</span>
-                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium">Glass Door</span>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <span class="text-green-600 font-semibold bg-green-50 px-3 py-1 rounded-full text-sm">SVR Series</span>
-                            </div>
-                            <div class="flex gap-2">
-                                <button onclick="window.location.href='server-rack.html'" class="download-btn flex-1 bg-green-600 text-white px-4 py-2 rounded-xl hover:bg-green-700 transition-all hover:shadow-lg transform hover:-translate-y-1">
-                                    <i class="fas fa-search mr-2"></i>Explore More
-                                </button>
-                                <button onclick="downloadSpec('server-rack')" class="download-btn flex-1 bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition-all hover:shadow-lg transform hover:-translate-y-1">
-                                    <i class="fas fa-download mr-2"></i>Spec Sheet
-                                </button>
-                            </div>
-                        </div>
+                </div>
+                
+                <!-- No results message -->
+                <div id="no-results" class="hidden text-center py-12">
+                    <div class="text-gray-500">
+                        <i class="fas fa-search text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">No products found</h3>
+                        <p>Try adjusting your search terms or browse our categories.</p>
                     </div>
-
-                    <!-- Data Centre Rack -->
-                    <div class="group product-card bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                        <div class="h-48 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern data center rack infrastructure" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                            <div class="absolute inset-0 bg-gradient-to-br from-purple-500/80 to-purple-700/80 group-hover:from-purple-600/80 group-hover:to-purple-800/80 transition-all duration-300 flex items-center justify-center">
-                                <i class="fas fa-database text-white text-4xl group-hover:scale-110 transition-transform duration-300"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-3">Data Centre Rack</h3>
-                            <p class="text-gray-600 mb-4">Organizes and houses crucial hardware for data center operations and management.</p>
-                            <div class="mb-4">
-                                <h4 class="font-semibold text-gray-800 mb-2">Available Variations:</h4>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-medium">High Density</span>
-                                    <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-medium">Cable Management</span>
-                                    <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-medium">Hot Aisle</span>
-                                    <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-medium">Cold Aisle</span>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <span class="text-purple-600 font-semibold bg-purple-50 px-3 py-1 rounded-full text-sm">DCR Series</span>
-                            </div>
-                            <div class="flex gap-2">
-                                <button onclick="window.location.href='data-centre-rack.html'" class="download-btn flex-1 bg-green-600 text-white px-4 py-2 rounded-xl hover:bg-green-700 transition-all hover:shadow-lg transform hover:-translate-y-1">
-                                    <i class="fas fa-search mr-2"></i>Explore More
-                                </button>
-                                <button onclick="downloadSpec('data-centre-rack')" class="download-btn flex-1 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
-                                    <i class="fas fa-download mr-2"></i>Spec Sheet
-                                </button>
-                            </div>
-                        </div>
+                </div>
+                
+                <!-- Search results grid -->
+                <div id="results-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </div>
+            
+            <!-- Product Filters -->
+            <div id="product-filters" class="mb-8">
+                <div class="flex flex-wrap gap-4 items-center justify-between">
+                    <div class="flex flex-wrap gap-2">
+                        <button class="filter-btn active" data-category="all">All Products</button>
+                        <button class="filter-btn" data-category="data-centre">Data Centre</button>
+                        <button class="filter-btn" data-category="telecom">Telecom</button>
+                        <button class="filter-btn" data-category="power-it">Power & IT</button>
+                        <button class="filter-btn" data-category="industrial-rack">Industrial Rack</button>
+                        <button class="filter-btn" data-category="civil-work">Civil Work</button>
+                        <button class="filter-btn" data-category="laboratory">Laboratory</button>
+                        <button class="filter-btn" data-category="accessories">Accessories</button>
+                    </div>
+                    <div class="text-gray-600">
+                        <span id="product-count">Loading products...</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Telecom & Security Products -->
-            <div id="telecom" class="mb-20">
-                <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Telecom & Security Products</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- CCTV Racks -->
-                    <div class="group product-card bg-gradient-to-br from-orange-50 to-orange-100 rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                        <div class="h-48 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="CCTV surveillance rack system" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                            <div class="absolute inset-0 bg-gradient-to-br from-orange-500/80 to-orange-700/80 group-hover:from-orange-600/80 group-hover:to-orange-800/80 transition-all duration-300 flex items-center justify-center">
-                                <i class="fas fa-video text-white text-4xl group-hover:scale-110 transition-transform duration-300"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-3">CCTV Racks</h3>
-                            <p class="text-gray-600 mb-4">Manages CCTV equipment in surveillance systems for security monitoring.</p>
-                            <div class="mb-4">
-                                <h4 class="font-semibold text-gray-800 mb-2">Available Variations:</h4>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs font-medium">Wall Mount</span>
-                                    <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs font-medium">Floor Standing</span>
-                                    <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs font-medium">Outdoor Rated</span>
-                                    <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs font-medium">Climate Control</span>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <span class="text-orange-600 font-semibold bg-orange-50 px-3 py-1 rounded-full text-sm">CCTV Series</span>
-                            </div>
-                            <div class="flex gap-2">
-                                <button onclick="window.location.href='cctv-racks.html'" class="download-btn flex-1 bg-green-600 text-white px-4 py-2 rounded-xl hover:bg-green-700 transition-all hover:shadow-lg transform hover:-translate-y-1">
-                                    <i class="fas fa-search mr-2"></i>Explore More
-                                </button>
-                                <button onclick="downloadSpec('cctv-racks')" class="download-btn flex-1 bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition-all hover:shadow-lg transform hover:-translate-y-1">
-                                    <i class="fas fa-download mr-2"></i>Spec Sheet
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Outdoor Telecom Products -->
-                    <div class="group product-card bg-gradient-to-br from-red-50 to-red-100 rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                        <div class="h-48 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Outdoor telecommunications equipment" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                            <div class="absolute inset-0 bg-gradient-to-br from-red-500/80 to-red-700/80 group-hover:from-red-600/80 group-hover:to-red-800/80 transition-all duration-300 flex items-center justify-center">
-                                <i class="fas fa-broadcast-tower text-white text-4xl group-hover:scale-110 transition-transform duration-300"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-3">Outdoor Telecom Products</h3>
-                            <p class="text-gray-600 mb-4">Houses and protects equipment in outdoor environments for telecom infrastructure.</p>
-                            <div class="mb-4">
-                                <h4 class="font-semibold text-gray-800 mb-2">Available Variations:</h4>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-medium">Weatherproof</span>
-                                    <span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-medium">IP65 Rated</span>
-                                    <span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-medium">Ventilation</span>
-                                    <span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-medium">Ground Mount</span>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <span class="text-red-600 font-semibold bg-red-50 px-3 py-1 rounded-full text-sm">OTP Series</span>
-                            </div>
-                            <div class="flex gap-2">
-                                <button onclick="window.location.href='outdoor-telecom-products.html'" class="download-btn flex-1 bg-green-600 text-white px-4 py-2 rounded-xl hover:bg-green-700 transition-all hover:shadow-lg transform hover:-translate-y-1">
-                                    <i class="fas fa-search mr-2"></i>Explore More
-                                </button>
-                                <button onclick="downloadSpec('outdoor-telecom')" class="download-btn flex-1 bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition-all hover:shadow-lg transform hover:-translate-y-1">
-                                    <i class="fas fa-download mr-2"></i>Spec Sheet
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Optical Fibre Accessories -->
-                    <div class="group product-card bg-gradient-to-br from-teal-50 to-teal-100 rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                        <div class="h-48 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Optical fiber cable accessories" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                            <div class="absolute inset-0 bg-gradient-to-br from-teal-500/80 to-teal-700/80 group-hover:from-teal-600/80 group-hover:to-teal-800/80 transition-all duration-300 flex items-center justify-center">
-                                <i class="fas fa-ethernet text-white text-4xl group-hover:scale-110 transition-transform duration-300"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-3">Optical Fibre Accessories</h3>
-                            <p class="text-gray-600 mb-4">A variety of optical fibre cable accessories for network connectivity solutions.</p>
-                            <div class="mb-4">
-                                <h4 class="font-semibold text-gray-800 mb-2">Available Variations:</h4>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded-full text-xs font-medium">Patch Panels</span>
-                                    <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded-full text-xs font-medium">Splice Trays</span>
-                                    <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded-full text-xs font-medium">Connectors</span>
-                                    <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded-full text-xs font-medium">Adapters</span>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <span class="text-teal-600 font-semibold bg-teal-50 px-3 py-1 rounded-full text-sm">OFA Series</span>
-                            </div>
-                            <div class="flex gap-2">
-                                <button onclick="window.location.href='optical-fibre-accessories.html'" class="download-btn flex-1 bg-green-600 text-white px-4 py-2 rounded-xl hover:bg-green-700 transition-all hover:shadow-lg transform hover:-translate-y-1">
-                                    <i class="fas fa-search mr-2"></i>Explore More
-                                </button>
-                                <button onclick="downloadSpec('optical-accessories')" class="download-btn flex-1 bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition-all hover:shadow-lg transform hover:-translate-y-1">
-                                    <i class="fas fa-download mr-2"></i>Spec Sheet
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+            <!-- All Products Section -->
+            <div id="all-products" class="mb-20">
+                <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">All Products</h2>
+                <div id="products-grid" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Products will be loaded here dynamically -->
                 </div>
             </div>
-
-            <!-- Infrastructure Products -->
-            <div id="infrastructure" class="mb-20">
-                <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Infrastructure Products</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- HDPE PLB Duct Pipes -->
-                    <div class="group product-card bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                        <div class="h-48 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="HDPE duct pipes for underground cable installation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                            <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/80 to-indigo-700/80 group-hover:from-indigo-600/80 group-hover:to-indigo-800/80 transition-all duration-300 flex items-center justify-center">
-                                <i class="fas fa-road text-white text-4xl group-hover:scale-110 transition-transform duration-300"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-3">HDPE PLB Duct Pipes</h3>
-                            <p class="text-gray-600 mb-4">High-density polyethylene duct pipes for underground cable protection and routing.</p>
-                            <div class="mb-4">
-                                <h4 class="font-semibold text-gray-800 mb-2">Available Variations:</h4>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full text-xs font-medium">Single Wall</span>
-                                    <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full text-xs font-medium">Double Wall</span>
-                                    <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full text-xs font-medium">Corrugated</span>
-                                    <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full text-xs font-medium">Smooth Bore</span>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <span class="text-indigo-600 font-semibold bg-indigo-50 px-3 py-1 rounded-full text-sm">HDPE Series</span>
-                            </div>
-                            <div class="flex gap-2">
-                                <button onclick="window.location.href='hdpe-plb-duct-pipes.html'" class="download-btn flex-1 bg-green-600 text-white px-4 py-2 rounded-xl hover:bg-green-700 transition-all hover:shadow-lg transform hover:-translate-y-1">
-                                    <i class="fas fa-search mr-2"></i>Explore More
-                                </button>
-                                <button onclick="downloadSpec('hdpe-duct-pipes')" class="download-btn flex-1 bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition-all hover:shadow-lg transform hover:-translate-y-1">
-                                    <i class="fas fa-download mr-2"></i>Spec Sheet
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
     </section>
-
-    <!-- Detailed Specifications Section -->
-    <section class="bg-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Technical Specifications</h2>
-            
-            <!-- Specification Tables -->
-            <div class="space-y-12">
-                <!-- Low Voltage Switchgear Specs -->
-                <div class="bg-gray-50 rounded-lg p-8">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Low Voltage Switchgear - LV-SG Series</h3>
-                    <div class="overflow-x-auto">
-                        <table class="spec-table w-full">
-                            <thead>
-                                <tr>
-                                    <th>Parameter</th>
-                                    <th>Specification</th>
-                                    <th>Standard</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Rated Voltage</td>
-                                    <td>415V / 690V AC</td>
-                                    <td>IEC 61439-1</td>
-                                </tr>
-                                <tr>
-                                    <td>Rated Current</td>
-                                    <td>630A - 6300A</td>
-                                    <td>IEC 61439-1</td>
-                                </tr>
-                                <tr>
-                                    <td>Short Circuit Rating</td>
-                                    <td>Up to 100kA</td>
-                                    <td>IEC 61439-1</td>
-                                </tr>
-                                <tr>
-                                    <td>IP Rating</td>
-                                    <td>IP54 / IP65</td>
-                                    <td>IEC 60529</td>
-                                </tr>
-                                <tr>
-                                    <td>Operating Temperature</td>
-                                    <td>-25°C to +70°C</td>
-                                    <td>IEC 61439-1</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="mt-6">
-                        <button onclick="downloadSpec('lv-switchgear')" class="download-btn bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
-                            <i class="fas fa-download mr-2"></i>Download Complete Specification
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Medium Voltage Switchgear Specs -->
-                <div class="bg-gray-50 rounded-lg p-8">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Medium Voltage Switchgear - MV-SG Series</h3>
-                    <div class="overflow-x-auto">
-                        <table class="spec-table w-full">
-                            <thead>
-                                <tr>
-                                    <th>Parameter</th>
-                                    <th>Specification</th>
-                                    <th>Standard</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Rated Voltage</td>
-                                    <td>3.3kV - 36kV</td>
-                                    <td>IEC 62271-200</td>
-                                </tr>
-                                <tr>
-                                    <td>Rated Current</td>
-                                    <td>630A - 4000A</td>
-                                    <td>IEC 62271-200</td>
-                                </tr>
-                                <tr>
-                                    <td>Short Circuit Rating</td>
-                                    <td>Up to 63kA</td>
-                                    <td>IEC 62271-200</td>
-                                </tr>
-                                <tr>
-                                    <td>Insulation Medium</td>
-                                    <td>Air / SF6 Gas</td>
-                                    <td>IEC 62271-200</td>
-                                </tr>
-                                <tr>
-                                    <td>Operating Mechanism</td>
-                                    <td>Spring / Motor</td>
-                                    <td>IEC 62271-100</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="mt-6">
-                        <button onclick="downloadSpec('mv-switchgear')" class="download-btn bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700">
-                            <i class="fas fa-download mr-2"></i>Download Complete Specification
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Distribution Boards Specs -->
-                <div class="bg-gray-50 rounded-lg p-8">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Distribution Boards - DB Series</h3>
-                    <div class="overflow-x-auto">
-                        <table class="spec-table w-full">
-                            <thead>
-                                <tr>
-                                    <th>Parameter</th>
-                                    <th>Specification</th>
-                                    <th>Standard</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Rated Voltage</td>
-                                    <td>230V / 415V AC</td>
-                                    <td>IEC 61439-3</td>
-                                </tr>
-                                <tr>
-                                    <td>Rated Current</td>
-                                    <td>63A - 800A</td>
-                                    <td>IEC 61439-3</td>
-                                </tr>
-                                <tr>
-                                    <td>Number of Ways</td>
-                                    <td>4 - 72 ways</td>
-                                    <td>IEC 61439-3</td>
-                                </tr>
-                                <tr>
-                                    <td>Enclosure Material</td>
-                                    <td>Steel / Stainless Steel</td>
-                                    <td>IEC 62208</td>
-                                </tr>
-                                <tr>
-                                    <td>Protection Class</td>
-                                    <td>Class I / Class II</td>
-                                    <td>IEC 61140</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="mt-6">
-                        <button onclick="downloadSpec('distribution-boards')" class="download-btn bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700">
-                            <i class="fas fa-download mr-2"></i>Download Complete Specification
-                        </button>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
