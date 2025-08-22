@@ -60,19 +60,26 @@
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             
-            mobileMenuButton.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
-        });
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
             
-            // Mobile products menu toggle
-            const mobileProductsButton = document.getElementById('mobile-products-menu-button');
+            // Mobile products dropdown toggle
+            const mobileProductsDropdown = document.getElementById('mobile-products-dropdown');
             const mobileProductsMenu = document.getElementById('mobile-products-menu');
-            const mobileProductsIcon = mobileProductsButton.querySelector('i');
             
-            mobileProductsButton.addEventListener('click', function() {
-                mobileProductsMenu.classList.toggle('hidden');
-                mobileProductsIcon.classList.toggle('rotate-180');
-            });
+            if (mobileProductsDropdown && mobileProductsMenu) {
+                mobileProductsDropdown.addEventListener('click', function() {
+                    mobileProductsMenu.classList.toggle('hidden');
+                    const icon = mobileProductsDropdown.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-chevron-down');
+                        icon.classList.toggle('fa-chevron-up');
+                    }
+                });
+            }
             
             // Connect search buttons to search system
             const searchButton = document.getElementById('search-button');
@@ -467,12 +474,12 @@
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm">
+<nav class="bg-white shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
                     <div class="flex items-center space-x-2">
-                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background-color: #3A46A5;">
                             <i class="fas fa-bolt text-white text-sm"></i>
                         </div>
                         <span class="text-xl font-bold text-gray-900">PHEDEL </span>
@@ -480,78 +487,83 @@
                 </div>
                 <div class="hidden md:flex lg:flex">
                     <div class="ml-10 flex items-baseline space-x-4 lg:space-x-8">
-                        <a href="index.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Home</a>
-                        <a href="services.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Services</a>
+                        <a href="index.html" class="text-gray-700 px-2 lg:px-3 py-2 text-sm font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Home</a>
+                        <a href="services.html" class="px-2 lg:px-3 py-2 text-sm font-medium" style="color: #3A46A5;">Services</a>
+                        
+                        <!-- Products dropdown -->
                         <div class="relative group">
-                            <a href="products.html" class="text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium flex items-center">
+                            <a href="products.html" class="text-gray-700 px-2 lg:px-3 py-2 text-sm font-medium flex items-center transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">
                                 Products
                                 <i class="fas fa-chevron-down ml-1 text-xs"></i>
                             </a>
-                            <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50">
-                                <div class="py-1" role="menu" aria-orientation="vertical">
-                                    <a href="data-centre-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Data Centre</a>
-                                    <a href="telecom-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Telecom</a>
-                                    <a href="power-it-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Power & IT</a>
-                                    <a href="industrial-rack-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Industrial Rack</a>
-                                    <a href="civil-work-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Civil Work</a>
-                                    <a href="laboratory-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Laboratory</a>
-                                    <a href="accessories-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Accessories</a>
-                                    <a href="products.html" class="block px-4 py-2 text-sm text-blue-600 bg-gray-100" role="menuitem">All Products</a>
+                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                                <div class="py-1">
+                                    <a href="data-centre-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Data Centre</a>
+                                    <a href="telecom-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Telecom</a>
+                                    <a href="power-it-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Power & IT</a>
+                                    <a href="industrial-rack-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Industrial Rack</a>
+                                    <a href="civil-work-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Civil Work</a>
+                                    <a href="laboratory-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Laboratory</a>
+                                    <a href="accessories-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Accessories</a>
+                                    <a href="products.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">All Products</a>
                                 </div>
                             </div>
                         </div>
-                        <a href="about.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">About</a>
-                        <a href="contact.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Contact</a>
+                        <a href="about.html" class="text-gray-700 px-2 lg:px-3 py-2 text-sm font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">About</a>
+                        <a href="contact.html" class="text-gray-700 px-2 lg:px-3 py-2 text-sm font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Contact</a>
                     </div>
                 </div>
                 <div class="flex items-center space-x-2 lg:space-x-4">
-                    <button id="search-button" class="text-gray-700 hover:text-blue-600 p-2 rounded-lg hover:bg-gray-100 transition-colors" title="Search Products (Ctrl+K)">
+                    <button id="search-button" class="text-gray-700 p-2 rounded-lg transition-colors" title="Search Products (Ctrl+K)" onmouseover="this.style.color='#3A46A5'; this.style.backgroundColor='#f3f4f6'" onmouseout="this.style.color=''; this.style.backgroundColor=''">
                         <i class="fas fa-search text-lg"></i>
                     </button>
-                    <a href="contact.html" class="bg-blue-600 text-white px-3 lg:px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700">Get Quote</a>
-                    <div class="md:hidden lg:hidden">
-                        <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600">
-                            <i class="fas fa-bars text-xl"></i>
-                        </button>
-                    </div>
+                    <a href="contact.html" class="hidden md:inline-block text-white px-3 lg:px-4 py-2 rounded-lg text-sm font-medium transition-colors" style="background-color: #3A46A5;" onmouseover="this.style.backgroundColor='#2d3a8c'" onmouseout="this.style.backgroundColor='#3A46A5'">Get Quote</a>
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-inset" style="focus:ring-color: #3A46A5;" onmouseover="this.style.color='#3A46A5'; this.style.backgroundColor='#f3f4f6'" onmouseout="this.style.color=''; this.style.backgroundColor=''">
+                        <span class="sr-only">Open main menu</span>
+                        <svg id="hamburger-icon" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg id="close-icon" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
                 </div>
             </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden lg:hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <button id="mobile-search-button" class="block w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600">
-                    <i class="fas fa-search mr-2"></i>Search Products
-                </button>
-                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Home</a>
-                <a href="services.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Services</a>
-                
-                <!-- Products dropdown for mobile -->
-                <div class="relative">
-                    <button id="mobile-products-menu-button" class="text-blue-600 flex justify-between w-full px-3 py-2 rounded-md text-base font-medium transition duration-300">
-                        Products
-                        <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-200"></i>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+                    <button id="mobile-search-button" class="block w-full text-left px-3 py-2 text-gray-700 text-base font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">
+                        <i class="fas fa-search mr-2"></i>Search Products
                     </button>
-                    <div id="mobile-products-menu" class="hidden px-4 py-2 bg-gray-50">
-                        <a href="data-centre-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Data Centre</a>
-                        <a href="telecom-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Telecom</a>
-                        <a href="power-it-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Power & IT</a>
-                        <a href="industrial-rack-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Industrial Rack</a>
-                        <a href="civil-work-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Civil Work</a>
-                        <a href="laboratory-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Laboratory</a>
-                        <a href="accessories-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Accessories</a>
-                        <a href="products.html" class="block px-3 py-2 rounded-md text-sm text-blue-600">All Products</a>
+                    <a href="index.html" class="text-gray-700 block px-3 py-2 text-base font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Home</a>
+                    <a href="services.html" class="block px-3 py-2 text-base font-medium" style="color: #3A46A5;">Services</a>
+                    
+                    <!-- Products dropdown for mobile -->
+                    <div class="relative">
+                        <button id="mobile-products-dropdown" class="text-gray-700 hover:text-blue-600 flex justify-between w-full px-3 py-2 rounded-md text-base font-medium transition duration-300">
+                            Products
+                            <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-200"></i>
+                        </button>
+                        <div id="mobile-products-menu" class="hidden px-4 py-2 bg-gray-50">
+                            <a href="data-centre-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Data Centre</a>
+                            <a href="telecom-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Telecom</a>
+                            <a href="power-it-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Power & IT</a>
+                            <a href="industrial-rack-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Industrial Rack</a>
+                            <a href="civil-work-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Civil Work</a>
+                            <a href="laboratory-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Laboratory</a>
+                            <a href="accessories-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Accessories</a>
+                            <a href="products.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">All Products</a>
+                        </div>
                     </div>
+                    
+                    <a href="about.html" class="text-gray-700 block px-3 py-2 text-base font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">About</a>
+                    <a href="contact.html" class="text-gray-700 block px-3 py-2 text-base font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Contact</a>
+                    <a href="contact.html" class="text-white block px-3 py-2 text-base font-medium transition-colors rounded-lg mx-3 mt-4" style="background-color: #3A46A5;" onmouseover="this.style.backgroundColor='#2d3a8c'" onmouseout="this.style.backgroundColor='#3A46A5'">Get Quote</a>
                 </div>
-                
-                <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">About</a>
-                <a href="contact.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
-                <a href="contact.html" class="bg-blue-600 text-white block px-3 py-2 text-base font-medium hover:bg-blue-700 rounded-lg mx-3 mt-4">Get Quote</a>
             </div>
         </div>
     </nav>
-
     <!-- Hero Section -->
     <section class="bg-gradient-to-br from-blue-50 to-indigo-100 relative overflow-hidden py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -583,7 +595,7 @@
                 <a href="data-centre-category.html" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                     <div class="h-48 relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Data Centre" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/70 to-blue-700/70 group-hover:from-blue-600/70 group-hover:to-blue-800/70 transition-all duration-300 flex items-center justify-center">
+                        <div class="absolute inset-0 transition-all duration-300 flex items-center justify-center" style="background: linear-gradient(to bottom right, rgba(58, 70, 165, 0.7), rgba(45, 58, 140, 0.7));" onmouseover="this.style.background='linear-gradient(to bottom right, rgba(58, 70, 165, 0.8), rgba(45, 58, 140, 0.8))'" onmouseout="this.style.background='linear-gradient(to bottom right, rgba(58, 70, 165, 0.7), rgba(45, 58, 140, 0.7))'">
                             <i class="fas fa-server text-white text-4xl group-hover:scale-110 transition-transform duration-300"></i>
                         </div>
                     </div>
@@ -597,7 +609,7 @@
                 <a href="telecom-category.html" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                     <div class="h-48 relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Telecom" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-br from-green-500/70 to-green-700/70 group-hover:from-green-600/70 group-hover:to-green-800/70 transition-all duration-300 flex items-center justify-center">
+                        <div class="absolute inset-0 transition-all duration-300 flex items-center justify-center" style="background: linear-gradient(to bottom right, rgba(78, 174, 1, 0.7), rgba(58, 139, 1, 0.7));" onmouseover="this.style.background='linear-gradient(to bottom right, rgba(78, 174, 1, 0.8), rgba(58, 139, 1, 0.8))'" onmouseout="this.style.background='linear-gradient(to bottom right, rgba(78, 174, 1, 0.7), rgba(58, 139, 1, 0.7))'">
                             <i class="fas fa-broadcast-tower text-white text-4xl group-hover:scale-110 transition-transform duration-300"></i>
                         </div>
                     </div>
@@ -611,7 +623,7 @@
                 <a href="power-it-category.html" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                     <div class="h-48 relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Power & IT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-br from-red-500/70 to-red-700/70 group-hover:from-red-600/70 group-hover:to-red-800/70 transition-all duration-300 flex items-center justify-center">
+                        <div class="absolute inset-0 transition-all duration-300 flex items-center justify-center" style="background: linear-gradient(to bottom right, rgba(58, 70, 165, 0.7), rgba(45, 58, 140, 0.7));" onmouseover="this.style.background='linear-gradient(to bottom right, rgba(58, 70, 165, 0.8), rgba(45, 58, 140, 0.8))'" onmouseout="this.style.background='linear-gradient(to bottom right, rgba(58, 70, 165, 0.7), rgba(45, 58, 140, 0.7))'">
                             <i class="fas fa-bolt text-white text-4xl group-hover:scale-110 transition-transform duration-300"></i>
                         </div>
                     </div>
@@ -625,7 +637,7 @@
                 <a href="industrial-rack-category.html" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                     <div class="h-48 relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1581092921461-eab10380ed66?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Industrial Rack" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-br from-yellow-500/70 to-yellow-700/70 group-hover:from-yellow-600/70 group-hover:to-yellow-800/70 transition-all duration-300 flex items-center justify-center">
+                        <div class="absolute inset-0 transition-all duration-300 flex items-center justify-center" style="background: linear-gradient(to bottom right, rgba(78, 174, 1, 0.7), rgba(58, 139, 1, 0.7));" onmouseover="this.style.background='linear-gradient(to bottom right, rgba(78, 174, 1, 0.8), rgba(58, 139, 1, 0.8))'" onmouseout="this.style.background='linear-gradient(to bottom right, rgba(78, 174, 1, 0.7), rgba(58, 139, 1, 0.7))'">
                             <i class="fas fa-industry text-white text-4xl group-hover:scale-110 transition-transform duration-300"></i>
                         </div>
                     </div>
@@ -639,7 +651,7 @@
                 <a href="civil-work-category.html" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                     <div class="h-48 relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Civil Work" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-br from-gray-500/70 to-gray-700/70 group-hover:from-gray-600/70 group-hover:to-gray-800/70 transition-all duration-300 flex items-center justify-center">
+                        <div class="absolute inset-0 transition-all duration-300 flex items-center justify-center" style="background: linear-gradient(to bottom right, rgba(58, 70, 165, 0.7), rgba(45, 58, 140, 0.7));" onmouseover="this.style.background='linear-gradient(to bottom right, rgba(58, 70, 165, 0.8), rgba(45, 58, 140, 0.8))'" onmouseout="this.style.background='linear-gradient(to bottom right, rgba(58, 70, 165, 0.7), rgba(45, 58, 140, 0.7))'">
                             <i class="fas fa-hard-hat text-white text-4xl group-hover:scale-110 transition-transform duration-300"></i>
                         </div>
                     </div>
@@ -653,7 +665,7 @@
                 <a href="laboratory-category.html" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                     <div class="h-48 relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Laboratory" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/70 to-blue-700/70 group-hover:from-blue-600/70 group-hover:to-blue-800/70 transition-all duration-300 flex items-center justify-center">
+                        <div class="absolute inset-0 transition-all duration-300 flex items-center justify-center" style="background: linear-gradient(to bottom right, rgba(78, 174, 1, 0.7), rgba(58, 139, 1, 0.7));" onmouseover="this.style.background='linear-gradient(to bottom right, rgba(78, 174, 1, 0.8), rgba(58, 139, 1, 0.8))'" onmouseout="this.style.background='linear-gradient(to bottom right, rgba(78, 174, 1, 0.7), rgba(58, 139, 1, 0.7))'">
                             <i class="fas fa-flask text-white text-4xl group-hover:scale-110 transition-transform duration-300"></i>
                         </div>
                     </div>
@@ -667,7 +679,7 @@
                 <a href="accessories-category.html" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                     <div class="h-48 relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Accessories" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500/70 to-purple-700/70 group-hover:from-purple-600/70 group-hover:to-purple-800/70 transition-all duration-300 flex items-center justify-center">
+                        <div class="absolute inset-0 transition-all duration-300 flex items-center justify-center" style="background: linear-gradient(to bottom right, rgba(58, 70, 165, 0.7), rgba(45, 58, 140, 0.7));" onmouseover="this.style.background='linear-gradient(to bottom right, rgba(58, 70, 165, 0.8), rgba(45, 58, 140, 0.8))'" onmouseout="this.style.background='linear-gradient(to bottom right, rgba(58, 70, 165, 0.7), rgba(45, 58, 140, 0.7))'">
                             <i class="fas fa-tools text-white text-4xl group-hover:scale-110 transition-transform duration-300"></i>
                         </div>
                     </div>
@@ -742,15 +754,15 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="bg-blue-600 text-white py-20">
+    <section class="text-white py-20" style="background-color: #3A46A5;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl font-bold mb-6">Need Custom Solutions?</h2>
             <p class="text-xl mb-8 max-w-3xl mx-auto">Our engineering team can design and manufacture custom electrical solutions tailored to your specific requirements.</p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="contact.html" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+                <a href="contact.html" class="bg-white px-8 py-3 rounded-lg font-semibold transition duration-300" style="color: #3A46A5;" onmouseover="this.style.backgroundColor='#f3f4f6'" onmouseout="this.style.backgroundColor='white'">
                     Contact Our Engineers
                 </a>
-                <a href="#" onclick="downloadCatalog()" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition duration-300">
+                <a href="#" onclick="downloadCatalog()" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold transition duration-300" onmouseover="this.style.backgroundColor='white'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='white'">
                     <i class="fas fa-download mr-2"></i>Download Full Catalog
                 </a>
             </div>
@@ -773,25 +785,25 @@
                 <div>
                     <h3 class="font-semibold mb-4">Products</h3>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="#switchgear" class="hover:text-white">Switchgear</a></li>
-                        <li><a href="#distribution" class="hover:text-white">Power Distribution</a></li>
-                        <li><a href="#control" class="hover:text-white">Control Systems</a></li>
+                        <li><a href="#switchgear" class="transition-colors" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Switchgear</a></li>
+                        <li><a href="#distribution" class="transition-colors" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Power Distribution</a></li>
+                        <li><a href="#control" class="transition-colors" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Control Systems</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="font-semibold mb-4">Services</h3>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="services.html" class="hover:text-white">Consultation</a></li>
-                        <li><a href="services.html" class="hover:text-white">Development</a></li>
-                        <li><a href="services.html" class="hover:text-white">Logistics</a></li>
+                        <li><a href="services.html" class="transition-colors" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Consultation</a></li>
+                        <li><a href="services.html" class="transition-colors" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Development</a></li>
+                        <li><a href="services.html" class="transition-colors" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Logistics</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="font-semibold mb-4">Company</h3>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="about.html" class="hover:text-white">About</a></li>
-                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
-                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                        <li><a href="about.html" class="transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">About</a></li>
+                        <li><a href="contact.html" class="transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Contact</a></li>
+                        <li><a href="#" class="transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Careers</a></li>
                     </ul>
                 </div>
                 <div>

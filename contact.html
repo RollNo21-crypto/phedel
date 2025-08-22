@@ -77,12 +77,12 @@
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm">
+<nav class="bg-white shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
                     <div class="flex items-center space-x-2">
-                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background-color: #3A46A5;">
                             <i class="fas fa-bolt text-white text-sm"></i>
                         </div>
                         <span class="text-xl font-bold text-gray-900">PHEDEL </span>
@@ -90,41 +90,39 @@
                 </div>
                 <div class="hidden md:flex lg:flex">
                     <div class="ml-10 flex items-baseline space-x-4 lg:space-x-8">
-                        <a href="index.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Home</a>
-                        <a href="services.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Services</a>
+                        <a href="index.html" class="text-gray-700 px-2 lg:px-3 py-2 text-sm font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Home</a>
+                        <a href="services.html" class="px-2 lg:px-3 py-2 text-sm font-medium" style="color: #3A46A5;">Services</a>
                         
                         <!-- Products dropdown -->
                         <div class="relative group">
-                            <button class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium flex items-center">
+                            <a href="products.html" class="text-gray-700 px-2 lg:px-3 py-2 text-sm font-medium flex items-center transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">
                                 Products
                                 <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                            </button>
+                            </a>
                             <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                                 <div class="py-1">
-                                    <a href="data-centre-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Data Centre</a>
-                                    <a href="telecom-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Telecom</a>
-                                    <a href="power-it-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Power & IT</a>
-                                    <a href="industrial-rack-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Industrial Rack</a>
-                                    <a href="civil-work-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Civil Work</a>
-                                    <a href="laboratory-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Laboratory</a>
-                                    <a href="accessories-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Accessories</a>
-                                    <a href="products.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">All Products</a>
+                                    <a href="data-centre-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Data Centre</a>
+                                    <a href="telecom-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Telecom</a>
+                                    <a href="power-it-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Power & IT</a>
+                                    <a href="industrial-rack-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Industrial Rack</a>
+                                    <a href="civil-work-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Civil Work</a>
+                                    <a href="laboratory-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Laboratory</a>
+                                    <a href="accessories-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Accessories</a>
+                                    <a href="products.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">All Products</a>
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- <a href="portfolio.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Portfolio</a> -->
-                        <a href="about.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">About</a>
-                        <a href="contact.html" class="text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Contact</a>
+                        <a href="about.html" class="text-gray-700 px-2 lg:px-3 py-2 text-sm font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">About</a>
+                        <a href="contact.html" class="text-gray-700 px-2 lg:px-3 py-2 text-sm font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Contact</a>
                     </div>
                 </div>
                 <div class="flex items-center space-x-2 lg:space-x-4">
-                    <button id="search-button" class="text-gray-700 hover:text-blue-600 p-2 rounded-lg hover:bg-gray-100 transition-colors" title="Search Products (Ctrl+K)">
+                    <button id="search-button" class="text-gray-700 p-2 rounded-lg transition-colors" title="Search Products (Ctrl+K)" onmouseover="this.style.color='#3A46A5'; this.style.backgroundColor='#f3f4f6'" onmouseout="this.style.color=''; this.style.backgroundColor=''">
                         <i class="fas fa-search text-lg"></i>
                     </button>
-                    <a href="contact.html" class="hidden md:inline-block bg-blue-600 text-white px-3 lg:px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700">Get Quote</a>
+                    <a href="contact.html" class="hidden md:inline-block text-white px-3 lg:px-4 py-2 rounded-lg text-sm font-medium transition-colors" style="background-color: #3A46A5;" onmouseover="this.style.backgroundColor='#2d3a8c'" onmouseout="this.style.backgroundColor='#3A46A5'">Get Quote</a>
                     <!-- Mobile menu button -->
-                    <button id="mobile-menu-button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                    <button id="mobile-menu-button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-inset" style="focus:ring-color: #3A46A5;" onmouseover="this.style.color='#3A46A5'; this.style.backgroundColor='#f3f4f6'" onmouseout="this.style.color=''; this.style.backgroundColor=''">
                         <span class="sr-only">Open main menu</span>
                         <svg id="hamburger-icon" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -138,15 +136,15 @@
             <!-- Mobile menu -->
             <div id="mobile-menu" class="md:hidden hidden">
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
-                    <button id="mobile-search-button" class="block w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600">
+                    <button id="mobile-search-button" class="block w-full text-left px-3 py-2 text-gray-700 text-base font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">
                         <i class="fas fa-search mr-2"></i>Search Products
                     </button>
-                    <a href="index.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Home</a>
-                    <a href="services.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Services</a>
+                    <a href="index.html" class="text-gray-700 block px-3 py-2 text-base font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Home</a>
+                    <a href="services.html" class="block px-3 py-2 text-base font-medium" style="color: #3A46A5;">Services</a>
                     
                     <!-- Products dropdown for mobile -->
                     <div class="relative">
-                        <button id="mobile-products-menu-button" class="text-gray-700 hover:text-blue-600 flex justify-between w-full px-3 py-2 rounded-md text-base font-medium transition duration-300">
+                        <button id="mobile-products-dropdown" class="text-gray-700 hover:text-blue-600 flex justify-between w-full px-3 py-2 rounded-md text-base font-medium transition duration-300">
                             Products
                             <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-200"></i>
                         </button>
@@ -162,25 +160,23 @@
                         </div>
                     </div>
                     
-                    <a href="about.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">About</a>
-                    <a href="portfolio.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Portfolio</a>
-                    <a href="contact.html" class="text-blue-600 block px-3 py-2 text-base font-medium">Contact</a>
-                    <a href="contact.html" class="bg-blue-600 text-white block px-3 py-2 text-base font-medium hover:bg-blue-700 rounded-lg mx-3 mt-4">Get Quote</a>
+                    <a href="about.html" class="text-gray-700 block px-3 py-2 text-base font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">About</a>
+                    <a href="contact.html" class="text-gray-700 block px-3 py-2 text-base font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Contact</a>
+                    <a href="contact.html" class="text-white block px-3 py-2 text-base font-medium transition-colors rounded-lg mx-3 mt-4" style="background-color: #3A46A5;" onmouseover="this.style.backgroundColor='#2d3a8c'" onmouseout="this.style.backgroundColor='#3A46A5'">Get Quote</a>
                 </div>
-            </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-blue-50 to-indigo-100 relative overflow-hidden py-20">
+    <section class="relative overflow-hidden py-20" style="background: linear-gradient(to bottom right, rgba(58, 70, 165, 0.05), rgba(58, 70, 165, 0.1));">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="inline-flex items-center space-x-2 bg-blue-100 rounded-full px-4 py-2 mb-6">
-                <i class="fas fa-phone text-blue-600"></i>
-                <span class="text-blue-600 font-medium text-sm">Get In Touch</span>
+            <div class="inline-flex items-center space-x-2 rounded-full px-4 py-2 mb-6" style="background-color: rgba(58, 70, 165, 0.1);">
+                <i class="fas fa-phone" style="color: #3A46A5;"></i>
+                <span class="font-medium text-sm" style="color: #3A46A5;">Get In Touch</span>
             </div>
             <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Contact <span class="text-blue-600">Us</span>
+                Contact <span style="color: #3A46A5;">Us</span>
             </h1>
             <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
                 Get in touch with our team to discuss your computer racks and modular systems needs
@@ -205,14 +201,14 @@
                                 <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
                                 <input type="text" id="firstName" name="firstName" required
                                        minlength="2" maxlength="50"
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-xl transition-colors" style="--tw-ring-color: #3A46A5;" onfocus="this.style.borderColor='#3A46A5'; this.style.boxShadow='0 0 0 2px rgba(58, 70, 165, 0.2)';" onblur="this.style.borderColor=''; this.style.boxShadow='';">
                                 <div class="text-red-500 text-sm mt-1 hidden" id="firstName-error">Please enter a valid first name (2-50 characters)</div>
                             </div>
                             <div>
                                 <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
                                 <input type="text" id="lastName" name="lastName" required
                                        minlength="2" maxlength="50"
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-xl transition-colors" style="--tw-ring-color: #3A46A5;" onfocus="this.style.borderColor='#3A46A5'; this.style.boxShadow='0 0 0 2px rgba(58, 70, 165, 0.2)';" onblur="this.style.borderColor=''; this.style.boxShadow='';">
                                 <div class="text-red-500 text-sm mt-1 hidden" id="lastName-error">Please enter a valid last name (2-50 characters)</div>
                             </div>
                         </div>
@@ -222,14 +218,14 @@
                                 <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
                                 <input type="email" id="email" name="email" required
                                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-xl transition-colors" style="--tw-ring-color: #3A46A5;" onfocus="this.style.borderColor='#3A46A5'; this.style.boxShadow='0 0 0 2px rgba(58, 70, 165, 0.2)';" onblur="this.style.borderColor=''; this.style.boxShadow='';">
                                 <div class="text-red-500 text-sm mt-1 hidden" id="email-error">Please enter a valid email address</div>
                             </div>
                             <div>
                                 <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
                                 <input type="tel" id="phone" name="phone"
                                        pattern="[+]?[0-9\s\-\(\)]{10,15}"
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-xl transition-colors" style="--tw-ring-color: #3A46A5;" onfocus="this.style.borderColor='#3A46A5'; this.style.boxShadow='0 0 0 2px rgba(58, 70, 165, 0.2)';" onblur="this.style.borderColor=''; this.style.boxShadow='';">
                                 <div class="text-red-500 text-sm mt-1 hidden" id="phone-error">Please enter a valid phone number</div>
                             </div>
                         </div>
@@ -238,13 +234,13 @@
                             <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Company</label>
                             <input type="text" id="company" name="company"
                                    maxlength="100"
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-xl transition-colors" style="--tw-ring-color: #3A46A5;" onfocus="this.style.borderColor='#3A46A5'; this.style.boxShadow='0 0 0 2px rgba(58, 70, 165, 0.2)';" onblur="this.style.borderColor=''; this.style.boxShadow='';">
                         </div>
                         
                         <div>
                             <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Service Interest</label>
                             <select id="service" name="service"
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-xl transition-colors" style="--tw-ring-color: #3A46A5;" onfocus="this.style.borderColor='#3A46A5'; this.style.boxShadow='0 0 0 2px rgba(58, 70, 165, 0.2)';" onblur="this.style.borderColor=''; this.style.boxShadow='';">
                                 <option value="">Select a product</option>
                                 <option value="computer-racks">Computer Racks</option>
                                 <option value="server-racks">Server Racks</option>
@@ -259,13 +255,14 @@
                             <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
                             <textarea id="message" name="message" rows="6" required
                                       minlength="10" maxlength="1000"
-                                      class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-xl transition-colors"
+                                      style="--tw-ring-color: #3A46A5;" onfocus="this.style.borderColor='#3A46A5'; this.style.boxShadow='0 0 0 2px rgba(58, 70, 165, 0.2)';" onblur="this.style.borderColor=''; this.style.boxShadow='';"
                                       placeholder="Tell us about your project requirements..."></textarea>
                             <div class="text-red-500 text-sm mt-1 hidden" id="message-error">Please enter a message (10-1000 characters)</div>
                         </div>
                         
                         <button type="submit" id="submitBtn"
-                                class="w-full bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-all transform hover:-translate-y-1 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
+                                class="w-full text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:-translate-y-1 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none" style="background-color: #3A46A5;" onmouseover="this.style.backgroundColor='#2d3a8c'" onmouseout="this.style.backgroundColor='#3A46A5'">
                             <span id="submitText">Send Message</span>
                             <span id="loadingText" class="hidden">
                                 <i class="fas fa-spinner fa-spin mr-2"></i>Sending...
@@ -286,7 +283,7 @@
                 <div class="lg:col-span-4 space-y-6">
                     
                     <!-- Contact Details Card -->
-                    <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-8 text-white">
+                    <div class="rounded-3xl p-8 text-white" style="background: linear-gradient(to bottom right, #3A46A5, #2d3a8c);">
                         <h3 class="text-2xl font-bold mb-6">Get in Touch</h3>
                         <div class="space-y-6">
                             <div class="flex items-start space-x-4">
@@ -295,7 +292,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-semibold mb-1">Address</h4>
-                                    <p class="text-blue-100 text-sm">
+                                    <p class="text-white/80 text-sm">
                                         PHEDEL Modular Systems Pvt. Ltd.<br>
                                         No.60, Magadi Main Road<br>
                                         Bangalore, Karnataka, India
@@ -309,7 +306,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-semibold mb-1">Phone</h4>
-                                    <p class="text-blue-100 text-sm">+91 80 1234 5678</p>
+                                    <p class="text-white/80 text-sm">+91 80 1234 5678</p>
                                 </div>
                             </div>
                             
@@ -319,7 +316,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-semibold mb-1">Email</h4>
-                                    <p class="text-blue-100 text-sm">info@phedel.pages.dev</p>
+                                    <p class="text-white/80 text-sm">info@phedel.pages.dev</p>
                                 </div>
                             </div>
                             
@@ -329,7 +326,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-semibold mb-1">Business Hours</h4>
-                                    <p class="text-blue-100 text-sm">
+                                    <p class="text-white/80 text-sm">
                                         Mon - Fri: 9:00 AM - 6:00 PM<br>
                                         Sat: 9:00 AM - 1:00 PM
                                     </p>
@@ -339,7 +336,7 @@
                     </div>
 
                     <!-- Quick Stats Card -->
-                    <div class="bg-gradient-to-br from-green-600 to-green-800 rounded-3xl p-8 text-white">
+                    <div class="rounded-3xl p-8 text-white" style="background: linear-gradient(to bottom right, #4EAE01, #3a8b01);">
                         <h3 class="text-xl font-bold mb-6">Why Choose Us?</h3>
                         <div class="space-y-4">
                             <div class="flex items-center space-x-3">
@@ -413,9 +410,9 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-bolt text-white text-sm"></i>
-                        </div>
+                        <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background-color: #3A46A5;">
+                        <i class="fas fa-bolt text-white text-sm"></i>
+                    </div>
                         <span class="text-xl font-bold">PHEDEL</span>
                     </div>
                     <p class="text-gray-400">Industrial Storage & Power Solutions</p>
@@ -423,17 +420,17 @@
                 <div>
                     <h3 class="font-semibold mb-4">Services</h3>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="services.html" class="hover:text-white">Consultation</a></li>
-                        <li><a href="services.html" class="hover:text-white">Development</a></li>
-                        <li><a href="services.html" class="hover:text-white">Logistics</a></li>
+                        <li><a href="services.html" class="transition-colors" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Consultation</a></li>
+                        <li><a href="services.html" class="transition-colors" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Development</a></li>
+                        <li><a href="services.html" class="transition-colors" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Logistics</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="font-semibold mb-4">Company</h3>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="about.html" class="hover:text-white">About</a></li>
-                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
-                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                        <li><a href="about.html" class="transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">About</a></li>
+                        <li><a href="contact.html" class="transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Contact</a></li>
+                        <li><a href="#" class="transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Careers</a></li>
                     </ul>
                 </div>
                 <div>
@@ -569,31 +566,43 @@
         // Mobile menu functionality
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = mobileMenuButton.querySelector('svg');
         
-        mobileMenuButton.addEventListener('click', function() {
-            const isHidden = mobileMenu.classList.contains('hidden');
+        if (mobileMenuButton && mobileMenu) {
+            const menuIcon = mobileMenuButton.querySelector('svg');
             
-            if (isHidden) {
-                mobileMenu.classList.remove('hidden');
-                // Change to X icon
-                menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
-            } else {
-                mobileMenu.classList.add('hidden');
-                // Change back to hamburger icon
-                menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
-            }
-        });
+            mobileMenuButton.addEventListener('click', function() {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    // Change to X icon
+                    if (menuIcon) {
+                        menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
+                    }
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    // Change back to hamburger icon
+                    if (menuIcon) {
+                        menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+                    }
+                }
+            });
+        }
         
-        // Mobile products menu toggle
-        const mobileProductsButton = document.getElementById('mobile-products-menu-button');
+        // Mobile products dropdown toggle
+        const mobileProductsDropdown = document.getElementById('mobile-products-dropdown');
         const mobileProductsMenu = document.getElementById('mobile-products-menu');
-        const mobileProductsIcon = mobileProductsButton.querySelector('i');
         
-        mobileProductsButton.addEventListener('click', function() {
-            mobileProductsMenu.classList.toggle('hidden');
-            mobileProductsIcon.classList.toggle('rotate-180');
-        });
+        if (mobileProductsDropdown && mobileProductsMenu) {
+            mobileProductsDropdown.addEventListener('click', function() {
+                mobileProductsMenu.classList.toggle('hidden');
+                const chevron = mobileProductsDropdown.querySelector('i');
+                if (chevron) {
+                    chevron.classList.toggle('fa-chevron-down');
+                    chevron.classList.toggle('fa-chevron-up');
+                }
+            });
+         }
         
         // Close mobile menu when clicking on a link
         const mobileMenuLinks = mobileMenu.querySelectorAll('a');

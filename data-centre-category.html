@@ -41,92 +41,101 @@
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full z-50">
+    <nav class="bg-white shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
+            <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <div class="flex-shrink-0">
-                        <h1 class="text-2xl font-bold text-blue-600">PHEDEL</h1>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background-color: #3A46A5;">
+                            <i class="fas fa-bolt text-white text-sm"></i>
+                        </div>
+                        <span class="text-xl font-bold text-gray-900">PHEDEL</span>
                     </div>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
-                    <a href="services.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Services</a>
-                    <div class="relative group">
-                        <a href="products.html" class="text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300 flex items-center">
-                            Products
-                            <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                        </a>
-                        <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50">
-                            <div class="py-1" role="menu" aria-orientation="vertical">
-                                <a href="data-centre-category.html" class="block px-4 py-2 text-sm text-blue-600 bg-gray-100" role="menuitem">Data Centre</a>
-                                <a href="telecom-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Telecom</a>
-                                <a href="power-it-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Power & IT</a>
-                                <a href="industrial-rack-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Industrial Rack</a>
-                                <a href="civil-work-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Civil Work</a>
-                                <a href="laboratory-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Laboratory</a>
-                                <a href="accessories-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Accessories</a>
-                                <a href="products.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">All Products</a>
+                <div class="hidden md:flex lg:flex">
+                    <div class="ml-10 flex items-baseline space-x-4 lg:space-x-8">
+                        <a href="index.html" class="text-gray-700 px-2 lg:px-3 py-2 text-sm font-medium" style="transition: color 0.2s;" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Home</a>
+                        <a href="services.html" class="text-gray-700 px-2 lg:px-3 py-2 text-sm font-medium" style="transition: color 0.2s;" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Services</a>
+                        <div class="relative group">
+                            <a href="products.html" class="px-2 lg:px-3 py-2 text-sm font-medium flex items-center" style="color: #3A46A5;">
+                                Products
+                                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </a>
+                            <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50">
+                                <div class="py-1" role="menu" aria-orientation="vertical">
+                                    <a href="data-centre-category.html" class="block px-4 py-2 text-sm bg-gray-100" role="menuitem" style="color: #3A46A5;">Data Centre</a>
+                                    <a href="telecom-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" style="transition: color 0.2s;" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Telecom</a>
+                                    <a href="power-it-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" style="transition: color 0.2s;" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Power & IT</a>
+                                    <a href="industrial-rack-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" style="transition: color 0.2s;" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Industrial Rack</a>
+                                    <a href="civil-work-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" style="transition: color 0.2s;" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Civil Work</a>
+                                    <a href="laboratory-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" style="transition: color 0.2s;" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Laboratory</a>
+                                    <a href="accessories-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" style="transition: color 0.2s;" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Accessories</a>
+                                    <a href="products.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-medium" role="menuitem" style="transition: color 0.2s;" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">All Products</a>
+                                </div>
                             </div>
                         </div>
+                        <a href="about.html" class="text-gray-700 px-2 lg:px-3 py-2 text-sm font-medium" style="transition: color 0.2s;" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">About</a>
+                        <a href="contact.html" class="text-gray-700 px-2 lg:px-3 py-2 text-sm font-medium" style="transition: color 0.2s;" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Contact</a>
                     </div>
-                    <a href="about.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">About</a>
-                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
-                    <button id="search-button" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">
-                        <i class="fas fa-search"></i>
-                    </button>
                 </div>
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600">
-                        <i class="fas fa-bars text-xl"></i>
+                <div class="flex items-center space-x-2 lg:space-x-4">
+                    <button id="search-button" class="text-gray-700 p-2 rounded-lg hover:bg-gray-100 transition-colors" title="Search Products (Ctrl+K)" style="transition: color 0.2s;" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">
+                        <i class="fas fa-search text-lg"></i>
                     </button>
+                    <a href="contact.html" class="text-white px-3 lg:px-4 py-2 rounded-lg text-sm font-medium transition-colors" style="background-color: #3A46A5;" onmouseover="this.style.backgroundColor='#2A3595'" onmouseout="this.style.backgroundColor='#3A46A5'">Get Quote</a>
+                    <div class="md:hidden lg:hidden">
+                        <button id="mobile-menu-button" class="text-gray-700" style="transition: color 0.2s;" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">
+                            <i class="fas fa-bars text-xl"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
-                <a href="index.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Home</a>
-                <a href="services.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Services</a>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden lg:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <button id="mobile-search-button" class="block w-full text-left px-3 py-2 text-gray-700" style="transition: color 0.2s;" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">
+                    <i class="fas fa-search mr-2"></i>Search Products
+                </button>
+                <a href="index.html" class="block px-3 py-2 text-gray-700" style="transition: color 0.2s;" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Home</a>
+                <a href="services.html" class="block px-3 py-2 text-gray-700" style="transition: color 0.2s;" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Services</a>
                 <div class="relative">
-                    <button id="mobile-products-dropdown" class="flex items-center justify-between w-full px-3 py-2 text-blue-600 rounded-md text-base font-medium">
+                    <button id="mobile-products-dropdown" class="flex items-center justify-between w-full px-3 py-2" style="color: #3A46A5;">
                         Products
                         <i class="fas fa-chevron-down ml-1 text-xs"></i>
                     </button>
                     <div id="mobile-products-menu" class="hidden pl-4 py-2 space-y-1">
-                        <a href="data-centre-category.html" class="block px-3 py-2 text-blue-600 font-medium">Data Centre</a>
-                        <a href="telecom-category.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Telecom</a>
-                        <a href="power-it-category.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Power & IT</a>
-                        <a href="industrial-rack-category.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Industrial Rack</a>
-                        <a href="civil-work-category.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Civil Work</a>
-                        <a href="laboratory-category.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Laboratory</a>
-                        <a href="accessories-category.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Accessories</a>
-                        <a href="products.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">All Products</a>
+                        <a href="data-centre-category.html" class="block px-3 py-2 font-medium" style="color: #3A46A5;">Data Centre</a>
+                        <a href="telecom-category.html" class="block px-3 py-2 text-gray-700" style="transition: color 0.2s;" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Telecom</a>
+                        <a href="power-it-category.html" class="block px-3 py-2 text-gray-700" style="transition: color 0.2s;" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Power & IT</a>
+                        <a href="industrial-rack-category.html" class="block px-3 py-2 text-gray-700" style="transition: color 0.2s;" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Industrial Rack</a>
+                        <a href="civil-work-category.html" class="block px-3 py-2 text-gray-700" style="transition: color 0.2s;" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Civil Work</a>
+                        <a href="laboratory-category.html" class="block px-3 py-2 text-gray-700" style="transition: color 0.2s;" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Laboratory</a>
+                        <a href="accessories-category.html" class="block px-3 py-2 text-gray-700" style="transition: color 0.2s;" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Accessories</a>
+                        <a href="products.html" class="block px-3 py-2 text-gray-700 font-medium" style="transition: color 0.2s;" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">All Products</a>
                     </div>
                 </div>
-                <a href="about.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition duration-300">About</a>
-                <a href="contact.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Contact</a>
-                <button id="mobile-search-button" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition duration-300 w-full text-left">
-                    <i class="fas fa-search mr-2"></i>Search
-                </button>
+                <a href="about.html" class="block px-3 py-2 text-gray-700" style="transition: color 0.2s;" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">About</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-700" style="transition: color 0.2s;" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Breadcrumb -->
-    <div class="pt-20 pb-4 bg-white">
+    <div class="pt-4 pb-4 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <nav class="flex" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
-                        <a href="index.html" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600">
+                        <a href="index.html" class="inline-flex items-center text-sm font-medium text-gray-700" style="transition: color 0.2s;" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">
                             <i class="fas fa-home mr-2"></i>Home
                         </a>
                     </li>
                     <li>
                         <div class="flex items-center">
                             <i class="fas fa-chevron-right text-gray-400 mx-2"></i>
-                            <a href="products.html" class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2">Products</a>
+                            <a href="products.html" class="ml-1 text-sm font-medium text-gray-700 md:ml-2" style="transition: color 0.2s;" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Products</a>
                         </div>
                     </li>
                     <li aria-current="page">
@@ -141,7 +150,7 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+    <section class="text-white py-16" style="background: linear-gradient(to right, #3A46A5, #2A3595);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <h1 class="text-4xl md:text-6xl font-bold mb-6">Data Centre Solutions</h1>

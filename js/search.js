@@ -538,7 +538,7 @@ class UniversalSearchSystem {
         return allProducts;
     }
 
-    // Enhanced UI creation with modern design
+    // Modern glassmorphism search interface
     createSearchInterface() {
         // Remove existing search container if it exists
         const existingContainer = document.getElementById('universalSearchContainer');
@@ -551,48 +551,63 @@ class UniversalSearchSystem {
         searchContainer.className = 'hidden fixed inset-0 z-50 overflow-y-auto';
         
         searchContainer.innerHTML = `
-            <!-- Backdrop -->
-            <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity" id="searchBackdrop"></div>
+            <!-- Modern Backdrop with Blur -->
+            <div class="fixed inset-0 bg-gradient-to-br from-blue-900/20 via-indigo-900/20 to-slate-900/20 backdrop-blur-sm transition-all duration-300" id="searchBackdrop"></div>
             
             <!-- Search Modal -->
-            <div class="flex min-h-full items-start justify-center p-4 text-center sm:p-0">
-                <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-4xl">
-                    <!-- Search Header -->
-                    <div class="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-3">
-                                <i class="fas fa-search text-white text-xl"></i>
-                                <h3 class="text-lg font-semibold text-white">Universal Product Search</h3>
+            <div class="flex min-h-full items-center justify-center p-4 text-center">
+                <div class="relative transform overflow-hidden rounded-3xl bg-white/95 backdrop-blur-xl text-left shadow-2xl transition-all duration-300 sm:w-full sm:max-w-5xl border border-white/20">
+                    <!-- Modern Search Header -->
+                    <div class="bg-gradient-to-r from-[#3A46A5] via-blue-600 to-indigo-700 px-8 py-6 relative overflow-hidden" style="background: linear-gradient(to right, #3A46A5, #4c5db8, #5a6bc7);">
+                        <!-- Animated Background Pattern -->
+                        <div class="absolute inset-0 opacity-10">
+                            <div class="absolute top-0 left-0 w-32 h-32 bg-white rounded-full -translate-x-16 -translate-y-16 animate-pulse"></div>
+                            <div class="absolute bottom-0 right-0 w-24 h-24 bg-white rounded-full translate-x-12 translate-y-12 animate-pulse delay-1000"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between relative z-10">
+                            <div class="flex items-center space-x-4">
+                                <div class="p-3 bg-white/20 rounded-2xl backdrop-blur-sm">
+                                    <i class="fas fa-search text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-white tracking-tight">Smart Product Search</h3>
+                                    <p class="text-white/80 text-sm font-medium">Find exactly what you need</p>
+                                </div>
                             </div>
-                            <button id="closeSearchBtn" class="text-white hover:text-gray-200 transition-colors">
+                            <button id="closeSearchBtn" class="p-2 text-white/80 hover:text-white hover:bg-white/20 rounded-xl transition-all duration-200 backdrop-blur-sm">
                                 <i class="fas fa-times text-xl"></i>
                             </button>
                         </div>
                         
-                        <!-- Search Input -->
-                        <div class="mt-4 relative">
-                            <input type="text" id="universalSearchInput" 
-                                   placeholder="Search products, categories, specifications..." 
-                                   class="w-full px-4 py-3 pl-12 pr-4 text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                                   autocomplete="off">
-                            <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                            <div id="searchLoader" class="hidden absolute right-4 top-1/2 transform -translate-y-1/2">
-                                <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
+                        <!-- Modern Search Input -->
+                        <div class="mt-6 relative">
+                            <div class="relative group">
+                                <input type="text" id="universalSearchInput" 
+                                       placeholder="Search products, categories, specifications..." 
+                                       class="w-full px-6 py-4 pl-14 pr-14 text-gray-800 bg-white/90 backdrop-blur-sm border-0 rounded-2xl focus:ring-4 focus:ring-white/30 focus:bg-white transition-all duration-300 text-lg placeholder-gray-500 shadow-lg"
+                                       autocomplete="off">
+                                <div class="absolute left-5 top-1/2 transform -translate-y-1/2">
+                                    <i class="fas fa-search text-gray-400 text-lg group-focus-within:text-[#3A46A5] transition-colors duration-200"></i>
+                                </div>
+                                <div id="searchLoader" class="hidden absolute right-5 top-1/2 transform -translate-y-1/2">
+                                    <div class="animate-spin rounded-full h-6 w-6 border-2 border-blue-200 border-t-[#3A46A5]"></div>
+                                </div>
                             </div>
                         </div>
                         
-                        <!-- Quick Filters -->
-                        <div class="mt-3 flex flex-wrap gap-2" id="quickFilters">
-                            <button class="px-3 py-1 bg-blue-500 text-white text-sm rounded-full hover:bg-blue-400 transition-colors" data-filter="all">All Products</button>
-                            <button class="px-3 py-1 bg-white text-blue-600 text-sm rounded-full hover:bg-gray-100 transition-colors" data-filter="it-infrastructure">IT Infrastructure</button>
-                            <button class="px-3 py-1 bg-white text-blue-600 text-sm rounded-full hover:bg-gray-100 transition-colors" data-filter="telecommunications">Telecommunications</button>
-                            <button class="px-3 py-1 bg-white text-blue-600 text-sm rounded-full hover:bg-gray-100 transition-colors" data-filter="infrastructure">Infrastructure</button>
-                            <button class="px-3 py-1 bg-white text-blue-600 text-sm rounded-full hover:bg-gray-100 transition-colors" data-filter="laboratory">Laboratory</button>
+                        <!-- Modern Quick Filters -->
+                        <div class="mt-4 flex flex-wrap gap-3" id="quickFilters">
+                            <button class="px-4 py-2 bg-white text-[#3A46A5] text-sm font-semibold rounded-xl hover:bg-white/90 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5" data-filter="all">All Products</button>
+                            <button class="px-4 py-2 bg-white/20 text-white text-sm font-medium rounded-xl hover:bg-white/30 transition-all duration-200 backdrop-blur-sm" data-filter="it-infrastructure">IT Infrastructure</button>
+                            <button class="px-4 py-2 bg-white/20 text-white text-sm font-medium rounded-xl hover:bg-white/30 transition-all duration-200 backdrop-blur-sm" data-filter="telecommunications">Telecommunications</button>
+                            <button class="px-4 py-2 bg-white/20 text-white text-sm font-medium rounded-xl hover:bg-white/30 transition-all duration-200 backdrop-blur-sm" data-filter="infrastructure">Infrastructure</button>
+                            <button class="px-4 py-2 bg-white/20 text-white text-sm font-medium rounded-xl hover:bg-white/30 transition-all duration-200 backdrop-blur-sm" data-filter="laboratory">Laboratory</button>
                         </div>
                     </div>
                     
-                    <!-- Search Results -->
-                    <div class="bg-white px-6 py-4 max-h-96 overflow-y-auto" id="searchResultsContainer">
+                    <!-- Modern Search Results -->
+                    <div class="bg-gradient-to-b from-gray-50/50 to-white px-8 py-6 max-h-[28rem] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent" id="searchResultsContainer">
                         <div id="searchSuggestions">
                             <!-- Initial suggestions will be populated here -->
                         </div>
@@ -601,22 +616,35 @@ class UniversalSearchSystem {
                             <!-- Search results will be populated here -->
                         </div>
                         
-                        <div id="noResults" class="hidden text-center py-8">
-                            <i class="fas fa-search text-gray-300 text-4xl mb-4"></i>
-                            <h4 class="text-lg font-medium text-gray-900 mb-2">No products found</h4>
-                            <p class="text-gray-500">Try adjusting your search terms or browse our categories</p>
+                        <div id="noResults" class="hidden text-center py-12">
+                            <div class="mb-6">
+                                <div class="w-20 h-20 mx-auto bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-search text-gray-400 text-2xl"></i>
+                                </div>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-3">No products found</h4>
+                            <p class="text-gray-500 text-lg max-w-md mx-auto leading-relaxed">Try adjusting your search terms or explore our product categories</p>
                         </div>
                     </div>
                     
-                    <!-- Search Footer -->
-                    <div class="bg-gray-50 px-6 py-3 border-t">
-                        <div class="flex items-center justify-between text-sm text-gray-500">
-                            <div class="flex items-center space-x-4">
-                                <span><kbd class="px-2 py-1 bg-gray-200 rounded text-xs">↑↓</kbd> Navigate</span>
-                                <span><kbd class="px-2 py-1 bg-gray-200 rounded text-xs">Enter</kbd> Select</span>
-                                <span><kbd class="px-2 py-1 bg-gray-200 rounded text-xs">Esc</kbd> Close</span>
+                    <!-- Modern Search Footer -->
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 px-8 py-4 border-t border-gray-200/50">
+                        <div class="flex items-center justify-between text-sm">
+                            <div class="flex items-center space-x-6">
+                                <span class="flex items-center space-x-2 text-gray-600">
+                                    <kbd class="px-3 py-1.5 bg-white border border-gray-300 rounded-lg text-xs font-semibold shadow-sm">↑↓</kbd>
+                                    <span class="font-medium">Navigate</span>
+                                </span>
+                                <span class="flex items-center space-x-2 text-gray-600">
+                                    <kbd class="px-3 py-1.5 bg-white border border-gray-300 rounded-lg text-xs font-semibold shadow-sm">Enter</kbd>
+                                    <span class="font-medium">Select</span>
+                                </span>
+                                <span class="flex items-center space-x-2 text-gray-600">
+                                    <kbd class="px-3 py-1.5 bg-white border border-gray-300 rounded-lg text-xs font-semibold shadow-sm">Esc</kbd>
+                                    <span class="font-medium">Close</span>
+                                </span>
                             </div>
-                            <div id="searchStats" class="text-xs">
+                            <div id="searchStats" class="text-xs font-medium text-gray-500">
                                 <!-- Search statistics -->
                             </div>
                         </div>
@@ -789,60 +817,84 @@ class UniversalSearchSystem {
         const relevanceScore = product.relevanceScore || 0;
         
         return `
-            <div class="search-result-card bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow cursor-pointer" 
+            <div class="search-result-card group bg-gradient-to-r from-white/80 to-white/60 backdrop-blur-sm border border-white/30 rounded-2xl p-6 hover:shadow-xl hover:shadow-[#3A46A5]/10 transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:bg-gradient-to-r hover:from-white/90 hover:to-white/70" 
                  onclick="window.location.href='${product.url}'" data-product-id="${product.id}">
-                <div class="flex items-start space-x-4">
-                    <img src="${product.image}" alt="${product.name}" 
-                         class="w-16 h-16 object-cover rounded-lg flex-shrink-0 bg-gray-100">
+                <div class="flex items-start space-x-5">
+                    <div class="relative">
+                        <img src="${product.image}" alt="${product.name}" 
+                             class="w-20 h-20 object-cover rounded-2xl flex-shrink-0 bg-gradient-to-br from-gray-100 to-gray-200 shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
                     
                     <div class="flex-1 min-w-0">
                         <div class="flex items-start justify-between">
                             <div class="flex-1">
-                                <h6 class="text-sm font-semibold text-gray-900 mb-1">
+                                <h6 class="text-base font-bold text-gray-900 mb-2 group-hover:text-[#3A46A5] transition-colors duration-200">
                                     ${this.highlightMatches(product.name, query)}
-                                    ${product.rating ? `<span class="ml-2 text-xs text-yellow-500">★ ${product.rating}</span>` : ''}
+                                    ${product.rating ? `<span class="ml-3 inline-flex items-center px-2 py-1 text-xs font-medium bg-gradient-to-r from-yellow-400 to-orange-400 text-white rounded-full shadow-sm">★ ${product.rating}</span>` : ''}
                                 </h6>
-                                <p class="text-xs text-gray-600 mb-2 line-clamp-2">
+                                <p class="text-sm text-gray-600 mb-3 line-clamp-2 leading-relaxed">
                                     ${this.highlightMatches(product.description, query)}
                                 </p>
                             </div>
-                            <div class="flex flex-col items-end ml-4">
-                                <span class="text-xs text-gray-500 mb-1">${product.category}</span>
+                            <div class="flex flex-col items-end ml-6">
+                                <span class="inline-flex items-center px-3 py-1 text-xs font-semibold bg-gradient-to-r from-blue-100 to-indigo-100 text-[#3A46A5] rounded-full mb-2 shadow-sm">${product.category}</span>
                                 ${product.availability ? `
-                                    <span class="px-2 py-1 text-xs rounded-full ${
-                                        product.availability === 'In Stock' ? 'bg-green-100 text-green-600' :
-                                        product.availability === 'Made to Order' ? 'bg-yellow-100 text-yellow-600' :
-                                        'bg-gray-100 text-gray-600'
-                                    }">${product.availability}</span>
+                                    <span class="inline-flex items-center px-3 py-1.5 text-xs font-semibold rounded-full shadow-sm ${
+                                        product.availability === 'In Stock' ? 'bg-gradient-to-r from-green-100 to-lime-100 text-[#4EAE01]' :
+                                        product.availability === 'Made to Order' ? 'bg-gradient-to-r from-yellow-100 to-amber-100 text-yellow-700' :
+                                        'bg-gradient-to-r from-gray-100 to-slate-100 text-gray-700'
+                                    }">
+                                        <div class="w-2 h-2 rounded-full mr-2 ${
+                                            product.availability === 'In Stock' ? 'bg-[#4EAE01]' :
+                                            product.availability === 'Made to Order' ? 'bg-yellow-500' :
+                                            'bg-gray-500'
+                                        }"></div>
+                                        ${product.availability}
+                                    </span>
                                 ` : ''}
                             </div>
                         </div>
                         
-                        <!-- Key specifications -->
+                        <!-- Modern Key specifications -->
                         ${product.specifications ? `
-                            <div class="mt-2 flex flex-wrap gap-2">
+                            <div class="mt-4 flex flex-wrap gap-2">
                                 ${Object.entries(product.specifications).slice(0, 3).map(([key, value]) => `
-                                    <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">
-                                        ${key}: ${value}
+                                    <span class="inline-flex items-center text-xs bg-gradient-to-r from-gray-50 to-gray-100 text-gray-700 px-3 py-1.5 rounded-xl border border-gray-200/50 font-medium shadow-sm">
+                                        <span class="text-gray-500 mr-1">${key}:</span> ${value}
                                     </span>
                                 `).join('')}
                             </div>
                         ` : ''}
                         
-                        <!-- Tags -->
-                        <div class="mt-2 flex flex-wrap gap-1">
+                        <!-- Modern Tags -->
+                        <div class="mt-3 flex flex-wrap gap-2">
                             ${product.tags.slice(0, 4).map(tag => `
-                                <span class="text-xs bg-blue-50 text-blue-600 px-2 py-1 rounded-full">
+                                <span class="inline-flex items-center text-xs bg-gradient-to-r from-blue-50 to-indigo-50 text-[#3A46A5] px-3 py-1 rounded-full border border-blue-100 font-medium shadow-sm hover:shadow-md transition-shadow duration-200">
+                                    <i class="fas fa-tag text-blue-400 mr-1.5 text-xs"></i>
                                     ${this.highlightMatches(tag, query)}
                                 </span>
                             `).join('')}
                         </div>
                         
-                        <!-- Match indicators -->
+                        <!-- Modern Match indicators -->
                         ${matchedFields.length > 0 ? `
-                            <div class="mt-2 text-xs text-gray-500">
-                                <i class="fas fa-bullseye mr-1"></i>Matches: ${matchedFields.join(', ')}
-                                ${relevanceScore > 0 ? `<span class="ml-2">Score: ${Math.round(relevanceScore)}</span>` : ''}
+                            <div class="mt-4 p-3 bg-gradient-to-r from-green-50 to-lime-50 rounded-xl border border-green-100">
+                                <div class="flex items-center text-sm text-[#4EAE01]">
+                                    <div class="flex items-center justify-center w-6 h-6 bg-green-100 rounded-full mr-3">
+                                        <i class="fas fa-bullseye text-[#4EAE01] text-xs"></i>
+                                    </div>
+                                    <span class="font-semibold">Matches:</span>
+                                    <span class="ml-2 font-medium">${matchedFields.join(', ')}</span>
+                                    ${relevanceScore > 0 ? `
+                                        <div class="ml-auto flex items-center">
+                                            <span class="text-xs text-[#4EAE01] font-medium mr-2">Relevance:</span>
+                                            <div class="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-[#4EAE01] to-green-500 text-white text-xs font-bold rounded-full shadow-sm">
+                                                ${Math.round(relevanceScore)}
+                                            </div>
+                                        </div>
+                                    ` : ''}
+                                </div>
                             </div>
                         ` : ''}
                     </div>
@@ -1148,10 +1200,11 @@ class UniversalSearchSystem {
     initializeSearch() {
         this.loadSearchAnalytics();
         
+        // Always create the search interface for all pages
+        this.createSearchInterface();
+        
         if (this.isSearchResultsPage) {
             this.initializeSearchResultsPage();
-        } else {
-            this.createSearchInterface();
         }
     }
     

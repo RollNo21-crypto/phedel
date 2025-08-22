@@ -127,83 +127,91 @@
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
                     <div class="flex items-center space-x-2">
-                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background-color: #3A46A5;">
                             <i class="fas fa-bolt text-white text-sm"></i>
                         </div>
-                        <span class="text-xl font-bold text-gray-900">PHEDEL</span>
+                        <span class="text-xl font-bold text-gray-900">PHEDEL </span>
                     </div>
                 </div>
                 <div class="hidden md:flex lg:flex">
                     <div class="ml-10 flex items-baseline space-x-4 lg:space-x-8">
-                        <a href="index.html" class="text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Home</a>
-                        <a href="services.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Services</a>
+                        <a href="index.html" class="text-gray-700 px-2 lg:px-3 py-2 text-sm font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Home</a>
+                        <a href="services.html" class="px-2 lg:px-3 py-2 text-sm font-medium" style="color: #3A46A5;">Services</a>
+                        
+                        <!-- Products dropdown -->
                         <div class="relative group">
-                            <a href="products.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium flex items-center">
+                            <a href="products.html" class="text-gray-700 px-2 lg:px-3 py-2 text-sm font-medium flex items-center transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">
                                 Products
                                 <i class="fas fa-chevron-down ml-1 text-xs"></i>
                             </a>
-                            <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50">
-                                <div class="py-1" role="menu" aria-orientation="vertical">
-                                    <a href="data-centre-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Data Centre</a>
-                                    <a href="telecom-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Telecom</a>
-                                    <a href="power-it-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Power & IT</a>
-                                    <a href="industrial-rack-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Industrial Rack</a>
-                                    <a href="civil-work-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Civil Work</a>
-                                    <a href="laboratory-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Laboratory</a>
-                                    <a href="accessories-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Accessories</a>
-                                    <a href="products.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-medium" role="menuitem">All Products</a>
+                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                                <div class="py-1">
+                                    <a href="data-centre-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Data Centre</a>
+                                    <a href="telecom-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Telecom</a>
+                                    <a href="power-it-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Power & IT</a>
+                                    <a href="industrial-rack-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Industrial Rack</a>
+                                    <a href="civil-work-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Civil Work</a>
+                                    <a href="laboratory-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Laboratory</a>
+                                    <a href="accessories-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Accessories</a>
+                                    <a href="products.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">All Products</a>
                                 </div>
                             </div>
                         </div>
-                        <a href="about.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">About</a>
-                        <a href="contact.html" class="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium">Contact</a>
+                        <a href="about.html" class="text-gray-700 px-2 lg:px-3 py-2 text-sm font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">About</a>
+                        <a href="contact.html" class="text-gray-700 px-2 lg:px-3 py-2 text-sm font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Contact</a>
                     </div>
                 </div>
                 <div class="flex items-center space-x-2 lg:space-x-4">
-                    <button id="search-button" class="text-gray-700 hover:text-blue-600 p-2 rounded-lg hover:bg-gray-100 transition-colors" title="Search Products (Ctrl+K)">
+                    <button id="search-button" class="text-gray-700 p-2 rounded-lg transition-colors" title="Search Products (Ctrl+K)" onmouseover="this.style.color='#3A46A5'; this.style.backgroundColor='#f3f4f6'" onmouseout="this.style.color=''; this.style.backgroundColor=''">
                         <i class="fas fa-search text-lg"></i>
                     </button>
-                    <a href="contact.html" class="bg-blue-600 text-white px-3 lg:px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700">Get Quote</a>
-                    <div class="md:hidden lg:hidden">
-                        <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600">
-                            <i class="fas fa-bars text-xl"></i>
-                        </button>
-                    </div>
+                    <a href="contact.html" class="hidden md:inline-block text-white px-3 lg:px-4 py-2 rounded-lg text-sm font-medium transition-colors" style="background-color: #3A46A5;" onmouseover="this.style.backgroundColor='#2d3a8c'" onmouseout="this.style.backgroundColor='#3A46A5'">Get Quote</a>
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-inset" style="focus:ring-color: #3A46A5;" onmouseover="this.style.color='#3A46A5'; this.style.backgroundColor='#f3f4f6'" onmouseout="this.style.color=''; this.style.backgroundColor=''">
+                        <span class="sr-only">Open main menu</span>
+                        <svg id="hamburger-icon" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg id="close-icon" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
                 </div>
             </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden lg:hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <button id="mobile-search-button" class="block w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600">
-                    <i class="fas fa-search mr-2"></i>Search Products
-                </button>
-                <a href="index.html" class="block px-3 py-2 text-blue-600">Home</a>
-                <a href="services.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Services</a>
-                <div class="relative">
-                    <button id="mobile-products-dropdown" class="flex items-center justify-between w-full px-3 py-2 text-gray-700 hover:text-blue-600">
-                        Products
-                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+                    <button id="mobile-search-button" class="block w-full text-left px-3 py-2 text-gray-700 text-base font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">
+                        <i class="fas fa-search mr-2"></i>Search Products
                     </button>
-                    <div id="mobile-products-menu" class="hidden pl-4 py-2 space-y-1">
-                        <a href="data-centre-category.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Data Centre</a>
-                        <a href="telecom-category.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Telecom</a>
-                        <a href="power-it-category.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Power & IT</a>
-                        <a href="industrial-rack-category.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Industrial Rack</a>
-                        <a href="civil-work-category.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Civil Work</a>
-                        <a href="laboratory-category.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Laboratory</a>
-                        <a href="accessories-category.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Accessories</a>
-                        <a href="products.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">All Products</a>
+                    <a href="index.html" class="text-gray-700 block px-3 py-2 text-base font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Home</a>
+                    <a href="services.html" class="block px-3 py-2 text-base font-medium" style="color: #3A46A5;">Services</a>
+                    
+                    <!-- Products dropdown for mobile -->
+                    <div class="relative">
+                        <button id="mobile-products-dropdown" class="text-gray-700 hover:text-blue-600 flex justify-between w-full px-3 py-2 rounded-md text-base font-medium transition duration-300">
+                            Products
+                            <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-200"></i>
+                        </button>
+                        <div id="mobile-products-menu" class="hidden px-4 py-2 bg-gray-50">
+                            <a href="data-centre-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Data Centre</a>
+                            <a href="telecom-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Telecom</a>
+                            <a href="power-it-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Power & IT</a>
+                            <a href="industrial-rack-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Industrial Rack</a>
+                            <a href="civil-work-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Civil Work</a>
+                            <a href="laboratory-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Laboratory</a>
+                            <a href="accessories-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Accessories</a>
+                            <a href="products.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">All Products</a>
+                        </div>
                     </div>
+                    
+                    <a href="about.html" class="text-gray-700 block px-3 py-2 text-base font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">About</a>
+                    <a href="contact.html" class="text-gray-700 block px-3 py-2 text-base font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Contact</a>
+                    <a href="contact.html" class="text-white block px-3 py-2 text-base font-medium transition-colors rounded-lg mx-3 mt-4" style="background-color: #3A46A5;" onmouseover="this.style.backgroundColor='#2d3a8c'" onmouseout="this.style.backgroundColor='#3A46A5'">Get Quote</a>
                 </div>
-                <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">About</a>
-                <a href="contact.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
-                <a href="contact.html" class="block px-3 py-2 bg-blue-600 text-white rounded-lg mx-3 mt-2">Get Quote</a>
             </div>
         </div>
     </nav>
-
     <!-- Hero Section -->
 <section class="bg-gradient-to-br from-blue-50 to-indigo-100 relative overflow-hidden py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -211,13 +219,13 @@
             
             <!-- Left Side - Main Content -->
             <div class="text-left">
-                <div class="inline-flex items-center space-x-2 bg-blue-100 rounded-full px-4 py-2 mb-6">
-                    <i class="fas fa-industry text-blue-600"></i>
-                    <span class="text-blue-600 font-medium text-sm">25+ Years of Excellence</span>
+                <div class="inline-flex items-center space-x-2 rounded-full px-4 py-2 mb-6" style="background-color: rgba(58, 70, 165, 0.1);">
+                    <i class="fas fa-industry" style="color: #3A46A5;"></i>
+                    <span class="font-medium text-sm" style="color: #3A46A5;">25+ Years of Excellence</span>
                 </div>
                 <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                     PHEDEL - Industrial Storage &<br>
-                    <span class="text-blue-600">Power Solutions</span> in Bangalore
+                    <span style="color: #3A46A5;">Power Solutions</span> in Bangalore
                 </h1>
                 <p class="text-xl text-gray-600 mb-8">
                     PHEDEL Enterprises Inc. - Leading manufacturer of Storage Racks, Solar Solutions, Data Center Infrastructure, and IT Solutions in Bangalore, Karnataka. Serving India with 600+ skilled professionals and 2L+ sqft manufacturing facility.
@@ -226,24 +234,24 @@
                 <!-- Key Stats -->
                 <div class="grid grid-cols-3 gap-4 mb-8">
                     <div class="text-center">
-                        <div class="text-2xl font-bold text-blue-600">600+</div>
+                        <div class="text-2xl font-bold" style="color: #3A46A5;">600+</div>
                         <div class="text-sm text-gray-600">Professionals</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-2xl font-bold text-green-600">2L+</div>
+                        <div class="text-2xl font-bold" style="color: #4EAE01;">2L+</div>
                         <div class="text-sm text-gray-600">Sqft Facility</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-2xl font-bold text-purple-600">ISO</div>
+                        <div class="text-2xl font-bold" style="color: #3A46A5;">ISO</div>
                         <div class="text-sm text-gray-600">Certified</div>
                     </div>
                 </div>
                 
                 <div class="flex flex-col sm:flex-row gap-4 mb-12">
-                    <a href="contact.html" class="bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-all hover:shadow-xl transform hover:-translate-y-1 text-center">
+                    <a href="contact.html" class="text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all hover:shadow-xl transform hover:-translate-y-1 text-center" style="background-color: #3A46A5;" onmouseover="this.style.backgroundColor='#2d3a8c'" onmouseout="this.style.backgroundColor='#3A46A5'">
                         Request Quote
                     </a>
-                    <a href="services.html" class="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-600 hover:text-white transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center">
+                    <a href="services.html" class="border-2 px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center" style="border-color: #3A46A5; color: #3A46A5;" onmouseover="this.style.backgroundColor='#3A46A5'; this.style.color='white'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#3A46A5'">
                        View Services
                     </a>
                 </div>
@@ -341,7 +349,7 @@
                     </div>
                     
                     <!-- Manufacturing Capacity -->
-                    <div class="absolute -bottom-8 -left-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-2xl p-4 shadow-xl z-20 transform -rotate-6">
+                    <div class="absolute -bottom-8 -left-16 bg-gradient-to-r from-[#3a46a5] to-[#2d3a8c] text-white rounded-2xl p-4 shadow-xl z-20 transform -rotate-6">
                         <div class="flex items-center space-x-3">
                             <i class="fas fa-industry text-2xl"></i>
                             <div>
@@ -354,10 +362,10 @@
                     <!-- Global Reach -->
                     <div class="absolute -top-2 -right-12 bg-white rounded-2xl p-4 shadow-xl z-20 transform -rotate-3">
                         <div class="text-center">
-                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                                <i class="fas fa-globe text-purple-600 text-xl"></i>
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <i class="fas fa-globe text-[#4eae01] text-xl"></i>
                             </div>
-                            <div class="text-lg font-bold text-purple-600">Global</div>
+                            <div class="text-lg font-bold text-[#4eae01]">Global</div>
                             <div class="text-xs text-gray-600">Reach & Support</div>
                         </div>
                     </div>
@@ -382,7 +390,7 @@
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="text-blue-600 font-medium text-sm uppercase tracking-wide">PHEDEL Solutions</span>
+                <span class="font-medium text-sm uppercase tracking-wide" style="color: #3A46A5;">PHEDEL Solutions</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
                     PHEDEL Industrial Services - Bangalore, Karnataka
                 </h2>
@@ -393,8 +401,8 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Consultation Services -->
-                <div class="group bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div class="group rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2" style="background: linear-gradient(135deg, rgba(78, 174, 1, 0.05), rgba(78, 174, 1, 0.1));">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform" style="background-color: #4EAE01;">
                         <i class="fas fa-comments text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Consultation Services</h3>
@@ -404,14 +412,14 @@
                         <li>• System optimization strategies</li>
                         <li>• Compliance consulting</li>
                     </ul>
-                    <a href="services.html" class="text-green-600 font-medium hover:text-green-700 transition-colors">
+                    <a href="services.html" class="font-medium transition-colors" style="color: #4EAE01;" onmouseover="this.style.color='#3d8a01'" onmouseout="this.style.color='#4EAE01'">
                         Learn More →
                     </a>
                 </div>
                 
                 <!-- Product Development -->
-                <div class="group bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div class="group rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2" style="background: linear-gradient(135deg, rgba(58, 70, 165, 0.05), rgba(58, 70, 165, 0.1));">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform" style="background-color: #3A46A5;">
                         <i class="fas fa-cogs text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Product Development</h3>
@@ -421,14 +429,14 @@
                         <li>• Power distribution units</li>
                         <li>• Modular systems</li>
                     </ul>
-                    <a href="services.html" class="text-blue-600 font-medium hover:text-blue-700 transition-colors">
+                    <a href="services.html" class="font-medium transition-colors" style="color: #3A46A5;" onmouseover="this.style.color='#2d3a8c'" onmouseout="this.style.color='#3A46A5'">
                         Learn More →
                     </a>
                 </div>
                 
                 <!-- Logistics & Delivery -->
-                <div class="group bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div class="group rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2" style="background: linear-gradient(135deg, rgba(78, 174, 1, 0.05), rgba(78, 174, 1, 0.1));">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform" style="background-color: #4EAE01;">
                         <i class="fas fa-truck text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Door Delivery & Logistics</h3>
@@ -438,14 +446,14 @@
                         <li>• Professional installation</li>
                         <li>• Supply chain management</li>
                     </ul>
-                    <a href="services.html" class="text-purple-600 font-medium hover:text-purple-700 transition-colors">
+                    <a href="services.html" class="font-medium transition-colors" style="color: #4EAE01;" onmouseover="this.style.color='#3d8a01'" onmouseout="this.style.color='#4EAE01'">
                         Learn More →
                     </a>
                 </div>
                 
                 <!-- Product Sourcing -->
-                <div class="group bg-gradient-to-br from-orange-50 to-orange-100 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div class="group rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2" style="background: linear-gradient(135deg, rgba(58, 70, 165, 0.05), rgba(58, 70, 165, 0.1));">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform" style="background-color: #3A46A5;">
                         <i class="fas fa-search text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Product Sourcing</h3>
@@ -455,14 +463,14 @@
                         <li>• Cost-effective sourcing</li>
                         <li>• Vendor management</li>
                     </ul>
-                    <a href="services.html" class="text-orange-600 font-medium hover:text-orange-700 transition-colors">
+                    <a href="services.html" class="font-medium transition-colors" style="color: #3A46A5;" onmouseover="this.style.color='#2d3a8c'" onmouseout="this.style.color='#3A46A5'">
                         Learn More →
                     </a>
                 </div>
                 
                 <!-- Datacenter Solutions -->
-                <div class="group bg-gradient-to-br from-teal-50 to-teal-100 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-teal-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div class="group rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2" style="background: linear-gradient(135deg, rgba(78, 174, 1, 0.05), rgba(78, 174, 1, 0.1));">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform" style="background-color: #4EAE01;">
                         <i class="fas fa-server text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Datacenter Solutions</h3>
@@ -472,14 +480,14 @@
                         <li>• Redundant power systems</li>
                         <li>• Scalable infrastructure</li>
                     </ul>
-                    <a href="services.html" class="text-teal-600 font-medium hover:text-teal-700 transition-colors">
+                    <a href="services.html" class="font-medium transition-colors" style="color: #4EAE01;" onmouseover="this.style.color='#3d8a01'" onmouseout="this.style.color='#4EAE01'">
                         Learn More →
                     </a>
                 </div>
                 
                 <!-- Certification Services -->
-                <div class="group bg-gradient-to-br from-red-50 to-red-100 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-red-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div class="group rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2" style="background: linear-gradient(135deg, rgba(58, 70, 165, 0.05), rgba(58, 70, 165, 0.1));">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform" style="background-color: #3A46A5;">
                         <i class="fas fa-certificate text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Certification Services</h3>
@@ -489,14 +497,14 @@
                         <li>• Quality assurance testing</li>
                         <li>• Documentation assistance</li>
                     </ul>
-                    <a href="services.html" class="text-red-600 font-medium hover:text-red-700 transition-colors">
+                    <a href="services.html" class="font-medium transition-colors" style="color: #3A46A5;" onmouseover="this.style.color='#2d3a8c'" onmouseout="this.style.color='#3A46A5'">
                         Learn More →
                     </a>
                 </div>
             </div>
             
             <div class="text-center mt-12">
-                <a href="services.html" class="bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-all hover:shadow-xl transform hover:-translate-y-1">
+                <a href="services.html" class="text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all hover:shadow-xl transform hover:-translate-y-1" style="background-color: #3A46A5;" onmouseover="this.style.backgroundColor='#2d3a8c'" onmouseout="this.style.backgroundColor='#3A46A5'">
                     View All Services
                 </a>
             </div>
@@ -507,7 +515,7 @@
     <section class="py-20 bg-gradient-to-br from-gray-900 to-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="text-blue-400 font-medium text-sm uppercase tracking-wide">PHEDEL Featured Projects</span>
+                <span class="font-medium text-sm uppercase tracking-wide" style="color: #3A46A5;">PHEDEL Featured Projects</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white mt-2 mb-4">
                     PHEDEL Excellence - Industrial Projects in India
                 </h2>
@@ -519,14 +527,14 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Hyperscale Data Center -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="h-48 bg-gradient-to-br from-blue-600 to-blue-800 relative overflow-hidden">
+                    <div class="h-48 relative overflow-hidden" style="background: linear-gradient(135deg, #3A46A5, #2d3a8c);">
                         <div class="absolute inset-0 bg-black bg-opacity-20"></div>
                         <div class="absolute bottom-4 left-4 text-white">
                             <div class="text-sm font-medium opacity-90">Data Center Infrastructure</div>
                             <div class="text-lg font-bold">Hyperscale Data Center</div>
                         </div>
                         <div class="absolute top-4 right-4">
-                            <span class="bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium">Completed</span>
+                            <span class="text-white px-2 py-1 rounded-full text-xs font-medium" style="background-color: #4EAE01;">Completed</span>
                         </div>
                     </div>
                     <div class="p-6">
@@ -534,15 +542,15 @@
                         <p class="text-gray-600 mb-4">Complete data center infrastructure with redundant power systems, advanced cooling, and high-density server racks.</p>
                         <div class="grid grid-cols-2 gap-4 mb-4">
                             <div class="text-center">
-                                <div class="text-2xl font-bold text-blue-600">99.9%</div>
+                                <div class="text-2xl font-bold" style="color: #3A46A5;">99.9%</div>
                                 <div class="text-xs text-gray-500">Uptime</div>
                             </div>
                             <div class="text-center">
-                                <div class="text-2xl font-bold text-green-600">50MW</div>
+                                <div class="text-2xl font-bold" style="color: #4EAE01;">50MW</div>
                                 <div class="text-xs text-gray-500">Power Capacity</div>
                             </div>
                         </div>
-                        <a href="portfolio.html" class="text-blue-600 font-medium hover:text-blue-700 transition-colors">
+                        <a href="portfolio.html" class="font-medium transition-colors" style="color: #3A46A5;" onmouseover="this.style.color='#2d3a8c'" onmouseout="this.style.color='#3A46A5'">
                             View Details →
                         </a>
                     </div>
@@ -550,14 +558,14 @@
                 
                 <!-- Manufacturing Automation -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="h-48 bg-gradient-to-br from-green-600 to-green-800 relative overflow-hidden">
+                    <div class="h-48 relative overflow-hidden" style="background: linear-gradient(135deg, #4EAE01, #3d8a01);">
                         <div class="absolute inset-0 bg-black bg-opacity-20"></div>
                         <div class="absolute bottom-4 left-4 text-white">
                             <div class="text-sm font-medium opacity-90">Manufacturing Solutions</div>
                             <div class="text-lg font-bold">Smart Manufacturing</div>
                         </div>
                         <div class="absolute top-4 right-4">
-                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium">In Progress</span>
+                            <span class="text-white px-2 py-1 rounded-full text-xs font-medium" style="background-color: #3A46A5;">In Progress</span>
                         </div>
                     </div>
                     <div class="p-6">
@@ -565,15 +573,15 @@
                         <p class="text-gray-600 mb-4">State-of-the-art manufacturing automation with IoT integration and real-time monitoring systems.</p>
                         <div class="grid grid-cols-2 gap-4 mb-4">
                             <div class="text-center">
-                                <div class="text-2xl font-bold text-green-600">40%</div>
+                                <div class="text-2xl font-bold" style="color: #4EAE01;">40%</div>
                                 <div class="text-xs text-gray-500">Efficiency Gain</div>
                             </div>
                             <div class="text-center">
-                                <div class="text-2xl font-bold text-purple-600">24/7</div>
+                                <div class="text-2xl font-bold" style="color: #3A46A5;">24/7</div>
                                 <div class="text-xs text-gray-500">Operations</div>
                             </div>
                         </div>
-                        <a href="portfolio.html" class="text-green-600 font-medium hover:text-green-700 transition-colors">
+                        <a href="portfolio.html" class="font-medium transition-colors" style="color: #4EAE01;" onmouseover="this.style.color='#3d8a01'" onmouseout="this.style.color='#4EAE01'">
                             View Details →
                         </a>
                     </div>
@@ -581,14 +589,14 @@
                 
                 <!-- Logistics Hub -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="h-48 bg-gradient-to-br from-purple-600 to-purple-800 relative overflow-hidden">
+                    <div class="h-48 relative overflow-hidden" style="background: linear-gradient(135deg, #3A46A5, #2d3a8c);">
                         <div class="absolute inset-0 bg-black bg-opacity-20"></div>
                         <div class="absolute bottom-4 left-4 text-white">
                             <div class="text-sm font-medium opacity-90">Logistics Infrastructure</div>
                             <div class="text-lg font-bold">Distribution Center</div>
                         </div>
                         <div class="absolute top-4 right-4">
-                            <span class="bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-medium">Planning</span>
+                            <span class="text-white px-2 py-1 rounded-full text-xs font-medium" style="background-color: #4EAE01;">Planning</span>
                         </div>
                     </div>
                     <div class="p-6">
@@ -596,15 +604,15 @@
                         <p class="text-gray-600 mb-4">Comprehensive logistics infrastructure with automated sorting, tracking systems, and optimized workflows.</p>
                         <div class="grid grid-cols-2 gap-4 mb-4">
                             <div class="text-center">
-                                <div class="text-2xl font-bold text-purple-600">60%</div>
+                                <div class="text-2xl font-bold" style="color: #3A46A5;">60%</div>
                                 <div class="text-xs text-gray-500">Faster Processing</div>
                             </div>
                             <div class="text-center">
-                                <div class="text-2xl font-bold text-orange-600">95%</div>
+                                <div class="text-2xl font-bold" style="color: #4EAE01;">95%</div>
                                 <div class="text-xs text-gray-500">Accuracy Rate</div>
                             </div>
                         </div>
-                        <a href="portfolio.html" class="text-purple-600 font-medium hover:text-purple-700 transition-colors">
+                        <a href="portfolio.html" class="font-medium transition-colors" style="color: #3A46A5;" onmouseover="this.style.color='#2d3a8c'" onmouseout="this.style.color='#3A46A5'">
                             View Details →
                         </a>
                     </div>
@@ -612,7 +620,7 @@
             </div>
             
             <div class="text-center mt-12">
-                <a href="portfolio.html" class="bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-all hover:shadow-xl transform hover:-translate-y-1">
+                <a href="portfolio.html" class="text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all hover:shadow-xl transform hover:-translate-y-1" style="background-color: #3A46A5;" onmouseover="this.style.backgroundColor='#2d3a8c'" onmouseout="this.style.backgroundColor='#3A46A5'">
                     View All Projects
                 </a>
             </div>
@@ -623,7 +631,7 @@
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="text-blue-600 font-medium text-sm uppercase tracking-wide">Achievements</span>
+                <span class="font-medium text-sm uppercase tracking-wide" style="color: #3A46A5;">Achievements</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
                     Awards & Certifications
                 </h2>
@@ -634,43 +642,43 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Best Industrial Solution Award -->
-                <div class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div class="rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1" style="background: linear-gradient(135deg, rgba(78, 174, 1, 0.05), rgba(78, 174, 1, 0.1));">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style="background: linear-gradient(135deg, #4EAE01, #3d8a01);">
                         <i class="fas fa-trophy text-white text-2xl"></i>
                     </div>
                     <h3 class="text-lg font-bold text-gray-900 mb-2">Best Industrial Solution</h3>
                     <p class="text-sm text-gray-600 mb-3">Industry Excellence Award 2023</p>
-                    <div class="text-xs text-orange-600 font-medium">Manufacturing Innovation</div>
+                    <div class="text-xs font-medium" style="color: #4EAE01;">Manufacturing Innovation</div>
                 </div>
                 
                 <!-- ISO 9001:2015 -->
-                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div class="rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1" style="background: linear-gradient(135deg, rgba(58, 70, 165, 0.05), rgba(58, 70, 165, 0.1));">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style="background: linear-gradient(135deg, #3A46A5, #2d3a8c);">
                         <i class="fas fa-certificate text-white text-2xl"></i>
                     </div>
                     <h3 class="text-lg font-bold text-gray-900 mb-2">ISO 9001:2015</h3>
                     <p class="text-sm text-gray-600 mb-3">Quality Management System</p>
-                    <div class="text-xs text-blue-600 font-medium">Certified Excellence</div>
+                    <div class="text-xs font-medium" style="color: #3A46A5;">Certified Excellence</div>
                 </div>
                 
                 <!-- ISO 27001:2013 -->
-                <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div class="rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1" style="background: linear-gradient(135deg, rgba(78, 174, 1, 0.05), rgba(78, 174, 1, 0.1));">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style="background: linear-gradient(135deg, #4EAE01, #3d8a01);">
                         <i class="fas fa-shield-alt text-white text-2xl"></i>
                     </div>
                     <h3 class="text-lg font-bold text-gray-900 mb-2">ISO 27001:2013</h3>
                     <p class="text-sm text-gray-600 mb-3">Information Security Management</p>
-                    <div class="text-xs text-green-600 font-medium">Security Certified</div>
+                    <div class="text-xs font-medium" style="color: #4EAE01;">Security Certified</div>
                 </div>
                 
                 <!-- Client Satisfaction -->
-                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div class="rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1" style="background: linear-gradient(135deg, rgba(58, 70, 165, 0.05), rgba(58, 70, 165, 0.1));">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style="background: linear-gradient(135deg, #3A46A5, #2d3a8c);">
                         <i class="fas fa-star text-white text-2xl"></i>
                     </div>
                     <h3 class="text-lg font-bold text-gray-900 mb-2">5-Star Rating</h3>
                     <p class="text-sm text-gray-600 mb-3">99.2% Client Satisfaction</p>
-                    <div class="text-xs text-purple-600 font-medium">Customer Excellence</div>
+                    <div class="text-xs font-medium" style="color: #3A46A5;">Customer Excellence</div>
                 </div>
             </div>
         </div>
@@ -679,7 +687,7 @@
     <!-- Industrial Statistics & Achievements -->
 <section class="py-10 md:py-20 bg-gray-100">
     <div class="text-center mb-16">
-        <span class="text-blue-600 font-medium text-sm uppercase tracking-wide">Our Impact</span>
+        <span class="font-medium text-sm uppercase tracking-wide" style="color: #3A46A5;">Our Impact</span>
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
             Delivering Excellence Across Industries
         </h2>
@@ -692,38 +700,38 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6">
                 
                 <!-- Main Hero Card with Founder -->
-<div class="lg:col-span-5 bg-gradient-to-br from-blue-800 to-blue-600 rounded-2xl md:rounded-3xl p-6 text-white relative overflow-hidden min-h-[400px]">
+<div class="lg:col-span-5 rounded-2xl md:rounded-3xl p-6 text-white relative overflow-hidden min-h-[400px]" style="background: linear-gradient(135deg, #3A46A5, #2d3a8c);">
     <div class="flex flex-col h-full">
         <h2 class="text-2xl md:text-3xl font-bold text-center">
             Meet Our 
-            <span class="text-yellow-300">Visionary Leader!</span>
+            <span style="color: #4EAE01;">Visionary Leader!</span>
         </h2>
         
         <!-- Founder Section -->
         <div class="mb-auto text-center">
-            <div class="w-40 h-40 mx-auto mt-5 mb-5 rounded-full overflow-hidden shadow-lg border-4 border-blue-300">
+            <div class="w-40 h-40 mx-auto mt-5 mb-5 rounded-full overflow-hidden shadow-lg border-4" style="border-color: rgba(78, 174, 1, 0.5);">
                 <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" 
                      alt="Founder" 
                      class="w-full h-full object-cover">
             </div>
             <div class="text-white">
                 <h3 class="text-lg font-bold mb-1">M Shivaraj Mattigatti</h3>
-                <p class="text-sm text-blue-100 opacity-95 font-medium">Founder & CEO</p>
+                <p class="text-sm opacity-95 font-medium" style="color: rgba(255, 255, 255, 0.8);">Founder & CEO</p>
                 <div class="mt-4 space-y-2">
                     <div class="flex items-center justify-center space-x-2">
-                        <i class="fas fa-calendar-alt text-yellow-300"></i>
+                        <i class="fas fa-calendar-alt" style="color: #4EAE01;"></i>
                         <span class="text-xs">17+ Years Experience</span>
                     </div>
                     <div class="flex items-center justify-center space-x-2">
-                        <i class="fas fa-industry text-yellow-300"></i>
+                        <i class="fas fa-industry" style="color: #4EAE01;"></i>
                         <span class="text-xs">Telecom & IT Data Centre Expert</span>
                     </div>
                     <div class="flex items-center justify-center space-x-2">
-                        <i class="fas fa-users text-yellow-300"></i>
+                        <i class="fas fa-users" style="color: #4EAE01;"></i>
                         <span class="text-xs">Leading 600+ Professionals</span>
                     </div>
                 </div>
-                <p class="text-xs text-blue-100 opacity-85 mt-3 leading-relaxed">
+                <p class="text-xs opacity-85 mt-3 leading-relaxed" style="color: rgba(255, 255, 255, 0.7);">
                     "Transforming industrial manufacturing through innovation, quality, and strategic vision. From founding Central Network Systems to leading Startronix's evolution into a 2,00,000 sqft state-of-the-art facility."
                 </p>
             </div>
@@ -739,7 +747,7 @@
                         <div class="text-sm text-gray-500 mb-2">Projects Delivered</div>
                         <div class="flex items-center justify-between mb-4">
                             <div class="text-3xl font-bold text-gray-900">500+</div>
-                            <div class="flex items-center text-green-600 text-sm">
+                            <div class="flex items-center text-sm" style="color: #4EAE01;">
                                 <i class="fas fa-arrow-up mr-1"></i>
                                 +25%
                             </div>
@@ -749,7 +757,7 @@
                                 Successfully completed industrial projects across telecom, datacenter, and power sectors.
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="bg-green-600 h-2 rounded-full" style="width: 85%"></div>
+                                <div class="h-2 rounded-full" style="width: 85%; background-color: #4EAE01;"></div>
                             </div>
                         </div>
                     </div>
@@ -759,7 +767,7 @@
                         <div class="text-sm text-gray-500 mb-2">Manufacturing Output</div>
                         <div class="flex items-center justify-between mb-4">
                             <div class="text-3xl font-bold text-gray-900">50K</div>
-                            <div class="flex items-center text-blue-600 text-sm">
+                            <div class="flex items-center text-sm" style="color: #3A46A5;">
                                 <i class="fas fa-arrow-up mr-1"></i>
                                 +18%
                             </div>
@@ -769,7 +777,7 @@
                                 Units per month production capacity with state-of-the-art manufacturing facilities.
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="bg-blue-600 h-2 rounded-full" style="width: 78%"></div>
+                                <div class="h-2 rounded-full" style="width: 78%; background-color: #3A46A5;"></div>
                             </div>
                         </div>
                     </div>
@@ -782,42 +790,42 @@
                         </div>
                         <div class="grid grid-cols-2 gap-4 mb-4">
                             <div class="flex items-start space-x-2">
-                                <i class="fas fa-industry text-blue-400 mt-1"></i>
+                                <i class="fas fa-industry mt-1" style="color: #3A46A5;"></i>
                                 <div>
                                     <div class="text-sm font-medium">Manufacturing Excellence</div>
                                     <div class="text-xs text-gray-400">2,00,000 sqft facility</div>
                                 </div>
                             </div>
                             <div class="flex items-start space-x-2">
-                                <i class="fas fa-users text-green-400 mt-1"></i>
+                                <i class="fas fa-users mt-1" style="color: #4EAE01;"></i>
                                 <div>
                                     <div class="text-sm font-medium">Expert Workforce</div>
                                     <div class="text-xs text-gray-400">600+ skilled professionals</div>
                                 </div>
                             </div>
                             <div class="flex items-start space-x-2">
-                                <i class="fas fa-globe text-purple-400 mt-1"></i>
+                                <i class="fas fa-globe mt-1" style="color: #3A46A5;"></i>
                                 <div>
                                     <div class="text-sm font-medium">Global Reach</div>
                                     <div class="text-xs text-gray-400">150+ clients worldwide</div>
                                 </div>
                             </div>
                             <div class="flex items-start space-x-2">
-                                <i class="fas fa-cogs text-orange-400 mt-1"></i>
+                                <i class="fas fa-cogs mt-1" style="color: #4EAE01;"></i>
                                 <div>
                                     <div class="text-sm font-medium">Advanced Technology</div>
                                     <div class="text-xs text-gray-400">State-of-the-art equipment</div>
                                 </div>
                             </div>
                             <div class="flex items-start space-x-2">
-                                <i class="fas fa-award text-yellow-400 mt-1"></i>
+                                <i class="fas fa-award mt-1" style="color: #4EAE01;"></i>
                                 <div>
                                     <div class="text-sm font-medium">Quality Assurance</div>
                                     <div class="text-xs text-gray-400">99.2% quality rating</div>
                                 </div>
                             </div>
                             <div class="flex items-start space-x-2">
-                                <i class="fas fa-headset text-red-400 mt-1"></i>
+                                <i class="fas fa-headset mt-1" style="color: #3A46A5;"></i>
                                 <div>
                                     <div class="text-sm font-medium">24/7 Support</div>
                                     <div class="text-xs text-gray-400">Round-the-clock assistance</div>
@@ -900,7 +908,7 @@
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="text-blue-600 font-medium text-sm uppercase tracking-wide">Client Testimonials</span>
+                <span class="font-medium text-sm uppercase tracking-wide" style="color: #3A46A5;">Client Testimonials</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
                     What Our Clients Say
                 </h2>
@@ -926,8 +934,8 @@
                         "PHEDEL's manufacturing quality exceeded our expectations. Their attention to detail and timely delivery made our datacenter project a huge success."
                     </p>
                     <div class="flex items-center">
-                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                            <i class="fas fa-user text-blue-600"></i>
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background-color: rgba(58, 70, 165, 0.1);">
+                            <i class="fas fa-user" style="color: #3A46A5;"></i>
                         </div>
                         <div class="ml-4">
                             <h4 class="font-semibold text-gray-900">Rajesh Kumar</h4>
@@ -952,8 +960,8 @@
                         "Outstanding service and product quality. PHEDEL's team understood our requirements perfectly and delivered custom solutions that fit our needs."
                     </p>
                     <div class="flex items-center">
-                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                            <i class="fas fa-user text-green-600"></i>
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background-color: rgba(78, 174, 1, 0.1);">
+                            <i class="fas fa-user" style="color: #4EAE01;"></i>
                         </div>
                         <div class="ml-4">
                             <h4 class="font-semibold text-gray-900">Priya Sharma</h4>
@@ -978,8 +986,8 @@
                         "Reliable partner for our industrial infrastructure needs. Their expertise in telecom solutions and professional approach sets them apart."
                     </p>
                     <div class="flex items-center">
-                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                            <i class="fas fa-user text-purple-600"></i>
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background-color: rgba(58, 70, 165, 0.1);">
+                            <i class="fas fa-user" style="color: #3A46A5;"></i>
                         </div>
                         <div class="ml-4">
                             <h4 class="font-semibold text-gray-900">Amit Patel</h4>
@@ -1014,7 +1022,7 @@
     <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="text-blue-600 font-medium text-sm uppercase tracking-wide">Visit Us</span>
+                <span class="font-medium text-sm uppercase tracking-wide" style="color: #3A46A5;">Visit Us</span>
                 <h2 class="text-4xl font-bold text-gray-900 mt-4">
                     PHEDEL Manufacturing Facility
                 </h2>
@@ -1030,8 +1038,8 @@
                         <h3 class="text-2xl font-bold text-gray-900 mb-6">Our Manufacturing Hub</h3>
                         <div class="space-y-4">
                             <div class="flex items-start space-x-4">
-                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-map-marker-alt text-blue-600 text-xl"></i>
+                                <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: rgba(58, 70, 165, 0.1);">
+                                    <i class="fas fa-map-marker-alt text-xl" style="color: #3A46A5;"></i>
                                 </div>
                                 <div>
                                     <h4 class="font-semibold text-gray-900 mb-1">Address</h4>
@@ -1039,8 +1047,8 @@
                                 </div>
                             </div>
                             <div class="flex items-start space-x-4">
-                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-industry text-green-600 text-xl"></i>
+                                <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: rgba(78, 174, 1, 0.1);">
+                                    <i class="fas fa-industry text-xl" style="color: #4EAE01;"></i>
                                 </div>
                                 <div>
                                     <h4 class="font-semibold text-gray-900 mb-1">Facility Size</h4>
@@ -1048,8 +1056,8 @@
                                 </div>
                             </div>
                             <div class="flex items-start space-x-4">
-                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-users text-purple-600 text-xl"></i>
+                                <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: rgba(58, 70, 165, 0.1);">
+                                    <i class="fas fa-users text-xl" style="color: #3A46A5;"></i>
                                 </div>
                                 <div>
                                     <h4 class="font-semibold text-gray-900 mb-1">Workforce</h4>
@@ -1057,8 +1065,8 @@
                                 </div>
                             </div>
                             <div class="flex items-start space-x-4">
-                                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-clock text-orange-600 text-xl"></i>
+                                <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: rgba(78, 174, 1, 0.1);">
+                                    <i class="fas fa-clock text-xl" style="color: #4EAE01;"></i>
                                 </div>
                                 <div>
                                     <h4 class="font-semibold text-gray-900 mb-1">Operating Hours</h4>
@@ -1069,14 +1077,14 @@
                     </div>
                     
                     <!-- Quick Contact -->
-                    <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white">
+                    <div class="rounded-2xl p-8 text-white" style="background: linear-gradient(135deg, #3A46A5, #2d3a8c);">
                         <h3 class="text-xl font-bold mb-4">Ready to Start Your Project?</h3>
-                        <p class="text-blue-100 mb-6">Get in touch with our industrial solutions experts today</p>
+                        <p class="mb-6" style="color: rgba(255, 255, 255, 0.8);">Get in touch with our industrial solutions experts today</p>
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="contact.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors text-center">
+                            <a href="contact.html" class="bg-white px-6 py-3 rounded-lg font-semibold transition-colors text-center" style="color: #3A46A5;" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'" onmouseout="this.style.backgroundColor='white'">
                                 Contact Us
                             </a>
-                            <a href="portfolio.html" class="border border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors text-center">
+                            <a href="portfolio.html" class="border border-white text-white px-6 py-3 rounded-lg font-semibold transition-colors text-center" onmouseover="this.style.backgroundColor='white'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='white'">
                                 View Portfolio
                             </a>
                         </div>
@@ -1115,7 +1123,7 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background-color: #3A46A5;">
                             <i class="fas fa-industry text-white text-sm"></i>
                         </div>
                         <span class="text-xl font-bold">PHEDEL</span>
@@ -1132,28 +1140,28 @@
                 <div>
                     <h4 class="font-semibold mb-4">Services</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="services.html" class="hover:text-white">Data Center Solutions</a></li>
-                        <li><a href="services.html" class="hover:text-white">Manufacturing Automation</a></li>
-                        <li><a href="services.html" class="hover:text-white">Telecom Infrastructure</a></li>
-                        <li><a href="services.html" class="hover:text-white">Logistics Solutions</a></li>
+                        <li><a href="services.html" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Data Center Solutions</a></li>
+                        <li><a href="services.html" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Manufacturing Automation</a></li>
+                        <li><a href="services.html" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Telecom Infrastructure</a></li>
+                        <li><a href="services.html" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Logistics Solutions</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-semibold mb-4">Company</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="about.html" class="hover:text-white">About PHEDEL</a></li>
-                        <li><a href="portfolio.html" class="hover:text-white">Portfolio</a></li>
-                        <li><a href="contact.html" class="hover:text-white">Careers</a></li>
-                        <li><a href="contact.html" class="hover:text-white">Contact Us</a></li>
+                        <li><a href="about.html" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">About PHEDEL</a></li>
+                        <li><a href="portfolio.html" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Portfolio</a></li>
+                        <li><a href="contact.html" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Careers</a></li>
+                        <li><a href="contact.html" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Contact Us</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-semibold mb-4">Industries</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="portfolio.html" class="hover:text-white">Data Centers</a></li>
-                        <li><a href="portfolio.html" class="hover:text-white">Manufacturing</a></li>
-                        <li><a href="portfolio.html" class="hover:text-white">Telecommunications</a></li>
-                        <li><a href="portfolio.html" class="hover:text-white">Logistics & Warehousing</a></li>
+                        <li><a href="portfolio.html" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Data Centers</a></li>
+                        <li><a href="portfolio.html" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Manufacturing</a></li>
+                        <li><a href="portfolio.html" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Telecommunications</a></li>
+                        <li><a href="portfolio.html" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''">Logistics & Warehousing</a></li>
                     </ul>
                 </div>
             </div>
@@ -1163,26 +1171,14 @@
                         <p>&copy; 2024 PHEDEL Enterprises Inc. All rights reserved. | ISO 9001:2015 Certified | Bangalore, Karnataka, India</p>
                     </div>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400" onmouseover="this.style.color='#4EAE01'" onmouseout="this.style.color=''"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''"><i class="fab fa-facebook"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    <script>
-        // Mobile menu toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
-        });
-    </script>
+
 </body>
 </html>
