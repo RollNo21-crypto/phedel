@@ -248,28 +248,6 @@ class UniversalSearchSystem {
                         icon: 'fas fa-plug',
                         products: [
                             {
-                                id: 'hd-32-hdpe',
-                                name: 'HD-32 HDPE Duct',
-                                description: 'High-density polyethylene duct for superior cable protection in underground installations',
-                                category: 'cable-management',
-                                domain: 'infrastructure',
-                                url: 'hdpe-plb-duct-pipes.html',
-                                image: 'https://cdn.jsdelivr.net/gh/phedel/assets@main/images/hdpe-duct-product.jpg',
-                                tags: ['hdpe', 'duct', 'cable', 'protection', 'underground', 'polyethylene'],
-                                specifications: {
-                                    diameter: '32mm',
-                                    material: 'HDPE (High-Density Polyethylene)',
-                                    length: '6m standard',
-                                    color: 'Orange/Black',
-                                    temperature: '-40°C to +60°C',
-                                    pressure: '450N (45kg)'
-                                },
-                                features: ['Chemical resistance', 'UV protection', 'Flexible installation', 'Long lifespan'],
-                                price: 'Contact for pricing',
-                                availability: 'In Stock',
-                                rating: 4.7
-                            },
-                            {
                                 id: 'ct-system-cable',
                                 name: 'CT-System Cable Tray',
                                 description: 'Modular cable tray system for organized cable routing and support',
@@ -316,40 +294,6 @@ class UniversalSearchSystem {
                                 price: 'Contact for pricing',
                                 availability: 'In Stock',
                                 rating: 4.6
-                            }
-                        ]
-                    }
-                }
-            },
-            'laboratory': {
-                name: 'Laboratory Equipment',
-                icon: 'fas fa-flask',
-                description: 'Specialized laboratory and clean room solutions',
-                categories: {
-                    'clean-room': {
-                        name: 'Clean Room Equipment',
-                        icon: 'fas fa-microscope',
-                        products: [
-                            {
-                                id: 'cr-cabinet-clean',
-                                name: 'CR-Cabinet Clean Room Storage',
-                                description: 'Stainless steel clean room cabinet for sterile equipment storage',
-                                category: 'clean-room',
-                                domain: 'laboratory',
-                                url: 'laboratory-category.html',
-                                image: 'https://cdn.jsdelivr.net/gh/phedel/assets@main/images/clean-room-cabinet.jpg',
-                                tags: ['clean-room', 'stainless-steel', 'sterile', 'laboratory', 'storage'],
-                                specifications: {
-                                    material: '316L Stainless Steel',
-                                    finish: 'Electropolished',
-                                    class: 'ISO Class 5 compatible',
-                                    doors: 'HEPA filtered',
-                                    shelves: 'Adjustable perforated'
-                                },
-                                features: ['HEPA filtration', 'Electropolished finish', 'Adjustable shelving', 'Easy cleaning'],
-                                price: 'Contact for pricing',
-                                availability: 'Made to Order',
-                                rating: 4.8
                             }
                         ]
                     }
@@ -602,7 +546,6 @@ class UniversalSearchSystem {
                             <button class="px-4 py-2 bg-white/20 text-white text-sm font-medium rounded-xl hover:bg-white/30 transition-all duration-200 backdrop-blur-sm" data-filter="it-infrastructure">IT Infrastructure</button>
                             <button class="px-4 py-2 bg-white/20 text-white text-sm font-medium rounded-xl hover:bg-white/30 transition-all duration-200 backdrop-blur-sm" data-filter="telecommunications">Telecommunications</button>
                             <button class="px-4 py-2 bg-white/20 text-white text-sm font-medium rounded-xl hover:bg-white/30 transition-all duration-200 backdrop-blur-sm" data-filter="infrastructure">Infrastructure</button>
-                            <button class="px-4 py-2 bg-white/20 text-white text-sm font-medium rounded-xl hover:bg-white/30 transition-all duration-200 backdrop-blur-sm" data-filter="laboratory">Laboratory</button>
                         </div>
                     </div>
                     
@@ -1256,8 +1199,6 @@ class UniversalSearchSystem {
             'telecom': 'telecommunications',
             'power-it': 'infrastructure',
             'industrial-rack': 'it-infrastructure',
-            'civil-work': 'infrastructure',
-            'laboratory': 'laboratory',
             'accessories': 'telecommunications'
         };
         return categoryMap[category] || 'infrastructure';
