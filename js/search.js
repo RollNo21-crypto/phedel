@@ -1,5 +1,5 @@
-// PHEDEL Advanced Universal Search System
-// Modern, efficient search with fuzzy matching, relevance scoring, and enhanced UX
+// PHEDEL Enhanced Universal Search System with Cloudflare D1 + Workers Integration
+// Modern, efficient search with API-powered backend, fuzzy matching, and enhanced UX
 // Supports both inline search and dedicated search results page
 
 class UniversalSearchSystem {
@@ -17,8 +17,21 @@ class UniversalSearchSystem {
             clickThroughRate: new Map()
         };
         
-        // Enhanced product database with better categorization
-        this.productDatabase = {
+        // API Configuration
+        this.apiConfig = {
+            baseUrl: 'https://phedel-search-search-api.krishnamurthym.workers.dev',
+            endpoints: {
+                search: '/api/search',
+                suggestions: '/api/search/suggestions',
+                categories: '/api/search/categories',
+                domains: '/api/search/domains',
+                analytics: '/api/search/analytics'
+            },
+            timeout: 10000
+        };
+        
+        // Fallback product database for offline/error scenarios
+        this.fallbackDatabase = {
             'it-infrastructure': {
                 name: 'IT Infrastructure',
                 icon: 'fas fa-server',
@@ -42,258 +55,12 @@ class UniversalSearchSystem {
                                     depth: '800mm',
                                     width: '600mm',
                                     loadCapacity: '1000kg',
-                                    material: 'Cold-rolled steel',
-                                    finish: 'RAL 7035 powder coating',
-                                    ventilation: 'Front-to-back airflow',
-                                    monitoring: 'Temperature, humidity, door access'
+                                    material: 'Cold-rolled steel'
                                 },
                                 features: ['Smart monitoring', 'Cable management', 'Adjustable rails', 'Lockable doors'],
                                 price: 'Contact for pricing',
                                 availability: 'In Stock',
                                 rating: 4.8
-                            },
-                            {
-                                id: 'sv-42u-server',
-                                name: 'SV-42U Server Rack',
-                                description: 'Standard 42U server rack optimized for data center applications with enhanced cable management',
-                                category: 'server-racks',
-                                domain: 'it-infrastructure',
-                                url: 'server-rack.html',
-                                image: 'https://cdn.jsdelivr.net/gh/phedel/assets@main/images/network-cabinet-27u.jpg',
-                                tags: ['server', '42u', 'standard', 'datacenter', 'cable-management'],
-                                specifications: {
-                                    height: '42U (2000mm)',
-                                    depth: '1000mm',
-                                    width: '600mm',
-                                    loadCapacity: '1200kg',
-                                    material: 'Cold-rolled steel',
-                                    finish: 'Black RAL 9005',
-                                    doors: 'Perforated front and rear'
-                                },
-                                features: ['Tool-free assembly', 'Adjustable depth', 'Cable management', 'Ventilation'],
-                                price: 'Contact for pricing',
-                                availability: 'In Stock',
-                                rating: 4.6
-                            },
-                            {
-                                id: 'dcr-42u-datacentre',
-                                name: 'DCR-42U Data Centre Rack',
-                                description: 'High-density data centre rack with advanced thermal management and maximum load capacity',
-                                category: 'server-racks',
-                                domain: 'it-infrastructure',
-                                url: 'data-centre-rack.html',
-                                image: 'https://cdn.jsdelivr.net/gh/phedel/assets@main/images/it-equipment-rack.jpg',
-                                tags: ['datacenter', '42u', 'thermal', 'high-density', 'enterprise', 'cooling'],
-                                specifications: {
-                                    height: '42U (2000mm)',
-                                    depth: '1200mm',
-                                    width: '600mm',
-                                    loadCapacity: '1500kg',
-                                    material: 'Heavy-duty steel',
-                                    cooling: 'Integrated thermal management',
-                                    power: 'Built-in PDU options'
-                                },
-                                features: ['Maximum load capacity', 'Thermal optimization', 'Power distribution', 'Seismic compliance'],
-                                price: 'Contact for pricing',
-                                availability: 'Made to Order',
-                                rating: 4.9
-                            }
-                        ]
-                    },
-                    'network-cabinets': {
-                        name: 'Network Cabinets',
-                        icon: 'fas fa-network-wired',
-                        products: [
-                            {
-                                id: 'nc-27u-network',
-                                name: 'NC-27U Network Cabinet',
-                                description: 'Compact 27U network cabinet perfect for office and small data center environments',
-                                category: 'network-cabinets',
-                                domain: 'it-infrastructure',
-                                url: 'network-cabinet.html',
-                                image: 'https://cdn.jsdelivr.net/gh/phedel/assets@main/images/wall-mount-rack-12u.jpg',
-                                tags: ['network', '27u', 'compact', 'office', 'switching'],
-                                specifications: {
-                                    height: '27U (1350mm)',
-                                    depth: '600mm',
-                                    width: '600mm',
-                                    loadCapacity: '800kg',
-                                    doors: 'Glass front, steel rear'
-                                },
-                                features: ['Compact design', 'Glass door', 'Cable management', 'Ventilation fans'],
-                                price: 'Contact for pricing',
-                                availability: 'In Stock',
-                                rating: 4.5
-                            }
-                        ]
-                    }
-                }
-            },
-            'telecommunications': {
-                name: 'Telecommunications',
-                icon: 'fas fa-broadcast-tower',
-                description: 'Comprehensive telecommunications infrastructure solutions',
-                categories: {
-                    'outdoor-equipment': {
-                        name: 'Outdoor Equipment',
-                        icon: 'fas fa-cloud',
-                        products: [
-                            {
-                                id: 'ot-600-outdoor',
-                                name: 'OT-600 Outdoor Cabinet',
-                                description: 'Weatherproof outdoor telecommunications cabinet with superior environmental protection',
-                                category: 'outdoor-equipment',
-                                domain: 'telecommunications',
-                                url: 'outdoor-telecom-products.html',
-                                image: 'https://cdn.jsdelivr.net/gh/phedel/assets@main/images/outdoor-telecom-cabinet.jpg',
-                                tags: ['outdoor', 'weatherproof', 'telecom', 'cabinet', 'ip65', 'galvanized'],
-                                specifications: {
-                                    protection: 'IP65',
-                                    material: 'Galvanized Steel',
-                                    ventilation: 'Natural convection',
-                                    temperature: '-40°C to +70°C',
-                                    humidity: '95% RH non-condensing',
-                                    coating: 'Polyester powder coating'
-                                },
-                                features: ['Weather resistant', 'Corrosion protection', 'Natural cooling', 'Easy access'],
-                                price: 'Contact for pricing',
-                                availability: 'In Stock',
-                                rating: 4.7
-                            }
-                        ]
-                    },
-                    'fiber-optics': {
-                        name: 'Fiber Optics',
-                        icon: 'fas fa-wifi',
-                        products: [
-                            {
-                                id: 'of-sc-connectors',
-                                name: 'OF-SC Fiber Connectors',
-                                description: 'Premium SC type fiber optic connectors with ultra-low insertion loss',
-                                category: 'fiber-optics',
-                                domain: 'telecommunications',
-                                url: 'optical-fibre-accessories.html',
-                                image: 'https://cdn.jsdelivr.net/gh/phedel/assets@main/images/optical-fiber-accessories.jpg',
-                                tags: ['fiber', 'connectors', 'sc', 'optical', 'low-loss', 'precision'],
-                                specifications: {
-                                    type: 'SC/UPC',
-                                    insertionLoss: '<0.2dB',
-                                    returnLoss: '>50dB',
-                                    durability: '>1000 mating cycles',
-                                    temperature: '-40°C to +85°C'
-                                },
-                                features: ['Ultra-low loss', 'High durability', 'Precision alignment', 'Quality tested'],
-                                price: 'Contact for pricing',
-                                availability: 'In Stock',
-                                rating: 4.8
-                            },
-                            {
-                                id: 'fdh-24-fiber',
-                                name: 'FDH-24 Fiber Distribution Hub',
-                                description: '24-port fiber distribution hub for network termination and cross-connection',
-                                category: 'fiber-optics',
-                                domain: 'telecommunications',
-                                url: 'fiber-distribution.html',
-                                image: 'https://cdn.jsdelivr.net/gh/phedel/assets@main/images/fiber-distribution-hub.jpg',
-                                tags: ['fiber', 'distribution', 'hub', '24-port', 'termination', 'cross-connect'],
-                                specifications: {
-                                    ports: '24 SC/LC ports',
-                                    capacity: 'Up to 24 fibers',
-                                    mounting: 'Wall or rack mount',
-                                    material: 'ABS plastic housing'
-                                },
-                                features: ['Modular design', 'Easy installation', 'Cable management', 'Dust protection'],
-                                price: 'Contact for pricing',
-                                availability: 'In Stock',
-                                rating: 4.6
-                            }
-                        ]
-                    },
-                    'security-systems': {
-                        name: 'Security Systems',
-                        icon: 'fas fa-shield-alt',
-                        products: [
-                            {
-                                id: 'cc-12u-cctv',
-                                name: 'CC-12U CCTV Rack',
-                                description: 'Compact 12U rack specifically designed for CCTV surveillance equipment',
-                                category: 'security-systems',
-                                domain: 'telecommunications',
-                                url: 'cctv-racks.html',
-                                image: 'https://cdn.jsdelivr.net/gh/phedel/assets@main/images/cctv-pole-mount.jpg',
-                                tags: ['cctv', '12u', 'surveillance', 'security', 'compact', 'monitoring'],
-                                specifications: {
-                                    height: '12U (600mm)',
-                                    mounting: 'Wall/Floor mount',
-                                    protection: 'IP54',
-                                    ventilation: 'Fan-assisted cooling',
-                                    power: 'Integrated power strip'
-                                },
-                                features: ['Compact design', 'Ventilation system', 'Cable management', 'Secure locking'],
-                                price: 'Contact for pricing',
-                                availability: 'In Stock',
-                                rating: 4.4
-                            }
-                        ]
-                    }
-                }
-            },
-            'infrastructure': {
-                name: 'Infrastructure',
-                icon: 'fas fa-building',
-                description: 'Essential infrastructure components and cable management',
-                categories: {
-                    'cable-management': {
-                        name: 'Cable Management',
-                        icon: 'fas fa-plug',
-                        products: [
-                            {
-                                id: 'ct-system-cable',
-                                name: 'CT-System Cable Tray',
-                                description: 'Modular cable tray system for organized cable routing and support',
-                                category: 'cable-management',
-                                domain: 'infrastructure',
-                                url: 'cable-tray-system.html',
-                                image: 'https://cdn.jsdelivr.net/gh/phedel/assets@main/images/cable-tray-system.jpg',
-                                tags: ['cable-tray', 'modular', 'routing', 'support', 'galvanized', 'system'],
-                                specifications: {
-                                    width: '100-600mm',
-                                    material: 'Galvanized steel',
-                                    finish: 'Hot-dip galvanized',
-                                    loadCapacity: 'Up to 50kg/m',
-                                    installation: 'Bolt-together system'
-                                },
-                                features: ['Modular design', 'Easy installation', 'Corrosion resistant', 'Multiple widths'],
-                                price: 'Contact for pricing',
-                                availability: 'In Stock',
-                                rating: 4.5
-                            }
-                        ]
-                    },
-                    'power-solutions': {
-                        name: 'Power Solutions',
-                        icon: 'fas fa-bolt',
-                        products: [
-                            {
-                                id: 'pdu-19-power',
-                                name: 'PDU-19 Power Distribution Unit',
-                                description: 'Rack-mounted power distribution unit with monitoring and surge protection',
-                                category: 'power-solutions',
-                                domain: 'infrastructure',
-                                url: 'power-distribution.html',
-                                image: 'https://cdn.jsdelivr.net/gh/phedel/assets@main/images/power-distribution-unit.jpg',
-                                tags: ['pdu', 'power', 'distribution', 'monitoring', 'surge-protection', '19-inch'],
-                                specifications: {
-                                    mounting: '19-inch rack',
-                                    outlets: '8-24 outlets',
-                                    voltage: '230V AC',
-                                    current: 'Up to 32A',
-                                    monitoring: 'Current, voltage, power'
-                                },
-                                features: ['Real-time monitoring', 'Surge protection', 'Remote management', 'Multiple outlets'],
-                                price: 'Contact for pricing',
-                                availability: 'In Stock',
-                                rating: 4.6
                             }
                         ]
                     }
@@ -304,15 +71,10 @@ class UniversalSearchSystem {
         this.initializeSearch();
     }
 
-    // Enhanced search algorithms with fuzzy matching and relevance scoring
-    performAdvancedSearch(query) {
-        // Use page products if available and on products page, otherwise use database
-        const allProducts = (this.isSearchResultsPage && this.searchableProducts) 
-            ? this.searchableProducts 
-            : this.getAllProducts();
-            
+    // Enhanced API-powered search with fallback
+    async performAdvancedSearch(query) {
         if (!query || query.trim().length < 1) {
-            return allProducts;
+            return await this.getAllProducts();
         }
 
         const normalizedQuery = query.toLowerCase().trim();
@@ -321,15 +83,66 @@ class UniversalSearchSystem {
         if (this.searchCache.has(normalizedQuery)) {
             return this.searchCache.get(normalizedQuery);
         }
+
+        try {
+            // API search with timeout
+            const searchPromise = this.apiSearch(normalizedQuery);
+            const timeoutPromise = new Promise((_, reject) => 
+                setTimeout(() => reject(new Error('Search timeout')), this.apiConfig.timeout)
+            );
+            
+            const results = await Promise.race([searchPromise, timeoutPromise]);
+            
+            // Cache results
+            this.searchCache.set(normalizedQuery, results);
+            
+            // Update analytics
+            this.updateSearchAnalytics(normalizedQuery, results.length);
+            
+            return results;
+        } catch (error) {
+            console.warn('API search failed, using fallback:', error);
+            return this.performFallbackSearch(normalizedQuery);
+        }
+    }
+
+    // API search implementation
+    async apiSearch(query) {
+        const url = `${this.apiConfig.baseUrl}${this.apiConfig.endpoints.search}`;
+        const params = new URLSearchParams({
+            q: query,
+            limit: 50,
+            include_suggestions: 'true'
+        });
+
+        const response = await fetch(`${url}?${params}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`API search failed: ${response.status}`);
+        }
+
+        const data = await response.json();
+        return data.results || [];
+    }
+
+    // Fallback search using client-side logic
+    performFallbackSearch(query) {
+        const allProducts = this.getFallbackProducts();
         const results = [];
 
         allProducts.forEach(product => {
-            const relevanceScore = this.calculateRelevanceScore(product, normalizedQuery);
+            const relevanceScore = this.calculateRelevanceScore(product, query);
             if (relevanceScore > 0) {
                 results.push({
                     ...product,
                     relevanceScore,
-                    matchedFields: this.getMatchedFields(product, normalizedQuery)
+                    matchedFields: this.getMatchedFields(product, query)
                 });
             }
         });
@@ -337,13 +150,78 @@ class UniversalSearchSystem {
         // Sort by relevance score (highest first)
         results.sort((a, b) => b.relevanceScore - a.relevanceScore);
         
-        // Cache results
-        this.searchCache.set(normalizedQuery, results);
-        
-        // Update analytics
-        this.updateSearchAnalytics(normalizedQuery, results.length);
-        
         return results;
+    }
+
+    // Get search suggestions from API
+    async getSearchSuggestions(query) {
+        if (!query || query.length < 2) return [];
+
+        try {
+            const url = `${this.apiConfig.baseUrl}${this.apiConfig.endpoints.suggestions}`;
+            const params = new URLSearchParams({ q: query, limit: 8 });
+            
+            const response = await fetch(`${url}?${params}`);
+            if (!response.ok) throw new Error('Suggestions API failed');
+            
+            const data = await response.json();
+            return data.suggestions || [];
+        } catch (error) {
+            console.warn('Suggestions API failed:', error);
+            return [];
+        }
+    }
+
+    // Get categories from API
+    async getCategories() {
+        try {
+            const url = `${this.apiConfig.baseUrl}${this.apiConfig.endpoints.categories}`;
+            const response = await fetch(url);
+            if (!response.ok) throw new Error('Categories API failed');
+            
+            const data = await response.json();
+            return data.categories || [];
+        } catch (error) {
+            console.warn('Categories API failed:', error);
+            return this.getFallbackCategories();
+        }
+    }
+
+    // Get domains from API
+    async getDomains() {
+        try {
+            const url = `${this.apiConfig.baseUrl}${this.apiConfig.endpoints.domains}`;
+            const response = await fetch(url);
+            if (!response.ok) throw new Error('Domains API failed');
+            
+            const data = await response.json();
+            return data.domains || [];
+        } catch (error) {
+            console.warn('Domains API failed:', error);
+            return this.getFallbackDomains();
+        }
+    }
+
+    // Send search analytics to API
+    async sendSearchAnalytics(query, resultCount, clickedProduct = null) {
+        try {
+            const url = `${this.apiConfig.baseUrl}${this.apiConfig.endpoints.analytics}`;
+            await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    query,
+                    result_count: resultCount,
+                    clicked_product: clickedProduct,
+                    timestamp: new Date().toISOString(),
+                    user_agent: navigator.userAgent
+                })
+            });
+        } catch (error) {
+            console.warn('Analytics API failed:', error);
+        }
     }
 
     calculateRelevanceScore(product, query) {
@@ -352,7 +230,7 @@ class UniversalSearchSystem {
         
         // Exact matches get highest scores
         if (product.name.toLowerCase().includes(query)) score += 100;
-        if (product.id.toLowerCase().includes(query)) score += 90;
+        if (product.id && product.id.toLowerCase().includes(query)) score += 90;
         if (product.description.toLowerCase().includes(query)) score += 80;
         
         // Word-by-word matching
@@ -361,14 +239,16 @@ class UniversalSearchSystem {
             if (product.name.toLowerCase().includes(word)) score += 50;
             
             // Tag matches
-            product.tags.forEach(tag => {
-                if (tag.toLowerCase().includes(word)) score += 30;
-                if (this.fuzzyMatch(tag.toLowerCase(), word)) score += 15;
-            });
+            if (product.tags) {
+                product.tags.forEach(tag => {
+                    if (tag.toLowerCase().includes(word)) score += 30;
+                    if (this.fuzzyMatch(tag.toLowerCase(), word)) score += 15;
+                });
+            }
             
             // Category and domain matches
-            if (product.category.toLowerCase().includes(word)) score += 40;
-            if (product.domain.toLowerCase().includes(word)) score += 35;
+            if (product.category && product.category.toLowerCase().includes(word)) score += 40;
+            if (product.domain && product.domain.toLowerCase().includes(word)) score += 35;
             
             // Description matches
             if (product.description.toLowerCase().includes(word)) score += 25;
@@ -446,23 +326,40 @@ class UniversalSearchSystem {
         queryWords.forEach(word => {
             if (product.name.toLowerCase().includes(word)) matched.push('name');
             if (product.description.toLowerCase().includes(word)) matched.push('description');
-            if (product.tags.some(tag => tag.toLowerCase().includes(word))) matched.push('tags');
-            if (product.category.toLowerCase().includes(word)) matched.push('category');
+            if (product.tags && product.tags.some(tag => tag.toLowerCase().includes(word))) matched.push('tags');
+            if (product.category && product.category.toLowerCase().includes(word)) matched.push('category');
         });
         
         return [...new Set(matched)];
     }
 
-    getAllProducts() {
+    async getAllProducts() {
         // If we have page products and we're on the products page, use those
         if (this.isSearchResultsPage && this.searchableProducts) {
             return this.searchableProducts;
         }
         
+        try {
+            // Try to get all products from API
+            const url = `${this.apiConfig.baseUrl}${this.apiConfig.endpoints.search}`;
+            const params = new URLSearchParams({ q: '', limit: 1000 });
+            
+            const response = await fetch(`${url}?${params}`);
+            if (!response.ok) throw new Error('Get all products API failed');
+            
+            const data = await response.json();
+            return data.results || [];
+        } catch (error) {
+            console.warn('Get all products API failed, using fallback:', error);
+            return this.getFallbackProducts();
+        }
+    }
+
+    getFallbackProducts() {
         const allProducts = [];
         
-        Object.keys(this.productDatabase).forEach(domainKey => {
-            const domain = this.productDatabase[domainKey];
+        Object.keys(this.fallbackDatabase).forEach(domainKey => {
+            const domain = this.fallbackDatabase[domainKey];
             Object.keys(domain.categories).forEach(categoryKey => {
                 const category = domain.categories[categoryKey];
                 category.products.forEach(product => {
@@ -480,6 +377,22 @@ class UniversalSearchSystem {
         });
         
         return allProducts;
+    }
+
+    getFallbackCategories() {
+        return [
+            { id: 'server-racks', name: 'Server Racks', icon: 'fas fa-database', count: 10 },
+            { id: 'network-cabinets', name: 'Network Cabinets', icon: 'fas fa-network-wired', count: 5 },
+            { id: 'outdoor-equipment', name: 'Outdoor Equipment', icon: 'fas fa-cloud', count: 8 }
+        ];
+    }
+
+    getFallbackDomains() {
+        return [
+            { id: 'it-infrastructure', name: 'IT Infrastructure', icon: 'fas fa-server', count: 15 },
+            { id: 'telecommunications', name: 'Telecommunications', icon: 'fas fa-broadcast-tower', count: 12 },
+            { id: 'infrastructure', name: 'Infrastructure', icon: 'fas fa-building', count: 8 }
+        ];
     }
 
     // Modern glassmorphism search interface
@@ -608,7 +521,7 @@ class UniversalSearchSystem {
         const backdrop = document.getElementById('searchBackdrop');
         const quickFilters = document.querySelectorAll('[data-filter]');
         
-        // Search input events
+        // Search input events with API integration
         if (searchInput) {
             searchInput.addEventListener('input', (e) => {
                 this.handleSearchInput(e.target.value);
@@ -668,11 +581,11 @@ class UniversalSearchSystem {
             loader.classList.remove('hidden');
         }
         
-        this.debounceTimer = setTimeout(() => {
+        this.debounceTimer = setTimeout(async () => {
             if (query.trim().length === 0) {
-                this.showInitialSuggestions();
+                await this.showInitialSuggestions();
             } else {
-                this.performSearchAndDisplay(query);
+                await this.performSearchAndDisplay(query);
             }
             
             if (loader) {
@@ -681,11 +594,14 @@ class UniversalSearchSystem {
         }, 300);
     }
 
-    performSearchAndDisplay(query) {
-        const results = this.performAdvancedSearch(query);
+    async performSearchAndDisplay(query) {
+        const results = await this.performAdvancedSearch(query);
         this.currentResults = results;
         this.displaySearchResults(results, query);
         this.updateSearchStats(query, results.length);
+        
+        // Send analytics to API
+        await this.sendSearchAnalytics(query, results.length);
         
         // If on products page, filter the displayed products in real-time
         if (this.isSearchResultsPage) {
@@ -761,10 +677,10 @@ class UniversalSearchSystem {
         
         return `
             <div class="search-result-card group bg-gradient-to-r from-white/80 to-white/60 backdrop-blur-sm border border-white/30 rounded-2xl p-6 hover:shadow-xl hover:shadow-[#3A46A5]/10 transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:bg-gradient-to-r hover:from-white/90 hover:to-white/70" 
-                 onclick="window.location.href='${product.url}'" data-product-id="${product.id}">
+                 onclick="window.searchSystem.handleProductClick('${product.id}', '${query}'); window.location.href='${product.url}'" data-product-id="${product.id}">
                 <div class="flex items-start space-x-5">
                     <div class="relative">
-                        <img src="${product.image}" alt="${product.name}" 
+                        <img src="${product.image_data ? `data:image/jpeg;base64,${product.image_data}` : 'images/placeholder.jpg'}" alt="${product.name}" 
                              class="w-20 h-20 object-cover rounded-2xl flex-shrink-0 bg-gradient-to-br from-gray-100 to-gray-200 shadow-lg group-hover:shadow-xl transition-shadow duration-300">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
@@ -812,7 +728,7 @@ class UniversalSearchSystem {
                         
                         <!-- Modern Tags -->
                         <div class="mt-3 flex flex-wrap gap-2">
-                            ${product.tags.slice(0, 4).map(tag => `
+                            ${(product.tags || []).slice(0, 4).map(tag => `
                                 <span class="inline-flex items-center text-xs bg-gradient-to-r from-blue-50 to-indigo-50 text-[#3A46A5] px-3 py-1 rounded-full border border-blue-100 font-medium shadow-sm hover:shadow-md transition-shadow duration-200">
                                     <i class="fas fa-tag text-blue-400 mr-1.5 text-xs"></i>
                                     ${this.highlightMatches(tag, query)}
@@ -846,6 +762,13 @@ class UniversalSearchSystem {
         `;
     }
 
+    // Handle product click for analytics
+    async handleProductClick(productId, query) {
+        if (query) {
+            await this.sendSearchAnalytics(query, this.currentResults.length, productId);
+        }
+    }
+
     highlightMatches(text, query) {
         if (!query || !text) return text;
         
@@ -864,24 +787,25 @@ class UniversalSearchSystem {
         const grouped = {};
         
         results.forEach(product => {
-            if (!grouped[product.domain]) {
-                grouped[product.domain] = [];
+            const domain = product.domain || 'Other';
+            if (!grouped[domain]) {
+                grouped[domain] = [];
             }
-            grouped[product.domain].push(product);
+            grouped[domain].push(product);
         });
         
         return grouped;
     }
 
     getDomainInfo(domainName) {
-        const domainKey = Object.keys(this.productDatabase).find(key => 
-            this.productDatabase[key].name === domainName
+        const domainKey = Object.keys(this.fallbackDatabase).find(key => 
+            this.fallbackDatabase[key].name === domainName
         );
         
-        return domainKey ? this.productDatabase[domainKey] : { icon: 'fas fa-cube' };
+        return domainKey ? this.fallbackDatabase[domainKey] : { icon: 'fas fa-cube' };
     }
 
-    showInitialSuggestions() {
+    async showInitialSuggestions() {
         const suggestionsContainer = document.getElementById('searchSuggestions');
         const resultsContainer = document.getElementById('searchResults');
         const noResultsContainer = document.getElementById('noResults');
@@ -893,10 +817,9 @@ class UniversalSearchSystem {
         if (resultsContainer) resultsContainer.classList.add('hidden');
         if (noResultsContainer) noResultsContainer.classList.add('hidden');
         
-        const allProducts = this.getAllProducts();
         const recentSearches = this.getRecentSearches();
-        const popularProducts = this.getPopularProducts(allProducts);
-        const domainOverview = this.getDomainOverview();
+        const domains = await this.getDomains();
+        const categories = await this.getCategories();
         
         let html = '';
         
@@ -926,14 +849,14 @@ class UniversalSearchSystem {
                     <i class="fas fa-sitemap mr-2"></i>Browse by Category
                 </h4>
                 <div class="grid grid-cols-2 gap-3">
-                    ${domainOverview.map(domain => `
+                    ${domains.map(domain => `
                         <div class="p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors"
-                             onclick="window.location.href='products.html?domain=${domain.key}'">
+                             onclick="window.location.href='products.html?domain=${domain.id}'">
                             <div class="flex items-center space-x-3">
                                 <i class="${domain.icon} text-blue-600 text-lg"></i>
                                 <div>
                                     <h5 class="text-sm font-medium text-gray-900">${domain.name}</h5>
-                                    <p class="text-xs text-gray-500">${domain.productCount} products</p>
+                                    <p class="text-xs text-gray-500">${domain.count || 0} products</p>
                                 </div>
                             </div>
                         </div>
@@ -942,23 +865,22 @@ class UniversalSearchSystem {
             </div>
         `;
         
-        // Popular products
-        if (popularProducts.length > 0) {
+        // Popular categories
+        if (categories.length > 0) {
             html += `
                 <div class="mb-6">
                     <h4 class="text-sm font-semibold text-gray-700 mb-3 flex items-center">
-                        <i class="fas fa-star mr-2"></i>Popular Products
+                        <i class="fas fa-star mr-2"></i>Popular Categories
                     </h4>
-                    <div class="space-y-2">
-                        ${popularProducts.slice(0, 4).map(product => `
+                    <div class="grid grid-cols-2 gap-2">
+                        ${categories.slice(0, 6).map(category => `
                             <div class="flex items-center space-x-3 p-2 hover:bg-gray-50 rounded cursor-pointer"
-                                 onclick="window.location.href='${product.url}'">
-                                <img src="${product.image}" alt="${product.name}" class="w-10 h-10 object-cover rounded">
+                                 onclick="document.getElementById('universalSearchInput').value='${category.name}'; document.getElementById('universalSearchInput').dispatchEvent(new Event('input'));">
+                                <i class="${category.icon} text-blue-600"></i>
                                 <div class="flex-1 min-w-0">
-                                    <p class="text-sm font-medium text-gray-900 truncate">${product.name}</p>
-                                    <p class="text-xs text-gray-500">${product.category} • ${product.domain}</p>
+                                    <p class="text-sm font-medium text-gray-900 truncate">${category.name}</p>
+                                    <p class="text-xs text-gray-500">${category.count || 0} products</p>
                                 </div>
-                                <div class="text-xs text-yellow-500">★ ${product.rating}</div>
                             </div>
                         `).join('')}
                     </div>
@@ -973,36 +895,40 @@ class UniversalSearchSystem {
         return this.searchHistory.slice(-5).reverse();
     }
 
-    getPopularProducts(products) {
-        return products
-            .filter(product => product.rating >= 4.5)
-            .sort((a, b) => b.rating - a.rating);
-    }
-
-    getDomainOverview() {
-        return Object.entries(this.productDatabase).map(([key, domain]) => {
-            const productCount = Object.values(domain.categories)
-                .reduce((total, category) => total + category.products.length, 0);
-            
-            return {
-                key,
-                name: domain.name,
-                icon: domain.icon,
-                productCount
-            };
-        });
-    }
-
-    applyQuickFilter(filterValue) {
+    async applyQuickFilter(filterValue) {
         const searchInput = document.getElementById('universalSearchInput');
         
         if (filterValue === 'all') {
-            this.showInitialSuggestions();
+            await this.showInitialSuggestions();
         } else {
-            const filteredProducts = this.getAllProducts().filter(product => 
-                product.domainKey === filterValue
-            );
-            this.displaySearchResults(filteredProducts);
+            // Filter by domain using API
+            try {
+                const url = `${this.apiConfig.baseUrl}${this.apiConfig.endpoints.search}`;
+                const params = new URLSearchParams({ 
+                    domain: filterValue,
+                    limit: 50
+                });
+                
+                const response = await fetch(`${url}?${params}`);
+                if (response.ok) {
+                    const data = await response.json();
+                    this.displaySearchResults(data.results || []);
+                } else {
+                    // Fallback to client-side filtering
+                    const allProducts = await this.getAllProducts();
+                    const filteredProducts = allProducts.filter(product => 
+                        product.domainKey === filterValue || product.domain === filterValue
+                    );
+                    this.displaySearchResults(filteredProducts);
+                }
+            } catch (error) {
+                console.warn('Quick filter API failed, using fallback:', error);
+                const allProducts = await this.getAllProducts();
+                const filteredProducts = allProducts.filter(product => 
+                    product.domainKey === filterValue || product.domain === filterValue
+                );
+                this.displaySearchResults(filteredProducts);
+            }
         }
         
         if (searchInput) {
@@ -1014,10 +940,10 @@ class UniversalSearchSystem {
         const allFilters = document.querySelectorAll('[data-filter]');
         
         allFilters.forEach(filter => {
-            filter.className = 'px-3 py-1 bg-white text-blue-600 text-sm rounded-full hover:bg-gray-100 transition-colors';
+            filter.className = 'px-4 py-2 bg-white/20 text-white text-sm font-medium rounded-xl hover:bg-white/30 transition-all duration-200 backdrop-blur-sm';
         });
         
-        activeButton.className = 'px-3 py-1 bg-blue-500 text-white text-sm rounded-full hover:bg-blue-400 transition-colors';
+        activeButton.className = 'px-4 py-2 bg-white text-[#3A46A5] text-sm font-semibold rounded-xl hover:bg-white/90 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5';
     }
 
     updateSearchStats(query, resultCount) {
@@ -1070,13 +996,13 @@ class UniversalSearchSystem {
         }
     }
 
-    handleSearchSubmit(query) {
+    async handleSearchSubmit(query) {
         if (query.trim()) {
             this.addToSearchHistory(query.trim());
             
             // If already on products page, filter products directly
             if (this.isSearchResultsPage && window.filterProductsBySearch) {
-                const results = this.performAdvancedSearch(query.trim());
+                const results = await this.performAdvancedSearch(query.trim());
                 window.filterProductsBySearch(query.trim(), results);
                 this.closeSearch();
             } else {
@@ -1195,13 +1121,13 @@ class UniversalSearchSystem {
     // Map category to domain for consistency
     mapCategoryToDomain(category) {
         const categoryMap = {
-            'data-centre': 'it-infrastructure',
-            'telecom': 'telecommunications',
-            'power-it': 'infrastructure',
-            'industrial-rack': 'it-infrastructure',
-            'accessories': 'telecommunications'
+            'data-centre': 'IT Infrastructure',
+            'telecom': 'Telecommunications',
+            'power-it': 'Infrastructure',
+            'industrial-rack': 'IT Infrastructure',
+            'accessories': 'Telecommunications'
         };
-        return categoryMap[category] || 'infrastructure';
+        return categoryMap[category] || 'Infrastructure';
     }
     
     // Generate search tags from product data
@@ -1228,8 +1154,12 @@ class UniversalSearchSystem {
 
     initializeSearchResultsPage() {
         // Initialize search results page functionality
-        // This would be implemented for the dedicated search results page
-        console.log('Search results page initialized');
+        console.log('Search results page initialized with API integration');
+    }
+
+    // Method to update API configuration
+    updateApiConfig(newConfig) {
+        this.apiConfig = { ...this.apiConfig, ...newConfig };
     }
 }
 

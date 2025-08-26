@@ -1,0 +1,65 @@
+name = "phedel-search-search-api"
+main = "src/search-api.js"
+compatibility_date = "2024-01-15"
+compatibility_flags = ["nodejs_compat"]
+
+# Environment variables
+[vars]
+ENVIRONMENT = "production"
+API_VERSION = "v1"
+CORS_ORIGIN = "*"
+
+# D1 Database
+[[d1_databases]]
+binding = "DB"
+database_name = "phedel-products-db"
+database_id = "eb390811-d94c-4af9-acfe-7a3298472c6e"
+
+# R2 Storage bindings - REMOVED (using base64 storage in D1)
+# [[r2_buckets]]
+# binding = "PRODUCT_IMAGES"
+# bucket_name = "phedel-product-images"
+# preview_bucket_name = "phedel-product-images-preview"
+
+# KV Namespaces (will be created during deployment)
+# [[kv_namespaces]]
+# binding = "ANALYTICS"
+# id = "" # Will be set after creating KV namespace
+# preview_id = ""
+
+# [[kv_namespaces]]
+# binding = "CACHE"
+# id = "" # Will be set after creating KV namespace
+# preview_id = ""
+
+# Routes Configuration - Commented out for workers.dev deployment
+# [[routes]]
+# pattern = "phedel.com/api/*"
+# zone_name = "phedel.com"
+
+# [[routes]]
+# pattern = "*.phedel.com/api/*"
+# zone_name = "phedel.com"
+
+# Worker Routes for different API endpoints
+[env.production]
+name = "phedel-search-cms"
+
+[env.production.vars]
+ENVIRONMENT = "production"
+JWT_SECRET = "" # Set via wrangler secret put JWT_SECRET
+ADMIN_PASSWORD_HASH = "" # Set via wrangler secret put ADMIN_PASSWORD_HASH
+
+[env.staging]
+name = "phedel-search-cms-staging"
+
+[env.staging.vars]
+ENVIRONMENT = "staging"
+JWT_SECRET = "" # Set via wrangler secret put JWT_SECRET --env staging
+ADMIN_PASSWORD_HASH = "" # Set via wrangler secret put ADMIN_PASSWORD_HASH --env staging
+
+# Development Configuration
+[dev]
+ip = "127.0.0.1"
+port = 8787
+local_protocol = "http"
