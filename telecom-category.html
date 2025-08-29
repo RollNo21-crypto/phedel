@@ -7,7 +7,7 @@
     <meta name="description" content="Explore PHEDEL's Telecom solutions - High-quality telecommunications infrastructure and equipment for reliable network deployments.">
     <meta name="keywords" content="telecom, telecommunications, HDPE ducts, optical fiber, PHEDEL">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <script src="js/search.js" defer></script>
     <script>
@@ -55,7 +55,25 @@
                 <div class="hidden md:flex lg:flex">
                     <div class="ml-10 flex items-baseline space-x-4 lg:space-x-8">
                         <a href="index.html" class="text-gray-700 hover:text-[#3A46A5] px-2 lg:px-3 py-2 text-sm font-medium">Home</a>
-                        <a href="services.html" class="text-gray-700 hover:text-[#3A46A5] px-2 lg:px-3 py-2 text-sm font-medium">Services</a>
+                        
+                        <!-- Industries dropdown -->
+                        <div class="relative group">
+                            <a href="#" class="text-gray-700 hover:text-[#3A46A5] px-2 lg:px-3 py-2 text-sm font-medium flex items-center">
+                                Industries
+                                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </a>
+                            <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50">
+                                <div class="py-1" role="menu" aria-orientation="vertical">
+                                    <a href="telecom-category.html" class="block px-4 py-2 text-sm text-[#3A46A5] bg-gray-100" role="menuitem">Telecom</a>
+                                    <a href="data-centre-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Data Center</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Industrial Auto</a>
+                                    <a href="power-it-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Power</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">IT</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Products dropdown -->
                         <div class="relative group">
                             <a href="products.html" class="text-[#3A46A5] px-2 lg:px-3 py-2 text-sm font-medium flex items-center">
                                 Products
@@ -63,17 +81,34 @@
                             </a>
                             <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50">
                                 <div class="py-1" role="menu" aria-orientation="vertical">
-                                    <a href="data-centre-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Data Centre</a>
+                                    <a href="data-centre-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Data Center</a>
                                     <a href="telecom-category.html" class="block px-4 py-2 text-sm text-[#3A46A5] bg-gray-100" role="menuitem">Telecom</a>
-                                    <a href="power-it-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Power & IT</a>
-                                    <a href="industrial-rack-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Industrial Rack</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">IT and Network Provider</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Electrical Panel</a>
+                                    <a href="industrial-rack-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Industrial Enclosure</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Security Surveillance</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">AV Racks</a>
                                     <a href="accessories-category.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Accessories</a>
-                                    <a href="products.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-medium" role="menuitem">All Products</a>
                                 </div>
                             </div>
                         </div>
-                        <a href="about.html" class="text-gray-700 hover:text-[#3A46A5] px-2 lg:px-3 py-2 text-sm font-medium">About</a>
-                        <a href="contact.html" class="text-gray-700 hover:text-[#3A46A5] px-2 lg:px-3 py-2 text-sm font-medium">Contact</a>
+                        
+                        <!-- About Us dropdown -->
+                        <div class="relative group">
+                            <a href="about.html" class="text-gray-700 hover:text-[#3A46A5] px-2 lg:px-3 py-2 text-sm font-medium flex items-center">
+                                About Us
+                                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </a>
+                            <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50">
+                                <div class="py-1" role="menu" aria-orientation="vertical">
+                                    <a href="about.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Company</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Founding Team</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Facility</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Careers</a>
+                                    <a href="contact.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Contact</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="flex items-center space-x-2 lg:space-x-4">
@@ -97,25 +132,54 @@
                     <i class="fas fa-search mr-2"></i>Search Products
                 </button>
                 <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">Home</a>
-                <a href="services.html" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">Services</a>
+                
+                <!-- Industries dropdown for mobile -->
+                <div class="relative">
+                    <button id="mobile-industries-dropdown" class="flex items-center justify-between w-full px-3 py-2 text-gray-700 hover:text-[#3A46A5]">
+                        Industries
+                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div id="mobile-industries-menu" class="hidden pl-4 py-2 space-y-1">
+                        <a href="telecom-category.html" class="block px-3 py-2 text-[#3A46A5] font-medium">Telecom</a>
+                        <a href="data-centre-category.html" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">Data Center</a>
+                        <a href="#" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">Industrial Auto</a>
+                        <a href="power-it-category.html" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">Power</a>
+                        <a href="#" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">IT</a>
+                    </div>
+                </div>
+                
+                <!-- Products dropdown for mobile -->
                 <div class="relative">
                     <button id="mobile-products-dropdown" class="flex items-center justify-between w-full px-3 py-2 text-[#3A46A5]">
                         Products
                         <i class="fas fa-chevron-down ml-1 text-xs"></i>
                     </button>
                     <div id="mobile-products-menu" class="hidden pl-4 py-2 space-y-1">
-                        <a href="data-centre-category.html" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">Data Centre</a>
+                        <a href="data-centre-category.html" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">Data Center</a>
                         <a href="telecom-category.html" class="block px-3 py-2 text-[#3A46A5] font-medium">Telecom</a>
-                        <a href="power-it-category.html" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">Power & IT</a>
-                        <a href="industrial-rack-category.html" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">Industrial Rack</a>
-                        <a href="civil-work-category.html" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">Civil Work</a>
-                        <a href="laboratory-category.html" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">Laboratory</a>
+                        <a href="#" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">IT and Network Provider</a>
+                        <a href="#" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">Electrical Panel</a>
+                        <a href="industrial-rack-category.html" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">Industrial Enclosure</a>
+                        <a href="#" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">Security Surveillance</a>
+                        <a href="#" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">AV Racks</a>
                         <a href="accessories-category.html" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">Accessories</a>
-                        <a href="products.html" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5] font-medium">All Products</a>
                     </div>
                 </div>
-                <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">About</a>
-                <a href="contact.html" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">Contact</a>
+                
+                <!-- About Us dropdown for mobile -->
+                <div class="relative">
+                    <button id="mobile-about-dropdown" class="flex items-center justify-between w-full px-3 py-2 text-gray-700 hover:text-[#3A46A5]">
+                        About Us
+                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div id="mobile-about-menu" class="hidden pl-4 py-2 space-y-1">
+                        <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">Company</a>
+                        <a href="#" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">Founding Team</a>
+                        <a href="#" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">Facility</a>
+                        <a href="#" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">Careers</a>
+                        <a href="contact.html" class="block px-3 py-2 text-gray-700 hover:text-[#3A46A5]">Contact</a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>

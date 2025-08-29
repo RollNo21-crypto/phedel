@@ -36,7 +36,7 @@
     <!-- Stylesheets -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <script src="js/search.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -455,7 +455,23 @@
                 <div class="hidden md:flex lg:flex">
                     <div class="ml-10 flex items-baseline space-x-4 lg:space-x-8">
                         <a href="index.html" class="text-gray-700 px-2 lg:px-3 py-2 text-sm font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Home</a>
-                        <a href="services.html" class="px-2 lg:px-3 py-2 text-sm font-medium" style="color: #3A46A5;">Services</a>
+                        
+                        <!-- Industries dropdown -->
+                        <div class="relative group">
+                            <a href="#" class="text-gray-700 px-2 lg:px-3 py-2 text-sm font-medium flex items-center transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">
+                                Industries
+                                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </a>
+                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                                <div class="py-1">
+                                    <a href="telecom-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Telecom</a>
+                                    <a href="data-centre-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Data Center</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Industrial Auto</a>
+                                    <a href="power-it-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Power</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">IT</a>
+                                </div>
+                            </div>
+                        </div>
                         
                         <!-- Products dropdown -->
                         <div class="relative group">
@@ -465,17 +481,34 @@
                             </a>
                             <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                                 <div class="py-1">
-                                    <a href="data-centre-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Data Centre</a>
+                                    <a href="data-centre-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Data Center</a>
                                     <a href="telecom-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Telecom</a>
-                                    <a href="power-it-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Power & IT</a>
-                                    <a href="industrial-rack-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Industrial Rack</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">IT and Network Provider</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Electrical Panel</a>
+                                    <a href="industrial-rack-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Industrial Enclosure</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Security Surveillance</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">AV Racks</a>
                                     <a href="accessories-category.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Accessories</a>
-                                    <a href="products.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">All Products</a>
                                 </div>
                             </div>
                         </div>
-                        <a href="about.html" class="text-gray-700 px-2 lg:px-3 py-2 text-sm font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">About</a>
-                        <a href="contact.html" class="text-gray-700 px-2 lg:px-3 py-2 text-sm font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Contact</a>
+                        
+                        <!-- About Us dropdown -->
+                        <div class="relative group">
+                            <a href="about.html" class="text-gray-700 px-2 lg:px-3 py-2 text-sm font-medium flex items-center transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">
+                                About Us
+                                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </a>
+                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                                <div class="py-1">
+                                    <a href="about.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Company</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Founding Team</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Facility</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Careers</a>
+                                    <a href="contact.html" class="block px-4 py-2 text-sm text-gray-700 transition-colors" onmouseover="this.style.backgroundColor='rgba(58, 70, 165, 0.1)'; this.style.color='#3A46A5'" onmouseout="this.style.backgroundColor=''; this.style.color=''">Contact</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="flex items-center space-x-2 lg:space-x-4">
@@ -502,7 +535,21 @@
                         <i class="fas fa-search mr-2"></i>Search Products
                     </button>
                     <a href="index.html" class="text-gray-700 block px-3 py-2 text-base font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Home</a>
-                    <a href="services.html" class="block px-3 py-2 text-base font-medium" style="color: #3A46A5;">Services</a>
+                    
+                    <!-- Industries dropdown for mobile -->
+                    <div class="relative">
+                        <button id="mobile-industries-dropdown" class="text-gray-700 hover:text-blue-600 flex justify-between w-full px-3 py-2 rounded-md text-base font-medium transition duration-300">
+                            Industries
+                            <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-200"></i>
+                        </button>
+                        <div id="mobile-industries-menu" class="hidden px-4 py-2 bg-gray-50">
+                            <a href="telecom-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Telecom</a>
+                            <a href="data-centre-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Data Center</a>
+                            <a href="#" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Industrial Auto</a>
+                            <a href="power-it-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Power</a>
+                            <a href="#" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">IT</a>
+                        </div>
+                    </div>
                     
                     <!-- Products dropdown for mobile -->
                     <div class="relative">
@@ -511,17 +558,31 @@
                             <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-200"></i>
                         </button>
                         <div id="mobile-products-menu" class="hidden px-4 py-2 bg-gray-50">
-                            <a href="data-centre-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Data Centre</a>
+                            <a href="data-centre-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Data Center</a>
                             <a href="telecom-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Telecom</a>
-                            <a href="power-it-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Power & IT</a>
-                            <a href="industrial-rack-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Industrial Rack</a>
+                            <a href="#" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">IT and Network Provider</a>
+                            <a href="#" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Electrical Panel</a>
+                            <a href="industrial-rack-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Industrial Enclosure</a>
+                            <a href="#" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Security Surveillance</a>
+                            <a href="#" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">AV Racks</a>
                             <a href="accessories-category.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Accessories</a>
-                            <a href="products.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">All Products</a>
                         </div>
                     </div>
                     
-                    <a href="about.html" class="text-gray-700 block px-3 py-2 text-base font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">About</a>
-                    <a href="contact.html" class="text-gray-700 block px-3 py-2 text-base font-medium transition-colors" onmouseover="this.style.color='#3A46A5'" onmouseout="this.style.color=''">Contact</a>
+                    <!-- About Us dropdown for mobile -->
+                    <div class="relative">
+                        <button id="mobile-about-dropdown" class="text-gray-700 hover:text-blue-600 flex justify-between w-full px-3 py-2 rounded-md text-base font-medium transition duration-300">
+                            About Us
+                            <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-200"></i>
+                        </button>
+                        <div id="mobile-about-menu" class="hidden px-4 py-2 bg-gray-50">
+                            <a href="about.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Company</a>
+                            <a href="#" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Founding Team</a>
+                            <a href="#" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Facility</a>
+                            <a href="#" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Careers</a>
+                            <a href="contact.html" class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:text-blue-600">Contact</a>
+                        </div>
+                    </div>
                     <a href="contact.html" class="text-white block px-3 py-2 text-base font-medium transition-colors rounded-lg mx-3 mt-4" style="background-color: #3A46A5;" onmouseover="this.style.backgroundColor='#2d3a8c'" onmouseout="this.style.backgroundColor='#3A46A5'">Get Quote</a>
                 </div>
             </div>
